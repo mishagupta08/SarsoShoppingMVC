@@ -22,11 +22,11 @@
         </div>
     </div>
     <div class="col-md-6">
-        <form class="form-horizontal" name ="RegistrationForm" id="RegistrationForm" onsubmit="return false;">
+        <form class="form-horizontal" name="RegistrationForm" id="RegistrationForm" onsubmit="return false;">
             <div class="row">
                 <div class="form-group">
-                    <label for="inputfname" class="control-label">SPONSOR ID <span class="color">*</span></label>                    
-                    @Html.TextBoxFor(m => m.SponserID, new { @placeholder = "Enter your sponsor ID..." ,@id = "SponserID" ,@name = "SponserID" ,@class="form-control" })
+                    <label for="inputfname" class="control-label">SPONSOR ID <span class="color">*</span></label>
+                    @Html.TextBoxFor(m => m.SponserID, new { @placeholder = "Enter your sponsor ID...", @id = "SponserID", @name = "SponserID", @class = "form-control" })
                 </div>
             </div>
 
@@ -45,13 +45,13 @@
             <div class="row">
                 <div class="form-group">
                     <label for="inputcompany" class="control-label">Company Name<span class="color">*</span></label>
-                   @Html.TextBoxFor(m => m.CompanyName, new { @placeholder = "Enter your Company name...", @class = "form-control" })
+                    @Html.TextBoxFor(m => m.CompanyName, new { @placeholder = "Enter your Company name...", @class = "form-control" })
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6 ">
                     <label for="inputfname" class="control-label">Email <span class="color">*</span></label>
-                   @Html.TextBoxFor(m => m.Email, new { @placeholder = "Enter your Email Id...", @class = "form-control" })
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Enter your Email Id...", @class = "form-control" })
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputlname" class="control-label">Mobile <span class="color">*</span></label>
@@ -72,7 +72,7 @@
             </div>
 
 
-            <div class="row">    <input type="submit" id="RegisterSubmit" class="link-v1 box lh-50 rt full"  value="REGISTER"/></div>
+            <div class="row">    <input type="submit" id="RegisterSubmit" class="link-v1 box lh-50 rt full" value="REGISTER" /></div>
 
 
 
@@ -81,3 +81,4 @@
 
 
 </div>
+    <script src="~/Scripts/Register.js"></script>
