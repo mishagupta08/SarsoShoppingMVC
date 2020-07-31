@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $("#SponserID").click(function () {
+    $("#SponserID").focusout(function () {
         var id = $("#SponserID").val();
         $(".preloader").show();
         $.ajax({
