@@ -13,10 +13,10 @@ using SarsoShoppingData;
 
 namespace SarsoShoppingMVC.Controllers
 {
-    [Authorize]
+    
     public class AccountController : Controller
     {
-
+        
         public ActionResult Register()
         {
             return View();
