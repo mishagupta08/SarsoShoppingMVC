@@ -44,6 +44,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -180,6 +208,181 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\bootstrap\_theme.css" />
+    <Content Include="assets\css\components\Elements\_blog.css" />
+    <Content Include="assets\css\components\Elements\_catbox.css" />
+    <Content Include="assets\css\components\Elements\_cta.css" />
+    <Content Include="assets\css\components\Elements\_image-zoom.css" />
+    <Content Include="assets\css\components\Elements\_instafeed.css" />
+    <Content Include="assets\css\components\Elements\_maps.css" />
+    <Content Include="assets\css\components\Elements\_shortcode.css" />
+    <Content Include="assets\css\components\Layout\_footers.css" />
+    <Content Include="assets\css\components\Layout\_loading.css" />
+    <Content Include="assets\css\fonts.css" />
+    <Content Include="assets\css\slick-theme.css" />
+    <Content Include="assets\css\slick.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\about1.jpg" />
+    <Content Include="assets\images\about2.jpg" />
+    <Content Include="assets\images\about3.jpg" />
+    <Content Include="assets\images\ayurvedic_meds.jpg" />
+    <Content Include="assets\images\bank_owner.png" />
+    <Content Include="assets\images\banner\01.jpg" />
+    <Content Include="assets\images\banner\02.jpg" />
+    <Content Include="assets\images\banner\03.jpg" />
+    <Content Include="assets\images\bathing.jpg" />
+    <Content Include="assets\images\bg-home8-slider.jpg" />
+    <Content Include="assets\images\bg-instafeed.jpg" />
+    <Content Include="assets\images\books\giloy.png" />
+    <Content Include="assets\images\books\noni_plus.png" />
+    <Content Include="assets\images\books\sehantmand.png" />
+    <Content Include="assets\images\brand\neeti.png" />
+    <Content Include="assets\images\brand\sootram.png" />
+    <Content Include="assets\images\brand\swadharma.png" />
+    <Content Include="assets\images\brand\tamra.png" />
+    <Content Include="assets\images\business1.png" />
+    <Content Include="assets\images\business2.png" />
+    <Content Include="assets\images\business3.png" />
+    <Content Include="assets\images\business_product_line.jpg" />
+    <Content Include="assets\images\cart-icon-mobile.png" />
+    <Content Include="assets\images\cart-icon.png" />
+    <Content Include="assets\images\ceo1.png" />
+    <Content Include="assets\images\ceo2.png" />
+    <Content Include="assets\images\check-icon.png" />
+    <Content Include="assets\images\check-select-color.png" />
+    <Content Include="assets\images\chemical_free_icon.png" />
+    <Content Include="assets\images\clientreview-bg.jpg" />
+    <Content Include="assets\images\clinically_proven.png" />
+    <Content Include="assets\images\close-menu-right.png" />
+    <Content Include="assets\images\close-newsletter.png" />
+    <Content Include="assets\images\clothing.jpg" />
+    <Content Include="assets\images\cruelty_free_icon.png" />
+    <Content Include="assets\images\distributor.jpg" />
+    <Content Include="assets\images\distributor1.jpg" />
+    <Content Include="assets\images\down-white.png" />
+    <Content Include="assets\images\drinking_tea.jpg" />
+    <Content Include="assets\images\edible_icon.png" />
+    <Content Include="assets\images\entrepreneur.png" />
+    <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\FDSA_logo.png" />
+    <Content Include="assets\images\food.jpg" />
+    <Content Include="assets\images\Hermes-home1-border-bottom.png" />
+    <Content Include="assets\images\icon-accor.png" />
+    <Content Include="assets\images\icon-bx-slider.png" />
+    <Content Include="assets\images\icon-close.png" />
+    <Content Include="assets\images\icon-col.png" />
+    <Content Include="assets\images\icon-delete-cart.png" />
+    <Content Include="assets\images\icon-list.png" />
+    <Content Include="assets\images\icon-menu-home2.png" />
+    <Content Include="assets\images\icon-next-prev.png" />
+    <Content Include="assets\images\icon-order-complete.png" />
+    <Content Include="assets\images\icon-quanty-v2.png" />
+    <Content Include="assets\images\icon-quanty.png" />
+    <Content Include="assets\images\icon-search-menu.png" />
+    <Content Include="assets\images\icon-setting.png" />
+    <Content Include="assets\images\icon-ulli.png" />
+    <Content Include="assets\images\icon-video.png" />
+    <Content Include="assets\images\joyful.jpg" />
+    <Content Include="assets\images\kapha.jpg" />
+    <Content Include="assets\images\lbook-plus.png" />
+    <Content Include="assets\images\loader.gif" />
+    <Content Include="assets\images\lock-icon-mobile.png" />
+    <Content Include="assets\images\lock-icon.png" />
+    <Content Include="assets\images\logo-mobile.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\nationwide.png" />
+    <Content Include="assets\images\natural.png" />
+    <Content Include="assets\images\newsletter-bottom.jpg" />
+    <Content Include="assets\images\non_toxic_icon.png" />
+    <Content Include="assets\images\nutrition.jpg" />
+    <Content Include="assets\images\orak_care.jpg" />
+    <Content Include="assets\images\pagebanner\about-us.jpg" />
+    <Content Include="assets\images\pagebanner\business.jpg" />
+    <Content Include="assets\images\pagebanner\category-banner.jpg" />
+    <Content Include="assets\images\pagebanner\mbo.jpg" />
+    <Content Include="assets\images\pagebanner\signin.jpg" />
+    <Content Include="assets\images\pagebanner\swadharma-story.jpg" />
+    <Content Include="assets\images\pagebanner\swadharma.jpg" />
+    <Content Include="assets\images\pagination-next.png" />
+    <Content Include="assets\images\pagination-prev.png" />
+    <Content Include="assets\images\pitta.jpg" />
+    <Content Include="assets\images\por-plus.png" />
+    <Content Include="assets\images\products\1.jpg" />
+    <Content Include="assets\images\products\2.jpg" />
+    <Content Include="assets\images\products\3.jpg" />
+    <Content Include="assets\images\products\4.jpg" />
+    <Content Include="assets\images\products\5.jpg" />
+    <Content Include="assets\images\products\watch_video.jpg" />
+    <Content Include="assets\images\search-icon-mobile.png" />
+    <Content Include="assets\images\search-icon.png" />
+    <Content Include="assets\images\select-radio.png" />
+    <Content Include="assets\images\shipping-v2.jpg" />
+    <Content Include="assets\images\sign-in1.png" />
+    <Content Include="assets\images\sign1.png" />
+    <Content Include="assets\images\sign2.png" />
+    <Content Include="assets\images\start_business_1.jpg" />
+    <Content Include="assets\images\story1.jpg" />
+    <Content Include="assets\images\story2.jpg" />
+    <Content Include="assets\images\story3.jpg" />
+    <Content Include="assets\images\story4.jpg" />
+    <Content Include="assets\images\story5.jpg" />
+    <Content Include="assets\images\story6.jpg" />
+    <Content Include="assets\images\swadharma_bg.jpg" />
+    <Content Include="assets\images\swadharma_logo.png" />
+    <Content Include="assets\images\swadharma_story.jpg" />
+    <Content Include="assets\images\swadharma_story.png" />
+    <Content Include="assets\images\tamra.jpg" />
+    <Content Include="assets\images\testimonials\02.png" />
+    <Content Include="assets\images\testimonials\03.png" />
+    <Content Include="assets\images\testimonials\jatin_bhateja.png" />
+    <Content Include="assets\images\title-page-border.jpg" />
+    <Content Include="assets\images\uno-bg-newsletter.jpg" />
+    <Content Include="assets\images\Uno-button-icon.png" />
+    <Content Include="assets\images\Uno-button-icon2.png" />
+    <Content Include="assets\images\uno-slider-tab-icon.png" />
+    <Content Include="assets\images\user-box-shadow.png" />
+    <Content Include="assets\images\vatta.jpg" />
+    <Content Include="assets\images\vegan_icon.png" />
+    <Content Include="assets\images\yoga.jpg" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\custombox.min.js" />
+    <Content Include="assets\js\engo-plugins.js" />
+    <Content Include="assets\js\instafeed.min.js" />
+    <Content Include="assets\js\jquery-1.11.1.min.js" />
+    <Content Include="assets\js\jquery.lazyimage.js" />
+    <Content Include="assets\js\jquery.mousewheel.min.js" />
+    <Content Include="assets\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="assets\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="assets\js\jquery.zoom.js" />
+    <Content Include="assets\js\legacy.min.js" />
+    <Content Include="assets\js\map-icons.js" />
+    <Content Include="assets\js\masonry.pkgd.min.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\price-range.js" />
+    <Content Include="assets\js\slick.min.js" />
+    <Content Include="assets\js\store.js" />
+    <Content Include="assets\js\wow.min.js" />
+    <Content Include="assets\offers\01.jpg" />
+    <Content Include="assets\offers\02.jpg" />
+    <Content Include="assets\product_video\Shaving Foam.mp4" />
+    <Content Include="assets\sass\components\Vendor\blanch\fonts.css" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\font-awesome.min.css" />
+    <Content Include="assets\sass\components\Vendor\font-nexabold\index.html" />
+    <Content Include="assets\sass\components\Vendor\font-nexabold\style.css" />
+    <Content Include="assets\sass\components\Vendor\font-nexalight\style-font.css" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor-bold\font-texgyreadventor-bold.css" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor\font-texgyreadventor.css" />
+    <Content Include="assets\sass\components\Vendor\pe-icon-7-stroke\css\helper.css" />
+    <Content Include="assets\sass\components\Vendor\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="assets\sass\components\Vendor\PlayfairDisplay\fonts.css" />
+    <Content Include="assets\sass\components\Vendor\simple-line-icon\css\simple-line-icons.css" />
+    <Content Include="assets\vendor\animate.css" />
+    <Content Include="assets\vendor\owl-slider.css" />
+    <Content Include="assets\vendor\range-price.css" />
+    <Content Include="assets\vendor\settings.css" />
+    <Content Include="assets\vendor\slick.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -187,6 +390,224 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\css\static\fonts\Futura-Book.eot" />
+    <Content Include="assets\css\static\fonts\Futura-Book.svg" />
+    <Content Include="assets\css\static\fonts\Futura-Book.ttf" />
+    <Content Include="assets\css\static\fonts\Futura-Book.woff" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy.eot" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy.svg" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy.ttf" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy.woff" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy.woff2" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy_1.eot" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy_1.svg" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy_1.ttf" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy_1.woff" />
+    <Content Include="assets\css\static\fonts\Futura-Heavy_1.woff2" />
+    <Content Include="assets\css\static\fonts\FuturaBT-Book.eot" />
+    <Content Include="assets\css\static\fonts\FuturaBT-Book.svg" />
+    <Content Include="assets\css\static\fonts\FuturaBT-Book.ttf" />
+    <Content Include="assets\css\static\fonts\FuturaBT-Book.woff" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Bold.eot" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Bold.svg" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Bold.ttf" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Bold.woff" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Bold.woff2" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Roman.eot" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Roman.svg" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Roman.ttf" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Roman.woff" />
+    <Content Include="assets\css\static\fonts\HelveticaLTStd-Roman.woff2" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Lt.eot" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Lt.svg" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Lt.ttf" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Lt.woff" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Lt.woff2" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Th.eot" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Th.svg" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Th.ttf" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Th.woff" />
+    <Content Include="assets\css\static\fonts\HelveticaNeueLTCom-Th.woff2" />
+    <Content Include="assets\css\style.css.map" />
+    <Content Include="assets\css\thin.eot" />
+    <Content Include="assets\css\thin.svg" />
+    <Content Include="assets\css\thin.ttf" />
+    <Content Include="assets\css\thin.woff" />
+    <Content Include="assets\css\thin.woff2" />
+    <Content Include="assets\images\icon-menu-mobile-active.svg" />
+    <Content Include="assets\images\icon-menu-mobile.svg" />
+    <Content Include="assets\sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_image.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_size.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="assets\sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="assets\sass\bootstrap\_alerts.scss" />
+    <Content Include="assets\sass\bootstrap\_badges.scss" />
+    <Content Include="assets\sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="assets\sass\bootstrap\_button-groups.scss" />
+    <Content Include="assets\sass\bootstrap\_buttons.scss" />
+    <Content Include="assets\sass\bootstrap\_carousel.scss" />
+    <Content Include="assets\sass\bootstrap\_close.scss" />
+    <Content Include="assets\sass\bootstrap\_code.scss" />
+    <Content Include="assets\sass\bootstrap\_component-animations.scss" />
+    <Content Include="assets\sass\bootstrap\_dropdowns.scss" />
+    <Content Include="assets\sass\bootstrap\_forms.scss" />
+    <Content Include="assets\sass\bootstrap\_glyphicons.scss" />
+    <Content Include="assets\sass\bootstrap\_grid.scss" />
+    <Content Include="assets\sass\bootstrap\_input-groups.scss" />
+    <Content Include="assets\sass\bootstrap\_jumbotron.scss" />
+    <Content Include="assets\sass\bootstrap\_labels.scss" />
+    <Content Include="assets\sass\bootstrap\_list-group.scss" />
+    <Content Include="assets\sass\bootstrap\_media.scss" />
+    <Content Include="assets\sass\bootstrap\_mixins.scss" />
+    <Content Include="assets\sass\bootstrap\_modals.scss" />
+    <Content Include="assets\sass\bootstrap\_navbar.scss" />
+    <Content Include="assets\sass\bootstrap\_navs.scss" />
+    <Content Include="assets\sass\bootstrap\_normalize.scss" />
+    <Content Include="assets\sass\bootstrap\_pager.scss" />
+    <Content Include="assets\sass\bootstrap\_pagination.scss" />
+    <Content Include="assets\sass\bootstrap\_panels.scss" />
+    <Content Include="assets\sass\bootstrap\_popovers.scss" />
+    <Content Include="assets\sass\bootstrap\_print.scss" />
+    <Content Include="assets\sass\bootstrap\_progress-bars.scss" />
+    <Content Include="assets\sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="assets\sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="assets\sass\bootstrap\_scaffolding.scss" />
+    <Content Include="assets\sass\bootstrap\_tables.scss" />
+    <Content Include="assets\sass\bootstrap\_theme.scss" />
+    <Content Include="assets\sass\bootstrap\_thumbnails.scss" />
+    <Content Include="assets\sass\bootstrap\_tooltip.scss" />
+    <Content Include="assets\sass\bootstrap\_type.scss" />
+    <Content Include="assets\sass\bootstrap\_utilities.scss" />
+    <Content Include="assets\sass\bootstrap\_variables.scss" />
+    <Content Include="assets\sass\bootstrap\_wells.scss" />
+    <Content Include="assets\sass\components\Ecommerce\item-view-templates.scss" />
+    <Content Include="assets\sass\components\Ecommerce\_cart.scss" />
+    <Content Include="assets\sass\components\Ecommerce\_checkout.scss" />
+    <Content Include="assets\sass\components\Ecommerce\_general.scss" />
+    <Content Include="assets\sass\components\Ecommerce\_pages.scss" />
+    <Content Include="assets\sass\components\Ecommerce\_single.scss" />
+    <Content Include="assets\sass\components\Ecommerce\_track-order.scss" />
+    <Content Include="assets\sass\components\Ecommerce\_widgets.scss" />
+    <Content Include="assets\sass\components\Ecommerce\_wishlist.scss" />
+    <Content Include="assets\sass\components\Elements\_about-team.scss" />
+    <Content Include="assets\sass\components\Elements\_banner1.scss" />
+    <Content Include="assets\sass\components\Elements\_blog.scss" />
+    <Content Include="assets\sass\components\Elements\_brand.scss" />
+    <Content Include="assets\sass\components\Elements\_catbox.scss" />
+    <Content Include="assets\sass\components\Elements\_contact-form.scss" />
+    <Content Include="assets\sass\components\Elements\_fromour.scss" />
+    <Content Include="assets\sass\components\Elements\_icon-box.scss" />
+    <Content Include="assets\sass\components\Elements\_icon-progress-bar.scss" />
+    <Content Include="assets\sass\components\Elements\_image-zoom.scss" />
+    <Content Include="assets\sass\components\Elements\_instafeed.scss" />
+    <Content Include="assets\sass\components\Elements\_interactive-banner.scss" />
+    <Content Include="assets\sass\components\Elements\_maps.scss" />
+    <Content Include="assets\sass\components\Elements\_newsletter.scss" />
+    <Content Include="assets\sass\components\Elements\_parallax.scss" />
+    <Content Include="assets\sass\components\Elements\_service.scss" />
+    <Content Include="assets\sass\components\Elements\_shipping.scss" />
+    <Content Include="assets\sass\components\Elements\_shortcode.scss" />
+    <Content Include="assets\sass\components\Elements\_slider-product.scss" />
+    <Content Include="assets\sass\components\Elements\_testimonial.scss" />
+    <Content Include="assets\sass\components\Layout\_contents.scss" />
+    <Content Include="assets\sass\components\Layout\_footers.scss" />
+    <Content Include="assets\sass\components\Layout\_general.scss" />
+    <Content Include="assets\sass\components\Layout\_headers.scss" />
+    <Content Include="assets\sass\components\Layout\_homepages.scss" />
+    <Content Include="assets\sass\components\Layout\_loading.scss" />
+    <Content Include="assets\sass\components\Layout\_pages.scss" />
+    <Content Include="assets\sass\components\Layout\_sidebar.scss" />
+    <Content Include="assets\sass\components\Mixins\_functions.scss" />
+    <Content Include="assets\sass\components\Mixins\_rtl.scss" />
+    <Content Include="assets\sass\components\Mixins\_template-mixins.scss" />
+    <Content Include="assets\sass\components\Responsive\_desktop.scss" />
+    <Content Include="assets\sass\components\Responsive\_fullHd.scss" />
+    <Content Include="assets\sass\components\Responsive\_maxDesktop.scss" />
+    <Content Include="assets\sass\components\Responsive\_maxmobile.scss" />
+    <Content Include="assets\sass\components\Responsive\_maxtable.scss" />
+    <Content Include="assets\sass\components\Responsive\_smallMobile.scss" />
+    <Content Include="assets\sass\components\Responsive\_tablet.scss" />
+    <Content Include="assets\sass\components\Vendor\blanch\fonts\BLANCH_CAPS.eot" />
+    <Content Include="assets\sass\components\Vendor\blanch\fonts\BLANCH_CAPS.svg" />
+    <Content Include="assets\sass\components\Vendor\blanch\fonts\BLANCH_CAPS.ttf" />
+    <Content Include="assets\sass\components\Vendor\blanch\fonts\BLANCH_CAPS.woff" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfont78ce.svg" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfont78ce.ttf" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfont78ce.woff" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\sass\components\Vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\sass\components\Vendor\font-nexabold\NexaFreeBoldwebfont.eot" />
+    <Content Include="assets\sass\components\Vendor\font-nexabold\NexaFreeBoldwebfont.ttf" />
+    <Content Include="assets\sass\components\Vendor\font-nexabold\NexaFreeBoldwebfont.woff" />
+    <Content Include="assets\sass\components\Vendor\font-nexalight\NexaLight.ttf.eot" />
+    <Content Include="assets\sass\components\Vendor\font-nexalight\NexaLight.ttf.svg" />
+    <Content Include="assets\sass\components\Vendor\font-nexalight\NexaLight.ttf.woff" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor-bold\texgyreadventor-bold-webfont.eot" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor-bold\texgyreadventor-bold-webfont.svg" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor-bold\texgyreadventor-bold-webfont.ttf" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor-bold\texgyreadventor-bold-webfont.woff" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor\texgyreadventor-regular-webfont.eot" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor\texgyreadventor-regular-webfont.svg" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor\texgyreadventor-regular-webfont.ttf" />
+    <Content Include="assets\sass\components\Vendor\font-texgyreadventor\texgyreadventor-regular-webfont.woff" />
+    <Content Include="assets\sass\components\Vendor\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="assets\sass\components\Vendor\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="assets\sass\components\Vendor\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="assets\sass\components\Vendor\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="assets\sass\components\Vendor\PlayfairDisplay\fonts\PlayfairDisplay-Regular.eot" />
+    <Content Include="assets\sass\components\Vendor\PlayfairDisplay\fonts\PlayfairDisplay-Regular.svg" />
+    <Content Include="assets\sass\components\Vendor\PlayfairDisplay\fonts\PlayfairDisplay-Regular.ttf" />
+    <Content Include="assets\sass\components\Vendor\PlayfairDisplay\fonts\PlayfairDisplay-Regular.woff" />
+    <Content Include="assets\sass\components\Vendor\simple-line-icon\fonts\Simple-Line-Icons.eot" />
+    <Content Include="assets\sass\components\Vendor\simple-line-icon\fonts\Simple-Line-Icons.svg" />
+    <Content Include="assets\sass\components\Vendor\simple-line-icon\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="assets\sass\components\Vendor\simple-line-icon\fonts\Simple-Line-Icons.woff" />
+    <Content Include="assets\sass\components\Vendor\simple-line-icon\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="assets\sass\components\Vendor\_animation.scss" />
+    <Content Include="assets\sass\components\_base.scss" />
+    <Content Include="assets\sass\components\_ecommerce.scss" />
+    <Content Include="assets\sass\components\_elements.scss" />
+    <Content Include="assets\sass\components\_engo-mixins.scss" />
+    <Content Include="assets\sass\components\_layout.scss" />
+    <Content Include="assets\sass\components\_reset.scss" />
+    <Content Include="assets\sass\components\_responsive.scss" />
+    <Content Include="assets\sass\components\_vendor.scss" />
+    <Content Include="assets\sass\style.scss" />
+    <Content Include="assets\sass\_bootstrap.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -196,6 +617,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Register.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -236,6 +658,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\css\components\Ecommerce\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -245,6 +668,12 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SarsoShoppingData\SarsoShoppingData.csproj">
+      <Project>{0794fc28-87e3-4533-accc-a03ab423b4a4}</Project>
+      <Name>SarsoShoppingData</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

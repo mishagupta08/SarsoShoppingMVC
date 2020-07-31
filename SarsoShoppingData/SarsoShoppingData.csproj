@@ -1,0 +1,1800 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0794FC28-87E3-4533-ACCC-A03AB423B4A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SarsoShoppingData</RootNamespace>
+    <AssemblyName>SarsoShoppingData</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddorDeductRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddorDeductWithdrawalRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_profile_Log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppConsultPayment.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppMemStsLog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppRejMemProfRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApproveCustomerOrder_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovePayment_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankStatement.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankStatement_Log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BatchDetRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BatchOutRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bckup_CustomerOrder_20160513.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillGanarate_JobThruUpdate_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Binaryrpt_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryTabular_Sp_22716_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryTabular_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryTrackReport_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BirthdaySms_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BlockSBOID.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BoosterTreeIdDet_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BulkMail.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReport_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CancelDispOrder.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CancelOrders_Log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeDistTOCust.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeMemStsLog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordLog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckDownto_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckSponsor_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckUserName_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChgAddress.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chgbank.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chgdisc.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChgNominee.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartialClasses.cs" />
+    <Compile Include="ClickShare.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CnF_Inward.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CnF_Outward.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CnF_StockOrder.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CodeError.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyBank.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyMeeting.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmationNote_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CouponCode.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourierMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourierNames_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CourierNo.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreateOffer.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditReqPending_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditReqReport.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditRequestOnline.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditRequestOnlinepaymentFailed_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditRequest_CnF.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurrlastloginTime_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerOrder.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DateWiseBusinessReport_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayStatisticsRpt_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="deleteTempCart_log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESPBatchExcel.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DespBatchExcelRpt_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESPBatchItem.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESPBatchMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchItemCodes_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchItems_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dispatchs_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistCancellation_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DistshipCancellationRpt.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Downloadfile.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Downloadfiles_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EarlRankTree.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EarlRankTreeRelation.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EarlTreasureAch.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EarlTreasureSlab.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Editfranchise_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrderItems_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Editrpcategories_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EWallet.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EWalletComm.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EwalletSummaryRpt1_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EwalletSummaryRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EWallet_CnF.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendDatelog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Faqreport_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCPGlance_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCPLogin_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FDSAbulkmailLog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeedBack.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fn_SplitValue_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Folder.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Franchisee.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FreeProductItemCode.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FundTransfer_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fundwithdrawl.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetApprovePODetailes_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAttributesAvailble_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetBalance_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetBatchForBatchOut_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetBinaryAnalysis_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetBulkMails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetBulkMessageSubject_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCompanyBanks_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCreditRequestOnline_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCreditreq_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetDraftMsg_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEBSPending_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetElementChilds_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFCcode_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFCPCreditReqRpt_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFeedback_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFolderMails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetGVDPurchaseOnline_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetItemCodesAvailble_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetmailCount_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMailfoldersname_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMemberDetails_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMemberId_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMemforBirthdaysms_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPayNo_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetRegistrationOnline_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSCOnline_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSentMails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getSICPDownlienCV_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getSSMPDownlienCnt_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetStates_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetStockforReturn_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTDSRpt_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTreeTooltip_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiftChallan.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlanceReport_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Glance_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GuestRegMember.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDComboPackage.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDConfirmlog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDFullPayment_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDInstalment.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDInstalPayment_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDPackImage.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDPurchaseOnline.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDPurchase_Sp1_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GVDPurchase_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderImage.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inbox.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IneligibleRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="insertnonmemsmsids_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="insertresendsmsids_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="insertresendsmsids_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InsertSalesTempReg_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inserttemplog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InsertTempReg_Sp_04_07_16_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InsertTempReg_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstalPaymentOnline.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceMaster_CnF.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceOffer.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicesRptAll_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicesRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvPrddetail.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemCode.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsList_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KYCPendingRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KYC_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Levelid.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LevelidsSPR.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="link.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="linksaccess.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LinksPremission_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiveMenLogic30April.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogOnlineDataEBSNew.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogOnlineDataNew.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogResponse.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MailLog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MakeCreditRequest_SP_LOG_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManualMatch.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mastermop.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mastermop_2000PV_270717.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mastermop_280817.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterMOP_ManualOrders_Ins.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mastermop_PKGInvChg_150717.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_AndroidAccess.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_BusinessSummary_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_CheckSICPRank_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_CheckSponser_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_CheckSpr_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_CheckTransPwd_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_CheckTrans_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_ClickandShare_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_CrdReqTraPwdChk_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_DashBoard_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_DesgIncomeDetails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_EwalletRpt_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_ForgotPwd_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_GenealogyRpt_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_GetAttributes_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_GetItemCodesFromAttributes_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_GetNotification_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_GetPayNo_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_LeverageIncome_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_LoginStatus_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_MemberDetailes_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_OrderReport_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_PayoutRpts_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_ProductsDetails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SCOrder_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SICPDetails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SICPGenealogyTooltip_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SICPGenealogyTreeview_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SponsorDetails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SSMPDetails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SSMPGenealogyTreeview_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SSMPGenealogy_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_SubCategoriesOne_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MA_TrnsCommfunds_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberAddress.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberBank.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberCV_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberDetailes_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="memberIHO.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberInvoices_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberKYC.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberLogic.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="memberlogic_36Ids_dontdel.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="memberlogic_DontDel.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberLogin_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberNominee.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPayment.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPhoto.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberProfile.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberProfile_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberRpOrders_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberSms_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberUpgrade.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberUpgrade_log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberVoucher.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemeberReport_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemNotification.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemphotosforAppRej_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemphotosReport_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemWithdrawlRequestType_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mem_photos.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobAppVersion.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileAppsmslog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileSlide.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MopMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mopsale.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mst25KUpdate.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstDiscountCoupon.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstDist.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstDist_20160503.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstDist_20160509.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstDist_20160510.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstDist_20160511.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstKitMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstRank.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstRankAchiever.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstRanks040720.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstRankUpdate.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstRankUpdateUp.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstRoyaltyBonu.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstRoyaltyGeneration.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstRoyaltySlab.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstSessnMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstSessWiseBv.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstState.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MstStoreProductId.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_25KTreasure.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_DistrictMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_MemTreeRelation.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_MonthlyPayDetail.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_MonthWiseBv.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_MonthWiseIncome.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_NONVCGPV.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_NONVCSESSNPV.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_PerformanceInc.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_RetailProfit.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_SessWiseBv.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="M_UserMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="News.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="newslog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewsSubcription.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OfferInfoPosting.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OfferPackage.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OfferPopup.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OfferProduct.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OfferReport_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OffersLog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OffPrddetail.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OffPrductsList.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OnlinepaymentFailed_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackageItem.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackageList_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PackageMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentGatewayStatu.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paymentreq.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentRequest.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentRequest_log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayoutApprove_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_AccInfo.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Analysis.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Binary_Orbit.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Booster_Orbit.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_BVLaps_Id.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_ComapanyIds.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_ConsiderBills.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Daily_RankBV.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_DesgMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_DesgMaster_26Oct18.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_DesgMaster_UptoJuly16.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_Accinfo.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_Analysis.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_MOnthly_ConsiderBills.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_DesgMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_RecALLRoundDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_RecAristocracy.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_RecBenDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_RecBenefits.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_RecBV.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_RecCFAmt.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_monthly_RecGentlemanOffer.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_RecLoyalDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_Record.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_UnitRate.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_WrkALLRoundDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_WrkAristocracy.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_WrkBenDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_WrkBenefits.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_WrkBV.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Monthly_WrkLoyalDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_OfferSSMP_20twenty.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_OrbitDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_OrbitDetails_245.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_orbit_Booster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_orbit_Final.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_RecBinary.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_RecBinary_Booster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_RecCF.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_RecCFAmt.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_RecCF_Backup_DontDel.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_RecCF_Booster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pay_recCF_dontdel.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pay_recCF_dontdel_Upto272.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Record.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_RecRewardInc.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_RecWeeklyRwd_Calc.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Rwd_Achievers.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_Rwd_Ranks.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_ErrorDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_Accinfo_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_Analysis_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_MOnthly_ConsiderBills_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_RecALLRoundDetails_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_RecAristocracy_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_RecBenDetails_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_RecBenefits_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_RecBV_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_RecCFAmt_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_monthly_RecGentlemanOffer_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_RecLoyalDetails_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_Record_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SICP_Monthly_UnitRate_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_AccInfo_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_ConsiderBills_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_ErrorDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_OfferSSMP_20twenty_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_RecBinary_Booster_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_RecBinary_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_RecCFAmt_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_RecCF_Booster_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_RecCF_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_Record_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_RecRewardInc_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMp_Rollback_Temp.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_SICPLapsIds.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_SICPLapsIds_Booster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_SICPLapsIds_Booster_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_SSMP_SICPLapsIds_RP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_WrkBinary.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_WrkBinary_Booster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_WrkRewardInc.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay_WrkWeeklyRwd_Calc.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PendingGatewayOrdersRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PinCodeMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlacementMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POSDispatchMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PowerSlab.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCredit.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductImage.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductItems_CnF.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductOffer.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPrice.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_attributes.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_attributes_fields.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PVDetails_log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PVUpdtdRpt.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RandomCoupon.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RandomNo.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReactDistMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationOnline.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationReport_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegMCPackDet_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegPackDet_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReleaseDeviceLock_Log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RePurchageProductRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RepurchaseMaster_Reg.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="repurchaseproduct.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="repurchaseproducts_log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="repurchasesale.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="repurchasesales_log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="repurchasesales_Returnlog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RepurchIncome.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RepurchIncomeExt.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RepurchIncomeold.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="repurprod_Org_070717.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequestMop.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequestOrder.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RpcategoriesList_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpcategory.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rwd_SSNP_Baleno_RwdDetails.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesTempReg.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SarsoEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SarsoEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SarsoEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SarsoEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SarsoEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Sarso_Subjects.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SBORANK.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCOnline.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SCOnlinepaymentFailed_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchMails_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessionsInOut.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShopCartRandomNo.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shoppingaddress.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SICPEWalletComm.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SICPPayoutApprove_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation_MemberLogic.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation_RecPV.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation_Repurchase.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="slog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="smslog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmsLogRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="smslog_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SplitString_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Split_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sponsorchange_SBOIDS.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorReport_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetCURRENTPayoutMonthDetail_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetPayoutMonthDetail_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_unilvltreeview_Old_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_unilvltreeview_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SS_Member_Reg.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SS_Orbit_test_booster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SS_tmp_FinalOrbit.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="state.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatewiseProductTaxs_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatusMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STNAddress.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockAdjust.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockAdjustRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockAdjust_FCP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockDispatchRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockInward.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockInwardRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockLevelRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockLogin_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockOrder.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockOrderReport_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockOrderRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockOrder_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockOutward.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stockreturn.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stockreturnsRpt_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockUsers_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoclLevel_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoresGlanceReport_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoresGlance_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="storeuser.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreUserList.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_PayoutIncomes.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_RaiseManual_Invoice_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_SICP_PayoutProcess_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_SSMP_PayoutProcess_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_SSMP_RewardID_details_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_Weeklypayout.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_YearMonthDayBillCount_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_YearMonthDayPGCount_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stp_YearMonthDayRegCount_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SWalletShopping.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblBank.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempAddToCart.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempAddToCart_log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCart.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCart_28_total.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCart_FCP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCart_log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCart_log_28_New.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCart_log_28_total.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCart_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempCourier.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tempdesg.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tempdistcanlrpt.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempEditOrder.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempEditOrders_Log.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tempInvOfferPrd.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tempInvOfferPrds_sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempInvPrdsList.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempLegShift.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempMemberDetailes_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempNotificationAlert.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempOfferproduct.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempOrder.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tempproductcredit.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempRepOrder_FCP_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tempsm.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempStockOrder_FCP.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempStockOrder_FCP_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempSubmityourKYC.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmpAlltable.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tmpdata.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmpPackageItem.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TmpPackageItems_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp_oldBillDatainfo_DontDel.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp_RREP_oldBillDatainfo_DontDel.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp_RREP_oldBillDatainfo_DontDel_2.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp_RREP_oldBillDatainfo_DontDel_3.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tmp_RREP_oldBillDatainfo_DontDel_4.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrnPaymentOnline.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnilevelPrintView_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateChequeDetail.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCourierlog.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDist.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateGstDetail.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMemberProfile_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpGVDCOMPValue.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsedCouponsRpt_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserList.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers_Admin.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers_Admin_Backup_dontdel.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_SSMPTabular_View.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_SSMP_ACntAll.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_SSMP_All.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_SSMP_CntAll.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_SSMP_InCntAll.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Address.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Distlist.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_EvalletOnWebsite.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_FirstPurchase.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_PaymentOnline.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_ShoppingOnWebsite.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_StoreKitId.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Ticketdetail.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_Tickets.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WalletOffer.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WDBatchItem.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WDBatchMaster.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WithdrawlBatchExcel_Sp_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Z_Get_Bills_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Z_Get_members_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Z_Get_SSMPIncomes_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="SarsoEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SarsoEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="SarsoEntity.edmx.diagram">
+      <DependentUpon>SarsoEntity.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SarsoEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SarsoEntity.edmx</DependentUpon>
+      <LastGenOutput>SarsoEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SarsoEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SarsoEntity.edmx</DependentUpon>
+      <LastGenOutput>SarsoEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

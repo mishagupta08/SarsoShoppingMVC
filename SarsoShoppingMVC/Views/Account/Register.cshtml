@@ -1,41 +1,83 @@
-﻿@model SarsoShoppingMVC.Models.RegisterViewModel
-@{
-    ViewBag.Title = "Register";
-}
+﻿@model SarsoShoppingData.MemberProfile
 
-<h2>@ViewBag.Title.</h2>
+<div class="row">
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+    <div class="col-md-6 space-30 space-padding-tb-30 pad40">
+        <div class="slider-one-item ver-2 bestoffer">
+            <div class="item-inner">
+                <div class="product">
+                    <div class="product-images">
+                        <a href="#" title="product-images"> <img class="primary_image" src="~/assets/offers/01.jpg" alt="" /> </a>
+                    </div>
+                </div>
+            </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+            <div class="item-inner">
+                <div class="product">
+                    <div class="product-images">
+                        <a href="#" title="product-images"> <img class="primary_image" src="~/assets/offers/02.jpg" alt="" /> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <form class="form-horizontal" name ="RegistrationForm" id="RegistrationForm" onsubmit="return false;">
+            <div class="row">
+                <div class="form-group">
+                    <label for="inputfname" class="control-label">SPONSOR ID <span class="color">*</span></label>                    
+                    @Html.TextBoxFor(m => m.SponserID, new { @placeholder = "Enter your sponsor ID..." ,@id = "SponserID" ,@name = "SponserID" ,@class="form-control" })
+                </div>
+            </div>
+
+            <div class="row"> <h3 class="title-brand" id="SponserName"></h3></div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inputfname" class="control-label">First Name <span class="color">*</span></label>
+                    @Html.TextBoxFor(m => m.FName, new { @placeholder = "Enter your first name...", @class = "form-control" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputlname" class="control-label">Last Name <span class="color">*</span></label>
+                    @Html.TextBoxFor(m => m.LName, new { @placeholder = "Enter your last name...", @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="inputcompany" class="control-label">Company Name<span class="color">*</span></label>
+                   @Html.TextBoxFor(m => m.CompanyName, new { @placeholder = "Enter your Company name...", @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6 ">
+                    <label for="inputfname" class="control-label">Email <span class="color">*</span></label>
+                   @Html.TextBoxFor(m => m.Email, new { @placeholder = "Enter your Email Id...", @class = "form-control" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputlname" class="control-label">Mobile <span class="color">*</span></label>
+                    @Html.TextBoxFor(m => m.MobileNo, new { @placeholder = "Enter your Mobile No...", @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="inputphone" class="control-label">Password<span class="color">*</span></label>
+                    @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter your Mobile No...", @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="inputstreet" class="control-label">Confirm Password<span class="color">*</span></label>
+                    @Html.TextBoxFor(m => m.cnfPassword, new { @placeholder = "Enter your Mobile No...", @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="row">    <input type="submit" id="RegisterSubmit" class="link-v1 box lh-50 rt full"  value="REGISTER"/></div>
+
+
+
+        </form>
+    </div>
+
+
+</div>
