@@ -14,5 +14,6 @@ namespace SarsoShoppingData
         public string Email { get; set; }
         public string Password { get; set; }
         public string cnfPassword { get; set; }
+        public string UserNo { get; set; }
     }
 }

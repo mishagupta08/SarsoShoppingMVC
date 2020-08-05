@@ -159,6 +159,7 @@
     <Compile Include="ChgNominee.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomClasses.cs" />
     <Compile Include="PartialClasses.cs" />
     <Compile Include="ClickShare.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
@@ -1391,6 +1392,7 @@
     <Compile Include="Simulation_Repurchase.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="SiteUtility.cs" />
     <Compile Include="slog.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>

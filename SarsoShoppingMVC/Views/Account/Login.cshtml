@@ -1,63 +1,117 @@
-﻿@using SarsoShoppingMVC.Models
-@model LoginViewModel
-@{
-    ViewBag.Title = "Log in";
+﻿@{
+    ViewBag.Title = "Login";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
+<div class="container-fluid container-fluid0">
+    <div class="tp-banner-container hidden-dot ver3">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/assets/images/pagebanner/category-banner.jpg" alt="Category Banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <!-- LAYER NR. 9 -->
+
+                    <div class="tp-caption color-white weight-300 letter-spacing-3 skewfromleft customout size-30"
+                         data-x="780"
+                         data-y="200"
+                         data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                         data-speed="800"
+                         data-start="1600"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="on"
+                         style="z-index: 4">Welcome, Please Sign In!</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End container -->
+</div>
+<!-- End Banner Grid -->
+<div class="main-content">
+
+    <div class="container container-ver2 space-padding-tb-30">
+    </div>
+    <!-- End container -->
+    <div class="cart-box-container check-out">
+        <div class="container container-ver2">
+            <div class="row">
+
+                <div class="col-md-6 space-30 space-padding-tb-30 pad40">
+                    <div class="slider-one-item ver-2 bestoffer">
+                        <div class="item-inner">
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images"> <img class="primary_image" src="~/assets/offers/01.jpg" alt="" /> </a>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="item-inner">
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images"> <img class="primary_image" src="~/assets/offers/02.jpg" alt="" /> </a>
+
+
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
+                <div class="col-md-6">
+                    <form class="form-horizontal">
+
+                        <h3 class="title-brand">RETURNING CUSTOMER</h3>
+
+                        <div class="form-group">
+                            <label for="inputfname" class=" control-label">USERNAME <span class="color">*</span></label>
+                            <input type="text" placeholder="" id="" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputlname" class=" control-label">PASSWORD <span class="color">*</span></label>
+                            <input type="text" placeholder="" id="" class="form-control">
+                        </div>
+                        <a class="link-v1 box lh-50 rt full" href="#" title="SIGN IN">SIGN IN</a>
+                        <div class="margin-top-10 text-left" style="border-bottom:1px solid #ccc; padding-bottom:20px;">
+                            <p>  <a href="#"><span style="color:#373737;">FORGOT PASSWORD?</span></a></p>
+                        </div>
+                        <div class="margin-top-30 space-10 text-left">
+                            <p>  You know a SARSO Business Owner &amp; have their Distributor ID.</p>
+                        </div>
+                        <a class="link-v1 box lh-50 rt full" href="#" title="REGISTER">CREATE ACCOUNT</a>
+                        <div class="margin-top-30 space-10 text-left">
+                            <p>  You don’t know a SARSO Business Owner.</p>
+                        </div>
+                        <a class="link-v1 box lh-50 rt full" href="#" title="CLICK HERE">CLICK HERE</a>
+
+
+
+                    </form>
                 </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
-            }
-        </section>
+
+
+            </div>
+            <!-- End row -->
+        </div>
+        <!-- End container -->
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
+    <!-- End cat-box-container -->
+</div>
+<!-- end product sidebar -->
+
+<div class="container brand-logos space-30 space-padding-tb-100">
+    <h3 class="title-v2 text-center">Our Brands</h3>
+    <div class="text-center center-block col-md-10 float-none">
+        <div class="col-md-3"> <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand/swadharma.png" alt="Swadharma"></a> </div>
+        <div class="col-md-3">   <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand/tamra.png" alt="Tamra"></a> </div>
+        <div class="col-md-3">     <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand/sootram.png" alt="Sootram"></a> </div>
+        <div class="col-md-3">   <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand/neeti.png" alt="Neeti"></a> </div>
     </div>
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

@@ -1,84 +1,133 @@
 ﻿@model SarsoShoppingData.MemberProfile
+@{
+    ViewBag.Title = "Register with us";
 
-<div class="row">
+}
 
-    <div class="col-md-6 space-30 space-padding-tb-30 pad40">
-        <div class="slider-one-item ver-2 bestoffer">
-            <div class="item-inner">
-                <div class="product">
-                    <div class="product-images">
-                        <a href="#" title="product-images"> <img class="primary_image" src="~/assets/offers/01.jpg" alt="" /> </a>
-                    </div>
-                </div>
-            </div>
+<div class="container-fluid container-fluid0">
+    <div class="tp-banner-container hidden-dot ver3">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/assets/images/pagebanner/category-banner.jpg" alt="Category Banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <!-- LAYER NR. 9 -->
 
-            <div class="item-inner">
-                <div class="product">
-                    <div class="product-images">
-                        <a href="#" title="product-images"> <img class="primary_image" src="~/assets/offers/02.jpg" alt="" /> </a>
-                    </div>
-                </div>
-            </div>
+                    <div class="tp-caption color-white weight-300 letter-spacing-3 skewfromleft customout size-30"
+                         data-x="780"
+                         data-y="200"
+                         data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                         data-speed="800"
+                         data-start="1600"
+                         data-easing="Power4.easeOut"
+                         data-endspeed="300"
+                         data-endeasing="Power1.easeIn"
+                         data-captionhidden="on"
+                         style="z-index: 4">Register with us</div>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="col-md-6">
-        <form class="form-horizontal" name="RegistrationForm" id="RegistrationForm" onsubmit="return false;">
-            <div class="row">
-                <div class="form-group">
-                    <label for="inputfname" class="control-label">SPONSOR ID <span class="color">*</span></label>
-                    @Html.TextBoxFor(m => m.SponserID, new { @placeholder = "Enter your sponsor ID...", @id = "SponserID", @name = "SponserID", @class = "form-control" })
-                </div>
-            </div>
-
-            <div class="row"> <h3 class="title-brand" id="SponserName"></h3></div>
-
-            <div class="row">
-                <div class="form-group col-md-6">
-                    <label for="inputfname" class="control-label">First Name <span class="color">*</span></label>
-                    @Html.TextBoxFor(m => m.FName, new { @placeholder = "Enter your first name...", @class = "form-control" })
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputlname" class="control-label">Last Name <span class="color">*</span></label>
-                    @Html.TextBoxFor(m => m.LName, new { @placeholder = "Enter your last name...", @class = "form-control" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <label for="inputcompany" class="control-label">Company Name<span class="color">*</span></label>
-                    @Html.TextBoxFor(m => m.CompanyName, new { @placeholder = "Enter your Company name...", @class = "form-control" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-6 ">
-                    <label for="inputfname" class="control-label">Email <span class="color">*</span></label>
-                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Enter your Email Id...", @class = "form-control" })
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputlname" class="control-label">Mobile <span class="color">*</span></label>
-                    @Html.TextBoxFor(m => m.MobileNo, new { @placeholder = "Enter your Mobile No...", @class = "form-control" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <label for="inputphone" class="control-label">Password<span class="color">*</span></label>
-                    @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter your Mobile No...", @class = "form-control" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <label for="inputstreet" class="control-label">Confirm Password<span class="color">*</span></label>
-                    @Html.TextBoxFor(m => m.cnfPassword, new { @placeholder = "Enter your Mobile No...", @class = "form-control" })
-                </div>
-            </div>
-
-
-            <div class="row">    <input type="submit" id="RegisterSubmit" class="link-v1 box lh-50 rt full" value="REGISTER" /></div>
-
-
-
-        </form>
-    </div>
-
-
+    <!-- End container -->
 </div>
-    <script src="~/Scripts/Register.js"></script>
+
+
+<div class="main-content">
+
+    <div class="container container-ver2 space-padding-tb-30">
+    </div>
+    <!-- End container -->
+    <div class="cart-box-container check-out">
+        <div class="container container-ver2">
+
+            <div class="row">
+
+                <div class="col-md-6 space-30 space-padding-tb-30 pad40">
+                    <div class="slider-one-item ver-2 bestoffer">
+                        <div class="item-inner">
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images"> <img class="primary_image" src="~/assets/offers/01.jpg" alt="" /> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-inner">
+                            <div class="product">
+                                <div class="product-images">
+                                    <a href="#" title="product-images"> <img class="primary_image" src="~/assets/offers/02.jpg" alt="" /> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form class="form-horizontal" name="RegistrationForm" id="RegistrationForm" onsubmit="return false;">
+                        @Html.HiddenFor(m => m.UserNo, new { @id = "UserNo" })
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="inputfname" class="control-label">SPONSOR ID <span class="color">*</span></label>
+                                @Html.TextBoxFor(m => m.SponserID, new { @placeholder = "Enter your sponsor ID...", @id = "SponserID", @name = "SponserID", @class = "form-control", @required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="row"> <h3 class="title-brand">Sponsor Name : &nbsp;<span id="SponserName"></span></h3></div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="inputfname" class="control-label">First Name <span class="color">*</span></label>
+                                @Html.TextBoxFor(m => m.FName, new { @placeholder = "Enter your first name...", @class = "form-control", @required = "required" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputlname" class="control-label">Last Name <span class="color">*</span></label>
+                                @Html.TextBoxFor(m => m.LName, new { @placeholder = "Enter your last name...", @class = "form-control", @required = "required" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="inputcompany" class="control-label">Company Name<span class="color">*</span></label>
+                                @Html.TextBoxFor(m => m.CompanyName, new { @placeholder = "Enter your Company name...", @class = "form-control", @required = "required" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6 ">
+                                <label for="inputfname" class="control-label">Email <span class="color">*</span></label>
+                                @Html.TextBoxFor(m => m.Email, new { @placeholder = "Enter your Email Id...", @class = "form-control", @required = "required" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputlname" class="control-label">Mobile <span class="color">*</span></label>
+                                @Html.TextBoxFor(m => m.MobileNo, new { @placeholder = "Enter your Mobile No...", @class = "form-control", @required = "required" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="inputphone" class="control-label">Password<span class="color">*</span></label>
+                                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter Password...", @class = "form-control", @required = "required" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="inputstreet" class="control-label">Confirm Password<span class="color">*</span></label>
+                                @Html.TextBoxFor(m => m.cnfPassword, new { @placeholder = "Enter Confirm Password...", @class = "form-control", @required = "required" })
+                            </div>
+                        </div>
+
+
+                        <div class="row">    <input type="submit" id="RegisterSubmit" class="link-v1 box lh-50 rt full" value="REGISTER" /></div>
+
+
+
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container brand-logos space-30 space-padding-tb-100">
+       @{Html.RenderPartial("~/Views/Shared/_BrandLogo.cshtml");   } 
+</div>
+<script src="~/Scripts/Register.js?v=1"></script>

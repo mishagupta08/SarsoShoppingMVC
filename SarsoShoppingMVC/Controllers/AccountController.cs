@@ -1,23 +1,25 @@
 ﻿using System;
-using System.Globalization;
 using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using SarsoShoppingMVC.Models;
 using SarsoShoppingData;
 
 namespace SarsoShoppingMVC.Controllers
 {
-    
+
     public class AccountController : Controller
     {
-        
+
+        public ActionResult SignIn()
+        {
+            return View();
+        }
+
         public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
         {
             return View();
         }
@@ -40,12 +42,42 @@ namespace SarsoShoppingMVC.Controllers
         [HttpPost]
         public ActionResult PartialInsertReg(MemberProfile objMem)
         {
+            Response objResponse = new Response();
+            SiteUtility objutility = new SiteUtility();
             int IsUserCreated = 0;
             try
             {
                 using (var entities = new sarsobizEntities())
                 {
-                    IsUserCreated = entities.PartialInsertReg_Sp("1", objMem.SponserID, "Right", "Mr", objMem.FName, objMem.LName, -1, "", objMem.MobileNo, objMem.Email, objMem.Password, objMem.cnfPassword, HttpContext.Session.SessionID, objMem.Password, "", null, "", "", "", 0, "InsertReg", "", "");
+                    var fieldCheck  = entities.GetRegFields_Sp("RegFields", objMem.FName, objMem.LName, "", "", objMem.MobileNo, objMem.Email).FirstOrDefault();
+                    if (!string.IsNullOrEmpty(fieldCheck))
+                    {
+                        if (fieldCheck == "SUCC")
+                        {
+                            IsUserCreated = entities.PartialInsertReg_Sp(objMem.UserNo, objMem.SponserID, "Right", "Mr", objMem.FName, objMem.LName, -1, "", objMem.MobileNo, objMem.Email, objutility.Encrypt(objMem.Password), objutility.Encrypt(objMem.cnfPassword), HttpContext.Session.SessionID, objMem.Password, "", null, "", "", "", 0, "InsertReg", "", "");
+                            if (IsUserCreated > 0)
+                            {
+                                objResponse.status = true;
+                                objResponse.Message = "Dear " + objMem.FName + " " + objMem.LName + ", You have been successfully registered with SARSO, your login details has been sent to your registered mobile number. Experience the new Art of shopping with www.sarsobiz.net.";
+                            }
+                            else
+                            {
+                                objResponse.status = false;
+                                objResponse.Message = "Partial Guest Registration Failed Please try again";
+                            }
+                        }
+                        else
+                        {
+                            objResponse.status = false;
+                            objResponse.Message = "Mobile No. Already Exists";
+
+                        }
+                    }
+                    else
+                    {
+                        objResponse.status = false;
+                        objResponse.Message = "Please Check Firsr Name (or) Last Name (or) Mobile NO (or) Email ID  Again";
+                    }
                 }
             }
             catch (Exception Ex)
@@ -53,7 +85,20 @@ namespace SarsoShoppingMVC.Controllers
 
             }
             return Json(IsUserCreated, JsonRequestBehavior.AllowGet);
+        }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            Exception exception = filterContext.Exception;
+            //Logging the Exception
+            filterContext.ExceptionHandled = true;
+
+            var Result = this.View("Error", new HandleErrorInfo(exception,
+                filterContext.RouteData.Values["controller"].ToString(),
+                filterContext.RouteData.Values["action"].ToString()));
+
+            filterContext.Result = Result;
 
         }
-        }
+    }
 }

@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" href="~/assets/css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="~/assets/vendor/owl-slider.css" />
     <link rel="stylesheet" type="text/css" href="~/assets/vendor/settings.css" />
-    <link rel="stylesheet" type="text/css" href="~/assets/vendor/range-price.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/animate.css" />
     <link rel="shortcut icon" href="~/assets/images/favicon.png" />
     <script type="text/javascript" src="~/assets/js/jquery-1.11.1.min.js"></script>
-    <title>Register with us</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>    
 </head>
 <body>
     <div class="awe-page-loading">
@@ -99,14 +99,15 @@
                                     <li class="hassub">
                                         <div class="container-fluid">
                                             <ul class="infor">
-                                                <li><span class="fa fa-unlock-alt"></span><a id="openLogin" href="#" title="Login">Login</a></li>
-                                                <li><span class="fa fa-user"></span><a href="~/Account/Register" title="Register">Register</a></li>
+                                                <li><span class="fa fa-unlock-alt"></span><a id="openLogin" href="~/Account/Login" title="Login">Login</a></li>
+                                                <li><span class="fa fa-user"></span><a href="~/Account/SignIn" title="Register">Register</a></li>
                                             </ul>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
                             <li> <span class="search" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="icon"></i></span></li>
+
                             <li> <span class="shopcart"><a href="#"><i class="icon"></i></a></span></li>
                         </ul>
                     </div>
@@ -116,127 +117,137 @@
             <!-- End header-top -->
         </header>
         <!-- /header -->
-        <div class="container-fluid container-fluid0">
-            <div class="tp-banner-container hidden-dot ver3">
-                <div class="tp-banner">
-                    <ul>
-                        <li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
-                            <!-- MAIN IMAGE -->
-                            <img src="~/assets/images/pagebanner/category-banner.jpg" alt="Category Banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-                            <!-- LAYER NR. 9 -->
+        
 
-                            <div class="tp-caption color-white weight-300 letter-spacing-3 skewfromleft customout size-30"
-                                 data-x="780"
-                                 data-y="200"
-                                 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                 data-speed="800"
-                                 data-start="1600"
-                                 data-easing="Power4.easeOut"
-                                 data-endspeed="300"
-                                 data-endeasing="Power1.easeIn"
-                                 data-captionhidden="on"
-                                 style="z-index: 4">Register with us</div>
-                        </li>
-                    </ul>
+        @RenderBody()
+
+        <!-- End container -->
+       
+           
+
+            <!-- End brand -->
+            <!-- End instagram -->
+            <footer id="footer" class="footer-v3 align-left">
+                <div class="footer-inner">
+                    <div class="container container-ver2">
+                        <div class="row space-30">
+                            <div class="col-md-3 col-sm-4 footerbox" style="border:none;">
+                                <ul class="list-footer">
+                                    <li><span>There’s More to Know</span></li>
+                                    <li><a href="#" title="News">News</a></li>
+                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
+                                    <li><a href="#" title="BLOG">BLOG</a></li>
+                                    <li><a href="#" title="Merchandise Bank Owner">Merchandise Bank Owner</a></li>
+                                    <li><a href="#" title="Media">Media</a></li>
+                                    <li><a href="#" title="Certifications">Certifications</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-4 footerbox">
+                                <ul class="list-footer">
+                                    <li><span>How do I</span> </li>
+                                    <li><a href="#" title="Pay for my order">Pay for my order</a></li>
+                                    <li><a href="#" title="Return a Product">Return a product</a></li>
+                                    <li><a href="#" title="Add Grievances">Add Grievances / Feedback</a></li>
+                                    <li><a href="#" title="Download SARSO App">Download SARSO App</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2 col-sm-4 footerbox">
+                                <ul class="list-footer">
+                                    <li><span>Others</span></li>
+                                    <li><a href="#" title="MBO Login">MBO Login</a></li>
+                                    <li><a href="#" title="#">Contact SARSO</a></li>
+                                    <li><a href="#" title="#">Awards</a></li>
+                                    <li><a href="#" title="#">FAQs</a></li>
+                                    <li><a href="#" title="#">Help</a></li>
+                                    <li><a href="#" title="#">Privacy Policy</a></li>
+                                    <li><a href="#" title="#">Terms &amp; Conditions</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6 newsletter-bottom footerbox">
+                                <ul class="info-footer space-10">
+                                    <li>Sign Up to Our Newsletter </li>
+                                    <li>
+                                        <form action="#" method="get" accept-charset="utf-8">
+                                            <input type="text" onblur="if (this.value == '') {this.value = 'Enter your email...';}" onfocus="if(this.value != '') {this.value = '';}" value="Enter your email..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+                                            <button class="button button1 hover-white" title="Subscribe" type="submit">SIGN UP</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                                <div class="fsdalogo"> <img src="~/assets/images/FDSA_logo.png" alt="Federation of Direct Selling Association" /></div>
+                            </div>
+                        </div>
+                        <div class="box bottom">
+                            <p class="float-left">Copyright &copy; 2020 Sarso Biz - All Rights Reserved.</p>
+                        </div>
+                        <!-- End box -->
+                    </div>
+                    <!-- End container -->
                 </div>
-            </div>
-            <!-- End container -->
+                <!-- End footer-inner -->
+            </footer>
         </div>
-        <!-- End Banner Grid -->
-        <div class="main-content">
+    <!-- End wrappage -->
+    <!-- Youtube Videos -->
 
-            <div class="container container-ver2 space-padding-tb-30">
-            </div>
-            <!-- End container -->
-            <div class="cart-box-container check-out">
-                <div class="container container-ver2">
-                   @RenderBody()
-                    <!-- End row -->
-                </div>
-                <!-- End container -->
-            </div>
-            <!-- End cat-box-container -->
-        </div>
-        <!-- end product sidebar -->
-
-
-        <div class="container brand-logos space-30 space-padding-tb-100">
-            <h3 class="title-v2 text-center">Our Brands</h3>
-            <div class="text-center center-block col-md-10 float-none">
-                <div class="col-md-3"> <a href="#" title="brand"><img class="img-responsive" src="~/assets/images/brand/swadharma.png" alt="Swadharma"></a> </div>
-                <div class="col-md-3">   <a href="#" title="brand"><img class="img-responsive" src="~/assets/images/brand/tamra.png" alt="Tamra"></a> </div>
-                <div class="col-md-3">     <a href="#" title="brand"><img class="img-responsive" src="~/assets/images/brand/sootram.png" alt="Sootram"></a> </div>
-                <div class="col-md-3">   <a href="#" title="brand"><img class="img-responsive" src="~/assets/images/brand/neeti.png" alt="Neeti"></a> </div>
-            </div>
-        </div>
-        <!-- End instagram -->
-        <footer id="footer" class="footer-v3 align-left">
-            <div class="footer-inner">
-                <div class="container container-ver2">
-                    <div class="row space-30">
-                        <div class="col-md-3 col-sm-4 footerbox" style="border:none;">
-                            <ul class="list-footer">
-                                <li><span>There’s More to Know</span></li>
-                                <li><a href="#" title="News">News</a></li>
-                                <li><a href="#" title="Sustainability">Sustainability</a></li>
-                                <li><a href="#" title="BLOG">BLOG</a></li>
-                                <li><a href="#" title="Merchandise Bank Owner">Merchandise Bank Owner</a></li>
-                                <li><a href="#" title="Media">Media</a></li>
-                                <li><a href="#" title="Certifications">Certifications</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 col-sm-4 footerbox">
-                            <ul class="list-footer">
-                                <li><span>How do I</span> </li>
-                                <li><a href="#" title="Pay for my order">Pay for my order</a></li>
-                                <li><a href="#" title="Return a Product">Return a product</a></li>
-                                <li><a href="#" title="Add Grievances">Add Grievances / Feedback</a></li>
-                                <li><a href="#" title="Download SARSO App">Download SARSO App</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-2 col-sm-4 footerbox">
-                            <ul class="list-footer">
-                                <li><span>Others</span></li>
-                                <li><a href="#" title="MBO Login">MBO Login</a></li>
-                                <li><a href="#" title="#">Contact SARSO</a></li>
-                                <li><a href="#" title="#">Awards</a></li>
-                                <li><a href="#" title="#">FAQs</a></li>
-                                <li><a href="#" title="#">Help</a></li>
-                                <li><a href="#" title="#">Privacy Policy</a></li>
-                                <li><a href="#" title="#">Terms &amp; Conditions</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 col-sm-6 newsletter-bottom footerbox">
-                            <ul class="info-footer space-10">
-                                <li>Sign Up to Our Newsletter </li>
-                                <li>
-                                    <form action="#" method="get" accept-charset="utf-8">
-                                        <input type="text" onblur="if (this.value == '') {this.value = 'Enter your email...';}" onfocus="if(this.value != '') {this.value = '';}" value="Enter your email..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
-                                        <button class="button button1 hover-white" title="Subscribe" type="submit">SIGN UP</button>
-                                    </form>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                            <div class="fsdalogo"> <img src="~/assets/images/FDSA_logo.png" alt="Federation of Direct Selling Association" /></div>
+    <div class="modal fade wow zoomIn ceo1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg popup-search">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <div class="iframe-container">
+                            <iframe allowFullScreen="allowFullScreen" src="https://www.youtube.com/embed/Nz37HYQn-uw?ecver=1&amp;cc_load_policy=1&amp;iv_load_policy=3&amp;yt:stretch=16:9&amp;autohide=0&amp;color=red&amp;width=560&amp;width=560?rel=0" allowtransparency="true" frameborder="0"></iframe>
                         </div>
                     </div>
-                    <div class="box bottom">
-                        <p class="float-left">Copyright &copy; 2020 Sarso Biz - All Rights Reserved.</p>
-                    </div>
-                    <!-- End box -->
                 </div>
-                <!-- End container -->
             </div>
-            <!-- End footer-inner -->
-        </footer>
+        </div>
+    </div>
+    <div class="modal fade wow zoomIn get-in-touch" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg popup-search">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <div class="content-text center">
+                            <h3 style="text-transform: none">Ask a Question</h3>
+                            <form class="form-horizontal space-50">
+                                <div class="form-group col-md-6">
+                                    <input type="text" placeholder="Name*" id="inputName" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" placeholder="Email*" id="inputsumary" class="form-control">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="text" placeholder="Website" id="inputemail" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Comment" name="Comment" id="message" class="form-control"></textarea>
+                                </div>
+                                <div class="box text-center"> <a title="add tags" href="#" class="link-v1 rt lh-50">Send message</a> </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+         $(document).ready(function () {
 
-        <!-- End wrappage -->
+             $('img').on('dragstart', function (event) { event.preventDefault(); });
 
-        <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="~/assets/js/owl.carousel.min.js"></script>
-        <script type="text/javascript" src="~/assets/js/jquery.themepunch.revolution.min.js"></script>
-        <script type="text/javascript" src="~/assets/js/jquery.themepunch.plugins.min.js"></script>
-        <script type="text/javascript" src="~/assets/js/engo-plugins.js"></script>
-        <script type="text/javascript" src="~/assets/js/store.js"></script>
+             // wow js
+             new WOW().init();
+         });
+
+    </script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/engo-plugins.js"></script>
+    <script type="text/javascript" src="~/assets/js/store.js"></script>
 </body>
 </html>
