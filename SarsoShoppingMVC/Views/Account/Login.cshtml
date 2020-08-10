@@ -1,4 +1,5 @@
-﻿@{
+﻿@model SarsoShoppingData.MemberProfile
+@{
     ViewBag.Title = "Login";
 }
 
@@ -66,26 +67,27 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="LoginForm" name="LoginForm" onsubmit="return false;">
 
                         <h3 class="title-brand">RETURNING CUSTOMER</h3>
 
                         <div class="form-group">
-                            <label for="inputfname" class=" control-label">USERNAME <span class="color">*</span></label>
-                            <input type="text" placeholder="" id="" class="form-control">
+                            <label for="inputfname" class="control-label">USERNAME <span class="color">*</span></label>
+                            @Html.TextBoxFor(m => m.Regid, new { @placeholder = "Enter Registration Id...", @class = "form-control", @required = "required" })
                         </div>
                         <div class="form-group">
-                            <label for="inputlname" class=" control-label">PASSWORD <span class="color">*</span></label>
-                            <input type="text" placeholder="" id="" class="form-control">
+                            <label for="inputlname" class="control-label">PASSWORD <span class="color">*</span></label>
+                            @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter Password...", @class = "form-control", @required = "required" })
                         </div>
-                        <a class="link-v1 box lh-50 rt full" href="#" title="SIGN IN">SIGN IN</a>
+                       
+                        <input type="submit" id="LoginSubmit" class="link-v1 box lh-50 rt full" value="SIGN IN" />
                         <div class="margin-top-10 text-left" style="border-bottom:1px solid #ccc; padding-bottom:20px;">
                             <p>  <a href="#"><span style="color:#373737;">FORGOT PASSWORD?</span></a></p>
                         </div>
                         <div class="margin-top-30 space-10 text-left">
                             <p>  You know a SARSO Business Owner &amp; have their Distributor ID.</p>
                         </div>
-                        <a class="link-v1 box lh-50 rt full" href="#" title="REGISTER">CREATE ACCOUNT</a>
+                        <a class="link-v1 box lh-50 rt full" href="~/Account/Registration" title="REGISTER">CREATE ACCOUNT</a>
                         <div class="margin-top-30 space-10 text-left">
                             <p>  You don’t know a SARSO Business Owner.</p>
                         </div>
@@ -107,11 +109,7 @@
 <!-- end product sidebar -->
 
 <div class="container brand-logos space-30 space-padding-tb-100">
-    <h3 class="title-v2 text-center">Our Brands</h3>
-    <div class="text-center center-block col-md-10 float-none">
-        <div class="col-md-3"> <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand/swadharma.png" alt="Swadharma"></a> </div>
-        <div class="col-md-3">   <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand/tamra.png" alt="Tamra"></a> </div>
-        <div class="col-md-3">     <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand/sootram.png" alt="Sootram"></a> </div>
-        <div class="col-md-3">   <a href="#" title="brand"><img class="img-responsive" src="assets/images/brand/neeti.png" alt="Neeti"></a> </div>
-    </div>
+    @{Html.RenderPartial("~/Views/Shared/_BrandLogo.cshtml");   }
 </div>
+
+<script src="~/Scripts/Register.js?v=1"></script>

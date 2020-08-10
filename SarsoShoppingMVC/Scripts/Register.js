@@ -52,6 +52,37 @@
         return false;
     });
 
+
+    $("#LoginForm").on("submit", function () {
+        $("#LoginSubmit").attr("disabled", true);
+        $("#UserNo").val(Uniqid());
+        var formdata = new FormData($("#LoginForm")[0]);
+        $.ajax({
+            url: '/Account/Login',
+            type: 'POST',
+            dataType: 'json',
+            async: false,
+            processData: false,
+            contentType: false,
+            data: formdata,
+            success: function (objResponse) {
+                $("#LoginSubmit").attr("disabled", false);
+                if (objResponse != null) {
+                    alert(objResponse.Message);
+                }
+            },
+
+            error: function (xhr, data) {
+
+                console.log(xhr);
+                console.log("Error:", data);
+            }
+
+        });
+        return false;
+    });
+
+
     $("#cnfPassword").change(function () {
         var cnfPass = $("#cnfPassword").val();
         var Pass = $("#Password").val();

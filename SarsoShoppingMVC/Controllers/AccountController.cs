@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using SarsoShoppingData;
+using System.Diagnostics;
 
 namespace SarsoShoppingMVC.Controllers
 {
@@ -34,7 +35,7 @@ namespace SarsoShoppingMVC.Controllers
                 }
             }
             catch (Exception Ex) {
-
+                throw Ex;
             }
             return Json(SponserDetail,JsonRequestBehavior.AllowGet);
         }
@@ -82,7 +83,31 @@ namespace SarsoShoppingMVC.Controllers
             }
             catch (Exception Ex)
             {
+                throw Ex;
+            }
+            return Json(IsUserCreated, JsonRequestBehavior.AllowGet);
+        }
 
+        [HttpPost]
+        public ActionResult Login(MemberProfile objMem)
+        {
+            Response objResponse = new Response();
+            SiteUtility objutility = new SiteUtility();
+            int IsUserCreated = 0;
+            try
+            {
+                using (var entities = new sarsobizEntities())
+                {
+                    CheckDownto_SP_Result LoginCheck = entities.CheckDownto_SP("DistributorLogin", Convert.ToString(objMem.Regid) , objutility.Encrypt(objMem.Password)).FirstOrDefault();
+                    if (LoginCheck.Result!=null)
+                    { 
+                        
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
             }
             return Json(IsUserCreated, JsonRequestBehavior.AllowGet);
         }
@@ -90,7 +115,9 @@ namespace SarsoShoppingMVC.Controllers
         protected override void OnException(ExceptionContext filterContext)
         {
             Exception exception = filterContext.Exception;
-            //Logging the Exception
+
+            EventLog.WriteEntry("Sarso Shopping", filterContext.RouteData.Values["controller"].ToString() +"/"+ filterContext.RouteData.Values["action"].ToString(), EventLogEntryType.Error);
+
             filterContext.ExceptionHandled = true;
 
             var Result = this.View("Error", new HandleErrorInfo(exception,
