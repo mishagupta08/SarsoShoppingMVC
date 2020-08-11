@@ -27,6 +27,7 @@
     $("#RegistrationForm").on("submit", function () {
         $("#RegisterSubmit").attr("disabled", true);
         $("#UserNo").val(Uniqid());
+        //$('#Registerinfo').modal('toggle');
         var formdata = new FormData($("#RegistrationForm")[0]);
         $.ajax({
             url: '/Account/PartialInsertReg',
@@ -38,10 +39,14 @@
             data: formdata,
             success: function (objResponse) {
                 $("#RegisterSubmit").attr("disabled", false);
-                if(objResponse!= null)
-                {
+                if (objResponse != null) {
                     alert(objResponse.Message);
                 }
+                else {
+                    alert('Registration Failed Please try again');
+                }
+
+                //$('#Registerinfo').modal('toggle');
             },
             error: function (xhr, data) {
 

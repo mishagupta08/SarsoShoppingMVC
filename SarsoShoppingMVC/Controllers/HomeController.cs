@@ -26,5 +26,10 @@ namespace SarsoShoppingMVC.Controllers
 
             return View();
         }
+
+        public ActionResult StartYourBusiness()
+        {
+            return View();
+        }
     }
 }

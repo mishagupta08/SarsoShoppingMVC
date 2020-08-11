@@ -11950,5 +11950,102 @@ namespace SarsoShoppingData
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("ReqStockreturn_sp1", actionParameter, billnoParameter, refNoParameter, typeParameter, frmdateParameter, todateParameter, pageIndexParameter, pageSizeParameter, ssidParameter, remarksParameter);
         }
+    
+        public virtual ObjectResult<Nullable<int>> SP_InsertReg(string userno, Nullable<int> sprno, string spseries, string title, string fname, string lname, Nullable<int> sex, string state, string mobile, string eMail, string lpassword, string tpassword, string sesid, string decpwd, string ddno, Nullable<System.DateTime> dddate, string ddbank, string ddbranch, string mop, Nullable<decimal> amount, string action, string unqid, string ip)
+        {
+            var usernoParameter = userno != null ?
+                new ObjectParameter("userno", userno) :
+                new ObjectParameter("userno", typeof(string));
+    
+            var sprnoParameter = sprno.HasValue ?
+                new ObjectParameter("sprno", sprno) :
+                new ObjectParameter("sprno", typeof(int));
+    
+            var spseriesParameter = spseries != null ?
+                new ObjectParameter("spseries", spseries) :
+                new ObjectParameter("spseries", typeof(string));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var fnameParameter = fname != null ?
+                new ObjectParameter("fname", fname) :
+                new ObjectParameter("fname", typeof(string));
+    
+            var lnameParameter = lname != null ?
+                new ObjectParameter("lname", lname) :
+                new ObjectParameter("lname", typeof(string));
+    
+            var sexParameter = sex.HasValue ?
+                new ObjectParameter("sex", sex) :
+                new ObjectParameter("sex", typeof(int));
+    
+            var stateParameter = state != null ?
+                new ObjectParameter("state", state) :
+                new ObjectParameter("state", typeof(string));
+    
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("mobile", mobile) :
+                new ObjectParameter("mobile", typeof(string));
+    
+            var eMailParameter = eMail != null ?
+                new ObjectParameter("eMail", eMail) :
+                new ObjectParameter("eMail", typeof(string));
+    
+            var lpasswordParameter = lpassword != null ?
+                new ObjectParameter("lpassword", lpassword) :
+                new ObjectParameter("lpassword", typeof(string));
+    
+            var tpasswordParameter = tpassword != null ?
+                new ObjectParameter("tpassword", tpassword) :
+                new ObjectParameter("tpassword", typeof(string));
+    
+            var sesidParameter = sesid != null ?
+                new ObjectParameter("sesid", sesid) :
+                new ObjectParameter("sesid", typeof(string));
+    
+            var decpwdParameter = decpwd != null ?
+                new ObjectParameter("Decpwd", decpwd) :
+                new ObjectParameter("Decpwd", typeof(string));
+    
+            var ddnoParameter = ddno != null ?
+                new ObjectParameter("ddno", ddno) :
+                new ObjectParameter("ddno", typeof(string));
+    
+            var dddateParameter = dddate.HasValue ?
+                new ObjectParameter("dddate", dddate) :
+                new ObjectParameter("dddate", typeof(System.DateTime));
+    
+            var ddbankParameter = ddbank != null ?
+                new ObjectParameter("ddbank", ddbank) :
+                new ObjectParameter("ddbank", typeof(string));
+    
+            var ddbranchParameter = ddbranch != null ?
+                new ObjectParameter("ddbranch", ddbranch) :
+                new ObjectParameter("ddbranch", typeof(string));
+    
+            var mopParameter = mop != null ?
+                new ObjectParameter("mop", mop) :
+                new ObjectParameter("mop", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("Amount", amount) :
+                new ObjectParameter("Amount", typeof(decimal));
+    
+            var actionParameter = action != null ?
+                new ObjectParameter("action", action) :
+                new ObjectParameter("action", typeof(string));
+    
+            var unqidParameter = unqid != null ?
+                new ObjectParameter("Unqid", unqid) :
+                new ObjectParameter("Unqid", typeof(string));
+    
+            var ipParameter = ip != null ?
+                new ObjectParameter("Ip", ip) :
+                new ObjectParameter("Ip", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SP_InsertReg", usernoParameter, sprnoParameter, spseriesParameter, titleParameter, fnameParameter, lnameParameter, sexParameter, stateParameter, mobileParameter, eMailParameter, lpasswordParameter, tpasswordParameter, sesidParameter, decpwdParameter, ddnoParameter, dddateParameter, ddbankParameter, ddbranchParameter, mopParameter, amountParameter, actionParameter, unqidParameter, ipParameter);
+        }
     }
 }

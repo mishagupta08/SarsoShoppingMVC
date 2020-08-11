@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using SarsoShoppingData;
 using System.Diagnostics;
+using System.Web.Security;
 
 namespace SarsoShoppingMVC.Controllers
 {
@@ -55,16 +56,16 @@ namespace SarsoShoppingMVC.Controllers
                     {
                         if (fieldCheck == "SUCC")
                         {
-                            IsUserCreated = entities.PartialInsertReg_Sp(objMem.UserNo, objMem.SponserID, "Right", "Mr", objMem.FName, objMem.LName, -1, "", objMem.MobileNo, objMem.Email, objutility.Encrypt(objMem.Password), objutility.Encrypt(objMem.cnfPassword), HttpContext.Session.SessionID, objMem.Password, "", null, "", "", "", 0, "InsertReg", "", "");
+                            IsUserCreated = entities.SP_InsertReg(objMem.UserNo, objMem.SponserID, "Right", "Mr", objMem.FName, objMem.LName, -1, "", objMem.MobileNo, objMem.Email, objutility.Encrypt(objMem.Password), objutility.Encrypt(objMem.cnfPassword), HttpContext.Session.SessionID, objMem.Password, "", null, "", "", "", 0, "InsertReg", "", "").FirstOrDefault()??0;
                             if (IsUserCreated > 0)
                             {
                                 objResponse.status = true;
-                                objResponse.Message = "Dear " + objMem.FName + " " + objMem.LName + ", You have been successfully registered with SARSO, your login details has been sent to your registered mobile number. Experience the new Art of shopping with www.sarsobiz.net.";
+                                objResponse.Message = "Dear " + objMem.FName + " " + objMem.LName + ", You have been successfully registered with SARSO wwith Login ID <b>"+IsUserCreated+"</b>, your login details has been sent to your registered mobile number. Experience the new Art of shopping with www.sarsobiz.net.";
                             }
                             else
                             {
                                 objResponse.status = false;
-                                objResponse.Message = "Partial Guest Registration Failed Please try again";
+                                objResponse.Message = "Registration Failed Please try again";
                             }
                         }
                         else
@@ -77,7 +78,7 @@ namespace SarsoShoppingMVC.Controllers
                     else
                     {
                         objResponse.status = false;
-                        objResponse.Message = "Please Check Firsr Name (or) Last Name (or) Mobile NO (or) Email ID  Again";
+                        objResponse.Message = "Please Check First Name (or) Last Name (or) Mobile NO (or) Email ID  Again";
                     }
                 }
             }
@@ -85,7 +86,7 @@ namespace SarsoShoppingMVC.Controllers
             {
                 throw Ex;
             }
-            return Json(IsUserCreated, JsonRequestBehavior.AllowGet);
+            return Json(objResponse, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -98,11 +99,14 @@ namespace SarsoShoppingMVC.Controllers
             {
                 using (var entities = new sarsobizEntities())
                 {
-                    CheckDownto_SP_Result LoginCheck = entities.CheckDownto_SP("DistributorLogin", Convert.ToString(objMem.Regid) , objutility.Encrypt(objMem.Password)).FirstOrDefault();
+                    var LoginCheck = entities.CheckDownto_SP("DistributorLogin", Convert.ToString(objMem.Regid) , objutility.Encrypt(objMem.Password)).FirstOrDefault();
                     if (LoginCheck.Result!=null)
-                    { 
-                        
+                    {                       
+                        Session["LoginUser"] = "test";
+                        FormsAuthentication.SetAuthCookie("test", false);
                     }
+
+
                 }
             }
             catch (Exception Ex)

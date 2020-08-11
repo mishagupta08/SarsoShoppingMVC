@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="sarsobizModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="sarsobizModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.Admin_profile_Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Admin_profile_Log">
@@ -5567,39 +5567,6 @@ warning 6002: The table/view 'sarsobiz.dbo.PackageMaster' does not have a primar
           <Property Name="OffSts" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.PartialGuestSingnup' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PartialGuestSingnup">
-          <Property Name="userno" Type="varchar" MaxLength="20" />
-          <Property Name="Regid" Type="int" />
-          <Property Name="sprno" Type="int" />
-          <Property Name="spseries" Type="varchar" MaxLength="10" />
-          <Property Name="Title" Type="varchar" MaxLength="10" />
-          <Property Name="fname" Type="varchar" MaxLength="100" />
-          <Property Name="lname" Type="varchar" MaxLength="100" />
-          <Property Name="sex" Type="int" />
-          <Property Name="state" Type="varchar" MaxLength="50" />
-          <Property Name="mobile" Type="varchar" MaxLength="12" />
-          <Property Name="eMail" Type="varchar" MaxLength="150" />
-          <Property Name="lpassword" Type="varchar" MaxLength="150" />
-          <Property Name="tpassword" Type="varchar" MaxLength="150" />
-          <Property Name="sesid" Type="varchar" MaxLength="50" />
-          <Property Name="Decpwd" Type="varchar" MaxLength="50" />
-          <Property Name="ddno" Type="varchar" MaxLength="50" />
-          <Property Name="dddate" Type="datetime" />
-          <Property Name="ddbank" Type="varchar" MaxLength="50" />
-          <Property Name="ddbranch" Type="varchar" MaxLength="150" />
-          <Property Name="mop" Type="varchar" MaxLength="150" />
-          <Property Name="Amount" Type="money" />
-          <Property Name="action" Type="varchar" MaxLength="50" />
-          <Property Name="Unqid" Type="varchar" MaxLength="200" />
-          <Property Name="Ip" Type="varchar" MaxLength="100" />
-          <Property Name="Paysts" Type="varchar" MaxLength="50" />
-          <Property Name="Billsts" Type="varchar" MaxLength="50" />
-          <Property Name="Tranxid" Type="varchar" MaxLength="200" />
-          <Property Name="Createddate" Type="datetime" />
-          <Property Name="RespDate" Type="datetime" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.Pay_AccInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Pay_AccInfo">
           <Key>
@@ -8828,22 +8795,6 @@ warning 6002: The table/view 'sarsobiz.dbo.SessionsInOut' does not have a primar
           <Property Name="usertype" Type="varchar" MaxLength="10" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.Sheet1$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Sheet1$">
-          <Property Name="Regid" Type="float" />
-          <Property Name="RandNo" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.shiftMemberlogic' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="shiftMemberlogic">
-          <Property Name="RegId" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="SprNo" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="SpSeries" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="Leg" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="DownTo" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="RecTimeStamp" Type="datetime" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.ShopCartRandomNo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ShopCartRandomNo">
           <Key>
@@ -8954,49 +8905,6 @@ warning 6002: The table/view 'sarsobiz.dbo.Simulation_Repurchase' does not have 
           <Property Name="InvStatus" Type="int" Nullable="false" />
           <Property Name="TotBV" Type="money" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.SKU_PackageItems' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="SKU_PackageItems">
-          <Property Name="Sales Order Code" Type="nvarchar" MaxLength="255" />
-          <Property Name="Display Order Code" Type="nvarchar" MaxLength="255" />
-          <Property Name="Notification Email" Type="nvarchar" MaxLength="255" />
-          <Property Name="Notification Mobile" Type="float" />
-          <Property Name="COD" Type="float" />
-          <Property Name="Shipping Address Id" Type="float" />
-          <Property Name="Shipping Address Name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Shipping Address Line 1" Type="nvarchar" MaxLength="255" />
-          <Property Name="Shipping Address Line 2" Type="nvarchar" MaxLength="255" />
-          <Property Name="Shipping Address City" Type="nvarchar" MaxLength="255" />
-          <Property Name="Shipping Address State" Type="nvarchar" MaxLength="255" />
-          <Property Name="Shipping Address Country" Type="nvarchar" MaxLength="255" />
-          <Property Name="Shipping Address Pincode" Type="float" />
-          <Property Name="Shipping Address Phone" Type="float" />
-          <Property Name="Billing Address Id" Type="float" />
-          <Property Name="Billing Address Name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Billing Address Line 1" Type="nvarchar" MaxLength="255" />
-          <Property Name="Billing Address Line 2" Type="nvarchar" MaxLength="255" />
-          <Property Name="Billing Address City" Type="nvarchar" MaxLength="255" />
-          <Property Name="Billing Address State" Type="nvarchar" MaxLength="255" />
-          <Property Name="Billing Address Country" Type="nvarchar" MaxLength="255" />
-          <Property Name="Billing Address Pincode" Type="float" />
-          <Property Name="Billing Address Phone" Type="float" />
-          <Property Name="CombinationIdentifier" Type="float" />
-          <Property Name="CombinationDescription" Type="nvarchar" MaxLength="255" />
-          <Property Name="Sale Order Item Code" Type="float" />
-          <Property Name="Shipping Method" Type="nvarchar" MaxLength="255" />
-          <Property Name="Item SKU Code" Type="float" />
-          <Property Name="Total Price" Type="float" />
-          <Property Name="Selling Price" Type="float" />
-          <Property Name="Discount" Type="float" />
-          <Property Name="Qty" Type="float" />
-          <Property Name="Packet Number" Type="float" />
-          <Property Name="ShippingCost" Type="float" />
-          <Property Name="Size" Type="nvarchar" MaxLength="255" />
-          <Property Name="Color" Type="nvarchar" MaxLength="255" />
-          <Property Name="DISPFORMNO" Type="float" />
-          <Property Name="Order Date" Type="datetime" />
-          <Property Name="OrderSNo" Type="float" />
-        </EntityType>-->
         <EntityType Name="slogs">
           <Key>
             <PropertyRef Name="ID" />
@@ -9088,15 +8996,6 @@ warning 6002: The table/view 'sarsobiz.dbo.SS_tmp_FinalOrbit' does not have a pr
           <Property Name="Orbit" Type="int" />
           <Property Name="Stage" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.SSMP_TmpIDLevelIDs' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="SSMP_TmpIDLevelIDs">
-          <Property Name="RegId" Type="int" />
-          <Property Name="Thru" Type="int" />
-          <Property Name="Lvl" Type="int" />
-          <Property Name="spseries" Type="int" />
-          <Property Name="Leg" Type="int" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.states' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="states">
@@ -9603,15 +9502,6 @@ warning 6002: The table/view 'sarsobiz.dbo.TempCourier' does not have a primary 
           <Property Name="createddate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.tempdata' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tempdata">
-          <Property Name="IDCount" Type="int" />
-          <Property Name="Dates" Type="datetime" />
-          <Property Name="Amount" Type="money" />
-          <Property Name="PlanType" Type="varchar" MaxLength="20" />
-          <Property Name="mgroup" Type="varchar" MaxLength="20" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.tempdesg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tempdesg">
           <Key>
@@ -9736,16 +9626,6 @@ warning 6002: The table/view 'sarsobiz.dbo.TempEditOrders_Log' does not have a p
           <Property Name="Prdtype" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.TempGiftPrds' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TempGiftPrds">
-          <Property Name="ItemCode" Type="varchar" MaxLength="100" />
-          <Property Name="Attrib" Type="varchar" MaxLength="100" />
-          <Property Name="pcode" Type="varchar" MaxLength="50" />
-          <Property Name="Qty" Type="int" />
-          <Property Name="Sts" Type="int" />
-          <Property Name="Sessid" Type="varchar" MaxLength="100" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.tempInvOfferPrds' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tempInvOfferPrds">
           <Key>
@@ -9849,17 +9729,6 @@ warning 6002: The table/view 'sarsobiz.dbo.Tempproductcredits' does not have a p
           <Property Name="Sts" Type="int" />
           <Property Name="createddate" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.TempSIcpProduct' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TempSIcpProduct">
-          <Property Name="Itemcode" Type="varchar" MaxLength="20" />
-          <Property Name="Pcode" Type="int" />
-          <Property Name="PackCode" Type="int" />
-          <Property Name="OffType" Type="varchar" MaxLength="20" />
-          <Property Name="CV" Type="int" />
-          <Property Name="regid" Type="int" />
-          <Property Name="GST" Type="money" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.tempsms' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tempsms">
@@ -10013,34 +9882,6 @@ warning 6002: The table/view 'sarsobiz.dbo.Tmpdata' does not have a primary key 
           <Property Name="BranchName" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.TmpIdsCntTable' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TmpIdsCntTable">
-          <Property Name="SSFJIDCount" Type="int" />
-          <Property Name="SSRJIDCount" Type="int" />
-          <Property Name="SIFJIDCount" Type="int" />
-          <Property Name="SIRJIDCount" Type="int" />
-          <Property Name="JonDates" Type="datetime" />
-          <Property Name="SSFJAmount" Type="money" />
-          <Property Name="SIFJAmount" Type="money" />
-          <Property Name="SSRJAmount" Type="money" />
-          <Property Name="SIRJAmount" Type="money" />
-          <Property Name="JonType" Type="varchar" MaxLength="20" />
-          <Property Name="SSPFIDCount" Type="int" />
-          <Property Name="SIPFIDCount" Type="int" />
-          <Property Name="SSPRIDCount" Type="int" />
-          <Property Name="SIPRIDCount" Type="int" />
-          <Property Name="PayDates" Type="datetime" />
-          <Property Name="SSPFAmount" Type="money" />
-          <Property Name="SIPFAmount" Type="money" />
-          <Property Name="SSPRAmount" Type="money" />
-          <Property Name="SIPRAmount" Type="money" />
-          <Property Name="PayType" Type="varchar" MaxLength="20" />
-          <Property Name="SICPFAmount" Type="money" />
-          <Property Name="SICPRAmount" Type="money" />
-          <Property Name="SICPPFAmount" Type="money" />
-          <Property Name="SICPPRAmount" Type="money" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.tmpPackageItems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tmpPackageItems">
           <Key>
@@ -10060,42 +9901,6 @@ warning 6002: The table/view 'sarsobiz.dbo.tmpPackageItems' does not have a prim
           <Property Name="CV" Type="money" />
           <Property Name="GSTPrice" Type="money" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.tmpRepurchasePayments' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tmpRepurchasePayments">
-          <Property Name="RegId" Type="numeric" Precision="10" Scale="0" />
-          <Property Name="mop" Type="varchar" MaxLength="20" />
-          <Property Name="mopno" Type="varchar" MaxLength="30" />
-          <Property Name="mopbank" Type="varchar" MaxLength="50" />
-          <Property Name="mopbranch" Type="varchar" MaxLength="50" />
-          <Property Name="mopdate" Type="varchar" MaxLength="20" />
-          <Property Name="amount" Type="money" />
-          <Property Name="UniqID" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.tmpShoppingaddress' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tmpShoppingaddress">
-          <Property Name="Regid" Type="numeric" Precision="10" Scale="0" />
-          <Property Name="Fname" Type="varchar" MaxLength="100" />
-          <Property Name="LName" Type="varchar" MaxLength="50" />
-          <Property Name="Mobile" Type="varchar" MaxLength="12" />
-          <Property Name="Address" Type="varchar" MaxLength="200" />
-          <Property Name="City" Type="varchar" MaxLength="50" />
-          <Property Name="District" Type="varchar" MaxLength="50" />
-          <Property Name="state" Type="varchar" MaxLength="50" />
-          <Property Name="PiCode" Type="varchar" MaxLength="10" />
-          <Property Name="UniqID" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'sarsobiz.dbo.tmpShoppingCart' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tmpShoppingCart">
-          <Property Name="regid" Type="numeric" Precision="10" Scale="0" />
-          <Property Name="Pcode" Type="varchar" MaxLength="20" />
-          <Property Name="qty" Type="int" />
-          <Property Name="Attribute" Type="varchar" MaxLength="500" />
-          <Property Name="itemcode" Type="varchar" MaxLength="30" />
-          <Property Name="UniqID" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'sarsobiz.dbo.TrnPaymentOnline' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TrnPaymentOnline">
@@ -13500,6 +13305,31 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
         <Function Name="sp_GetPayoutMonthDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="FormNo" Type="int" Mode="In" />
           <Parameter Name="SESSID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertReg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userno" Type="varchar" Mode="In" />
+          <Parameter Name="sprno" Type="int" Mode="In" />
+          <Parameter Name="spseries" Type="varchar" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="fname" Type="varchar" Mode="In" />
+          <Parameter Name="lname" Type="varchar" Mode="In" />
+          <Parameter Name="sex" Type="int" Mode="In" />
+          <Parameter Name="state" Type="varchar" Mode="In" />
+          <Parameter Name="mobile" Type="varchar" Mode="In" />
+          <Parameter Name="eMail" Type="varchar" Mode="In" />
+          <Parameter Name="lpassword" Type="varchar" Mode="In" />
+          <Parameter Name="tpassword" Type="varchar" Mode="In" />
+          <Parameter Name="sesid" Type="varchar" Mode="In" />
+          <Parameter Name="Decpwd" Type="varchar" Mode="In" />
+          <Parameter Name="ddno" Type="varchar" Mode="In" />
+          <Parameter Name="dddate" Type="datetime" Mode="In" />
+          <Parameter Name="ddbank" Type="varchar" Mode="In" />
+          <Parameter Name="ddbranch" Type="varchar" Mode="In" />
+          <Parameter Name="mop" Type="varchar" Mode="In" />
+          <Parameter Name="Amount" Type="money" Mode="In" />
+          <Parameter Name="action" Type="varchar" Mode="In" />
+          <Parameter Name="Unqid" Type="varchar" Mode="In" />
+          <Parameter Name="Ip" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SP_SendSMS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="newmobile" Type="varchar" Mode="In" />
@@ -20945,8 +20775,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
     FROM [dbo].[vw_SSMPTabular_View] AS [vw_SSMPTabular_View]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sarsobizModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31148,10 +30977,10 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
           <EntitySet Name="vw_SSMP_InCntAll" EntityType="Self.vw_SSMP_InCntAll" />
           <EntitySet Name="vw_SSMPTabular_View" EntityType="Self.vw_SSMPTabular_View" />
           <FunctionImport Name="fn_SplitValue" IsComposable="true" ReturnType="Collection(sarsobizModel.fn_SplitValue_Result)">
-            <Parameter Name="ResponseData" Mode="In" Type="String" />
+          <Parameter Name="ResponseData" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAttributesAvailble" IsComposable="true" ReturnType="Collection(sarsobizModel.GetAttributesAvailble_Result)">
-            <Parameter Name="pcode" Mode="In" Type="String" />
+          <Parameter Name="pcode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetBalance" IsComposable="true" ReturnType="Collection(sarsobizModel.GetBalance_Result)">
             <Parameter Name="RegID" Mode="In" Type="Decimal" />
@@ -31163,10 +30992,10 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
           </FunctionImport>
           <FunctionImport Name="GetItemCodesAvailble" IsComposable="true" ReturnType="Collection(sarsobizModel.GetItemCodesAvailble_Result)" />
           <FunctionImport Name="getSICPDownlienCV" IsComposable="true" ReturnType="Collection(sarsobizModel.getSICPDownlienCV_Result)">
-            <Parameter Name="Regid" Mode="In" Type="Decimal" />
+          <Parameter Name="Regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="getSSMPDownlienCnt" IsComposable="true" ReturnType="Collection(sarsobizModel.getSSMPDownlienCnt_Result)">
-            <Parameter Name="Regid" Mode="In" Type="Decimal" />
+          <Parameter Name="Regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="Split" IsComposable="true" ReturnType="Collection(sarsobizModel.Split_Result)">
             <Parameter Name="String" Mode="In" Type="String" />
@@ -31222,7 +31051,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="SessId" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="AdminEditPermission_Sp" ReturnType="Collection(String)">
-            <Parameter Name="uid" Mode="In" Type="Int32" />
+          <Parameter Name="uid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="AdminLogin_Sp" ReturnType="Collection(sarsobizModel.AdminLogin_Sp_Result)">
             <Parameter Name="username" Mode="In" Type="String" />
@@ -31323,10 +31152,10 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pageSize" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="BatchDetExcel_Sp">
-            <Parameter Name="despbno" Mode="In" Type="String" />
+          <Parameter Name="despbno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="BatchDetRpt_Sp" ReturnType="Collection(sarsobizModel.BatchDetRpt_Sp_Result)">
-            <Parameter Name="despbno" Mode="In" Type="String" />
+          <Parameter Name="despbno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="BatchOut_Sp">
             <Parameter Name="courier" Mode="In" Type="String" />
@@ -31374,7 +31203,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Val" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="BinaryTrackReport" ReturnType="Collection(sarsobizModel.BinaryTrackReport_Result)">
-            <Parameter Name="regid" Mode="In" Type="Decimal" />
+          <Parameter Name="regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="BirthdaySms_Sp" ReturnType="Collection(sarsobizModel.BirthdaySms_Sp_Result)" />
           <FunctionImport Name="BlockorUnBlock_SP" ReturnType="Collection(Int32)">
@@ -31433,7 +31262,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="uid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="CheckCreditRequestPending_SP" ReturnType="Collection(String)">
-            <Parameter Name="regid" Mode="In" Type="Decimal" />
+          <Parameter Name="regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="CheckDownto_SP" ReturnType="Collection(sarsobizModel.CheckDownto_SP_Result)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -31441,14 +31270,14 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="downto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CheckMember_SP" ReturnType="Collection(String)">
-            <Parameter Name="uid" Mode="In" Type="String" />
+          <Parameter Name="uid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CheckSentID">
             <Parameter Name="MailTo" Mode="In" Type="String" />
             <Parameter Name="ToID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CheckSponsor_SP" ReturnType="Collection(sarsobizModel.CheckSponsor_SP_Result)">
-            <Parameter Name="idno" Mode="In" Type="String" />
+          <Parameter Name="idno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CheckUserName" ReturnType="Collection(sarsobizModel.CheckUserName_Result)">
             <Parameter Name="IDNO" Mode="In" Type="String" />
@@ -31518,7 +31347,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="type" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Cleartmpsms_SP">
-            <Parameter Name="sesid" Mode="In" Type="String" />
+          <Parameter Name="sesid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ClickAndShare_sp" ReturnType="Collection(Decimal)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -31570,13 +31399,13 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="url" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ConfirmationNote_Sp" ReturnType="Collection(sarsobizModel.ConfirmationNote_Sp_Result)">
-            <Parameter Name="memid" Mode="In" Type="Decimal" />
+          <Parameter Name="memid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="CourierMaster_SP" ReturnType="Collection(String)">
-            <Parameter Name="action" Mode="In" Type="String" />
+          <Parameter Name="action" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CourierNames_sp" ReturnType="Collection(sarsobizModel.CourierNames_sp_Result)">
-            <Parameter Name="action" Mode="In" Type="String" />
+          <Parameter Name="action" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CourierStatusRpt_Sp">
             <Parameter Name="status" Mode="In" Type="String" />
@@ -31679,16 +31508,16 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="regid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteBulkMail_SP" ReturnType="Collection(Int32)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteFranchiseBill">
-            <Parameter Name="BillNo" Mode="In" Type="String" />
+          <Parameter Name="BillNo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DeleteMail_SP">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DeleteSentMails_SP" ReturnType="Collection(Int32)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DelStockUsers_Sp" ReturnType="Collection(Int32)">
             <Parameter Name="itemid" Mode="In" Type="Int32" />
@@ -31740,7 +31569,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="status" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Editfranchise_sp" ReturnType="Collection(sarsobizModel.Editfranchise_sp_Result)">
-            <Parameter Name="FCCode" Mode="In" Type="String" />
+          <Parameter Name="FCCode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="EditOrderItems_Sp" ReturnType="Collection(sarsobizModel.EditOrderItems_Sp_Result)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -31780,7 +31609,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="payno" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ExistFranchiseIdno_Sp" ReturnType="Collection(String)">
-            <Parameter Name="idno" Mode="In" Type="String" />
+          <Parameter Name="idno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Faqreport" ReturnType="Collection(sarsobizModel.Faqreport_Result)">
             <Parameter Name="Type" Mode="In" Type="String" />
@@ -31859,10 +31688,10 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="category2" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetApprovePODetailes_SP" ReturnType="Collection(sarsobizModel.GetApprovePODetailes_SP_Result)">
-            <Parameter Name="payno" Mode="In" Type="Int32" />
+          <Parameter Name="payno" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetAttach_SP" ReturnType="Collection(String)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetAvailableQty_Sp" ReturnType="Collection(String)">
             <Parameter Name="Action" Mode="In" Type="String" />
@@ -31906,16 +31735,16 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
           </FunctionImport>
           <FunctionImport Name="GetBulkMails_SP" ReturnType="Collection(sarsobizModel.GetBulkMails_SP_Result)" />
           <FunctionImport Name="GetBulkMessage_SP" ReturnType="Collection(String)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetBulkMessageSubject_SP" ReturnType="Collection(sarsobizModel.GetBulkMessageSubject_SP_Result)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCitysInState_Sp" ReturnType="Collection(String)">
-            <Parameter Name="stateid" Mode="In" Type="String" />
+          <Parameter Name="stateid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetCompanyBanks_Sp" ReturnType="Collection(sarsobizModel.GetCompanyBanks_Sp_Result)">
-            <Parameter Name="cbid" Mode="In" Type="Int32" />
+          <Parameter Name="cbid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCouponAmount_sp" ReturnType="Collection(String)">
             <Parameter Name="Action" Mode="In" Type="String" />
@@ -31924,7 +31753,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="invamt" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="GetCreditreq_sp" ReturnType="Collection(sarsobizModel.GetCreditreq_sp_Result)">
-            <Parameter Name="reqcode" Mode="In" Type="String" />
+          <Parameter Name="reqcode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetCreditReqRpt_SP">
             <Parameter Name="reqstatus" Mode="In" Type="Int32" />
@@ -31936,7 +31765,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pagesize" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="GetCreditRequestOnline_SP" ReturnType="Collection(sarsobizModel.GetCreditRequestOnline_SP_Result)">
-            <Parameter Name="ORDERID" Mode="In" Type="String" />
+          <Parameter Name="ORDERID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetData_Sp">
             <Parameter Name="tblname" Mode="In" Type="String" />
@@ -31944,7 +31773,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="itemId" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetDraftMsg_SP" ReturnType="Collection(sarsobizModel.GetDraftMsg_SP_Result)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetEBSPending" ReturnType="Collection(sarsobizModel.GetEBSPending_Result)" />
           <FunctionImport Name="GetEwalBalance_SP" ReturnType="Collection(String)">
@@ -31952,7 +31781,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="GetFCcode_Sp" ReturnType="Collection(sarsobizModel.GetFCcode_Sp_Result)">
-            <Parameter Name="Action" Mode="In" Type="String" />
+          <Parameter Name="Action" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetFCPCreditReqRpt_SP" ReturnType="Collection(sarsobizModel.GetFCPCreditReqRpt_SP_Result)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -31970,7 +31799,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="FolderId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetGVDPurchaseOnline_SP" ReturnType="Collection(sarsobizModel.GetGVDPurchaseOnline_SP_Result)">
-            <Parameter Name="ORDERID" Mode="In" Type="String" />
+          <Parameter Name="ORDERID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetItemCodesFromAttributes_Sp" ReturnType="Collection(String)">
             <Parameter Name="PCode" Mode="In" Type="String" />
@@ -31985,20 +31814,20 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Itemcodes" Mode="InOut" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetmailCount_Sp" ReturnType="Collection(sarsobizModel.GetmailCount_Sp_Result)">
-            <Parameter Name="MailId" Mode="In" Type="String" />
+          <Parameter Name="MailId" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetMailfoldersname_SP" ReturnType="Collection(sarsobizModel.GetMailfoldersname_SP_Result)">
-            <Parameter Name="Memid" Mode="In" Type="String" />
+          <Parameter Name="Memid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetMails_SP" ReturnType="Collection(sarsobizModel.GetMails_SP_Result)">
-            <Parameter Name="MailId" Mode="In" Type="String" />
+          <Parameter Name="MailId" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetMemberDetails" ReturnType="Collection(sarsobizModel.GetMemberDetails_Result)">
             <Parameter Name="Idno" Mode="In" Type="String" />
             <Parameter Name="Type" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetMemberId" ReturnType="Collection(sarsobizModel.GetMemberId_Result)">
-            <Parameter Name="uid" Mode="In" Type="String" />
+          <Parameter Name="uid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetMemforBirthdaysms_Sp" ReturnType="Collection(sarsobizModel.GetMemforBirthdaysms_Sp_Result)" />
           <FunctionImport Name="GetMemMails_sp" ReturnType="Collection(String)">
@@ -32009,19 +31838,19 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Type" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetMessage_SP" ReturnType="Collection(String)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetMessageDate_SP" ReturnType="Collection(String)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetMessageFrom_SP" ReturnType="Collection(String)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetMessageSubject_SP" ReturnType="Collection(String)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetMessageTo_SP" ReturnType="Collection(String)">
-            <Parameter Name="MailId" Mode="In" Type="Int32" />
+          <Parameter Name="MailId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetMinRegIdDuplicateIdsRpt_SP" ReturnType="Collection(String)">
             <Parameter Name="Fname" Mode="In" Type="String" />
@@ -32032,7 +31861,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Email" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetPayNo_SP" ReturnType="Collection(sarsobizModel.GetPayNo_SP_Result)">
-            <Parameter Name="type" Mode="In" Type="String" />
+          <Parameter Name="type" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetRegFields_Sp" ReturnType="Collection(String)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -32044,7 +31873,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="eMai1l" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetRegistrationOnline_SP" ReturnType="Collection(sarsobizModel.GetRegistrationOnline_SP_Result)">
-            <Parameter Name="ORDERID" Mode="In" Type="String" />
+          <Parameter Name="ORDERID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetReport_Sp" ReturnType="Collection(String)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -32077,14 +31906,14 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="category1" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetSCOnline_SP" ReturnType="Collection(sarsobizModel.GetSCOnline_SP_Result)">
-            <Parameter Name="ORDERID" Mode="In" Type="String" />
+          <Parameter Name="ORDERID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetSentMails_SP" ReturnType="Collection(sarsobizModel.GetSentMails_SP_Result)">
-            <Parameter Name="MailId" Mode="In" Type="String" />
+          <Parameter Name="MailId" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetSmsActions_Sp" ReturnType="Collection(String)" />
           <FunctionImport Name="GetStates_Sp" ReturnType="Collection(sarsobizModel.GetStates_Sp_Result)">
-            <Parameter Name="CountryID" Mode="In" Type="Int32" />
+          <Parameter Name="CountryID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetStockforReturn_Sp" ReturnType="Collection(sarsobizModel.GetStockforReturn_Sp_Result)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -32103,10 +31932,10 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pageSize" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetTreeTooltip_Sp" ReturnType="Collection(sarsobizModel.GetTreeTooltip_Sp_Result)">
-            <Parameter Name="membid" Mode="In" Type="String" />
+          <Parameter Name="membid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetTreeView">
-            <Parameter Name="membid" Mode="In" Type="String" />
+          <Parameter Name="membid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetUniqid" ReturnType="Collection(Guid)" />
           <FunctionImport Name="GetValue_Sp">
@@ -32440,7 +32269,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="regid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InsertResendSms_Sp">
-            <Parameter Name="sesid" Mode="In" Type="String" />
+          <Parameter Name="sesid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="insertresendsmsids" ReturnType="Collection(sarsobizModel.insertresendsmsids_Result)">
             <Parameter Name="regid" Mode="In" Type="Decimal" />
@@ -32652,7 +32481,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Pagesize" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="IsAttachExit_SP" ReturnType="Collection(Int32)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ItemCodesGeneration_Sp">
             <Parameter Name="Pcode" Mode="In" Type="Int32" />
@@ -32785,7 +32614,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pwd" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_CheckSponser" ReturnType="Collection(sarsobizModel.MA_CheckSponser_Result)">
-            <Parameter Name="Downto" Mode="In" Type="String" />
+          <Parameter Name="Downto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_CheckSpr" ReturnType="Collection(sarsobizModel.MA_CheckSpr_Result)">
             <Parameter Name="idno" Mode="In" Type="String" />
@@ -32806,7 +32635,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="action" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_CheckUser_sp" ReturnType="Collection(String)">
-            <Parameter Name="UserName" Mode="In" Type="String" />
+          <Parameter Name="UserName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_ClickandShare_SP" ReturnType="Collection(sarsobizModel.MA_ClickandShare_SP_Result)">
             <Parameter Name="idno" Mode="In" Type="String" />
@@ -32830,7 +32659,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pwd" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_ForgotPwd_SP" ReturnType="Collection(sarsobizModel.MA_ForgotPwd_SP_Result)">
-            <Parameter Name="idno" Mode="In" Type="String" />
+          <Parameter Name="idno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_GCM_SendUplile_SP">
             <Parameter Name="regid" Mode="In" Type="Decimal" />
@@ -32867,7 +32696,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pwd" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_GetPayNo_sp" ReturnType="Collection(sarsobizModel.MA_GetPayNo_sp_Result)">
-            <Parameter Name="type" Mode="In" Type="String" />
+          <Parameter Name="type" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_InsertGuestReg_Sp">
             <Parameter Name="Idno" Mode="In" Type="String" />
@@ -33040,7 +32869,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="message" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_SendNotificationToAll_SP">
-            <Parameter Name="BodyMsg" Mode="In" Type="String" />
+          <Parameter Name="BodyMsg" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MA_SICPDetails_SP" ReturnType="Collection(sarsobizModel.MA_SICPDetails_SP_Result)">
             <Parameter Name="idno" Mode="In" Type="String" />
@@ -33138,7 +32967,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="regid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MemberDetailes_Sp" ReturnType="Collection(sarsobizModel.MemberDetailes_Sp_Result)">
-            <Parameter Name="regid" Mode="In" Type="Decimal" />
+          <Parameter Name="regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="MemberInvoices_Sp" ReturnType="Collection(sarsobizModel.MemberInvoices_Sp_Result)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -33149,7 +32978,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MemberProfile_Sp" ReturnType="Collection(sarsobizModel.MemberProfile_Sp_Result)">
-            <Parameter Name="Regid" Mode="In" Type="Int32" />
+          <Parameter Name="Regid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MemberRpOrders_SP" ReturnType="Collection(sarsobizModel.MemberRpOrders_SP_Result)">
             <Parameter Name="regid" Mode="In" Type="String" />
@@ -33545,7 +33374,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="fullitemcode" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="RegPackDet_Sp" ReturnType="Collection(sarsobizModel.RegPackDet_Sp_Result)">
-            <Parameter Name="pid" Mode="In" Type="Int32" />
+          <Parameter Name="pid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ReplyMail_SP" ReturnType="Collection(Int32)">
             <Parameter Name="MAILFROM" Mode="In" Type="String" />
@@ -33624,7 +33453,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Changed" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="RpcategoriesList_Sp" ReturnType="Collection(sarsobizModel.RpcategoriesList_Sp_Result)">
-            <Parameter Name="action" Mode="In" Type="String" />
+          <Parameter Name="action" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="S_CourierNos_Sp">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -33745,7 +33574,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="billnoout" Mode="InOut" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SearchAllTables">
-            <Parameter Name="SearchStr" Mode="In" Type="String" />
+          <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SearchMails_SP" ReturnType="Collection(sarsobizModel.SearchMails_SP_Result)">
             <Parameter Name="MailFrom" Mode="In" Type="String" />
@@ -33808,7 +33637,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="SESSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_GetPayoutMonth">
-            <Parameter Name="FormNo" Mode="In" Type="Int32" />
+          <Parameter Name="FormNo" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_GetPayoutMonthDetail" ReturnType="Collection(sarsobizModel.sp_GetPayoutMonthDetail_Result)">
             <Parameter Name="FormNo" Mode="In" Type="Int32" />
@@ -33825,10 +33654,10 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="RefLegNo" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="sp_unilvltreeview" ReturnType="Collection(sarsobizModel.sp_unilvltreeview_Result)">
-            <Parameter Name="uid" Mode="In" Type="String" />
+          <Parameter Name="uid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_unilvltreeview_Old" ReturnType="Collection(sarsobizModel.sp_unilvltreeview_Old_Result)">
-            <Parameter Name="uid" Mode="In" Type="String" />
+          <Parameter Name="uid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_unitreeview">
             <Parameter Name="idno" Mode="In" Type="String" />
@@ -33896,7 +33725,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="sesid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="StockDispatchItems_Sp">
-            <Parameter Name="refno" Mode="In" Type="String" />
+          <Parameter Name="refno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="StockDispatchRpt_Sp" ReturnType="Collection(sarsobizModel.StockDispatchRpt_Sp_Result)">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -34016,10 +33845,10 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="SchTo" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Stp_SICP_GetLatestRank">
-            <Parameter Name="Regid" Mode="In" Type="Decimal" />
+          <Parameter Name="Regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="Stp_SICP_GetLoyalPerkRanks">
-            <Parameter Name="Regid" Mode="In" Type="Decimal" />
+          <Parameter Name="Regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="Stp_SICP_PayoutProcess" ReturnType="Collection(sarsobizModel.Stp_SICP_PayoutProcess_Result)">
             <Parameter Name="Action" Mode="In" Type="String" />
@@ -34034,10 +33863,10 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Remarks" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Stp_SpChng_levelIDs_gen">
-            <Parameter Name="regid" Mode="In" Type="Decimal" />
+          <Parameter Name="regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="Stp_SSMP_Baleno_RewardCalc">
-            <Parameter Name="RwdDate" Mode="In" Type="DateTime" />
+          <Parameter Name="RwdDate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Stp_SSMP_halfYearRepIDs" />
           <FunctionImport Name="Stp_SSMP_PayoutProcess" ReturnType="Collection(sarsobizModel.Stp_SSMP_PayoutProcess_Result)">
@@ -34048,7 +33877,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="StartPayno" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Stp_SSMP_RewardID_details" ReturnType="Collection(sarsobizModel.Stp_SSMP_RewardID_details_Result)">
-            <Parameter Name="regid" Mode="In" Type="Decimal" />
+          <Parameter Name="regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="Stp_SSMPPayout_RollBack">
             <Parameter Name="payno" Mode="In" Type="Int32" />
@@ -34057,14 +33886,14 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Remarks" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Stp_YearMonthDayBillCount" ReturnType="Collection(sarsobizModel.Stp_YearMonthDayBillCount_Result)">
-            <Parameter Name="year" Mode="In" Type="String" />
+          <Parameter Name="year" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Stp_YearMonthDayPGCount" ReturnType="Collection(sarsobizModel.Stp_YearMonthDayPGCount_Result)">
             <Parameter Name="year" Mode="In" Type="String" />
             <Parameter Name="Pgtype" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Stp_YearMonthDayRegCount" ReturnType="Collection(sarsobizModel.Stp_YearMonthDayRegCount_Result)">
-            <Parameter Name="year" Mode="In" Type="String" />
+          <Parameter Name="year" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sublinks_Sp">
             <Parameter Name="Lid" Mode="In" Type="Int32" />
@@ -34097,7 +33926,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Attrname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TempMemberDetailes_Sp" ReturnType="Collection(sarsobizModel.TempMemberDetailes_Sp_Result)">
-            <Parameter Name="regid" Mode="In" Type="Decimal" />
+          <Parameter Name="regid" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="TempOrder_SP" ReturnType="Collection(Int32)">
             <Parameter Name="UNQid" Mode="In" Type="String" />
@@ -34154,19 +33983,19 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pagesize" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="UnilevelTreeDet_Sp">
-            <Parameter Name="idno" Mode="In" Type="String" />
+          <Parameter Name="idno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="UnilevelTreeDet_Sp_old">
-            <Parameter Name="idno" Mode="In" Type="String" />
+          <Parameter Name="idno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="UnilevelTreeIDDet_Sp">
-            <Parameter Name="uid" Mode="In" Type="String" />
+          <Parameter Name="uid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="UnilevelTreeIDDet_Sp_old">
-            <Parameter Name="uid" Mode="In" Type="String" />
+          <Parameter Name="uid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="UpdateDockDet_Sp">
-            <Parameter Name="invoiceNos" Mode="In" Type="String" />
+          <Parameter Name="invoiceNos" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="UpdateDuplicateIdsRpt_SP" ReturnType="Collection(String)">
             <Parameter Name="regid" Mode="In" Type="Int32" />
@@ -34313,7 +34142,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="res" Mode="InOut" Type="String" />
           </FunctionImport>
           <FunctionImport Name="WithdrawlBatchExcel_Sp" ReturnType="Collection(sarsobizModel.WithdrawlBatchExcel_Sp_Result)">
-            <Parameter Name="wdno" Mode="In" Type="String" />
+          <Parameter Name="wdno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="WithdrawlBatchRpt_Sp">
             <Parameter Name="action" Mode="In" Type="String" />
@@ -34330,13 +34159,13 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pageSize" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="Z_Get_Bills" ReturnType="Collection(sarsobizModel.Z_Get_Bills_Result)">
-            <Parameter Name="Idno" Mode="In" Type="String" />
+          <Parameter Name="Idno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Z_Get_members" ReturnType="Collection(sarsobizModel.Z_Get_members_Result)">
-            <Parameter Name="Idno" Mode="In" Type="String" />
+          <Parameter Name="Idno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Z_Get_SSMPIncomes" ReturnType="Collection(sarsobizModel.Z_Get_SSMPIncomes_Result)">
-            <Parameter Name="Idno" Mode="In" Type="String" />
+          <Parameter Name="Idno" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DistCancellation_sp" ReturnType="Collection(sarsobizModel.DistCancellation_sp_Result)" />
           <FunctionImport Name="ReqStockreturn_sp1" ReturnType="Collection(String)">
@@ -34350,6 +34179,31 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="pageSize" Mode="In" Type="Int32" />
             <Parameter Name="ssid" Mode="In" Type="String" />
             <Parameter Name="remarks" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_InsertReg" ReturnType="Collection(Int32)">
+            <Parameter Name="userno" Mode="In" Type="String" />
+            <Parameter Name="sprno" Mode="In" Type="Int32" />
+            <Parameter Name="spseries" Mode="In" Type="String" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="fname" Mode="In" Type="String" />
+            <Parameter Name="lname" Mode="In" Type="String" />
+            <Parameter Name="sex" Mode="In" Type="Int32" />
+            <Parameter Name="state" Mode="In" Type="String" />
+            <Parameter Name="mobile" Mode="In" Type="String" />
+            <Parameter Name="eMail" Mode="In" Type="String" />
+            <Parameter Name="lpassword" Mode="In" Type="String" />
+            <Parameter Name="tpassword" Mode="In" Type="String" />
+            <Parameter Name="sesid" Mode="In" Type="String" />
+            <Parameter Name="Decpwd" Mode="In" Type="String" />
+            <Parameter Name="ddno" Mode="In" Type="String" />
+            <Parameter Name="dddate" Mode="In" Type="DateTime" />
+            <Parameter Name="ddbank" Mode="In" Type="String" />
+            <Parameter Name="ddbranch" Mode="In" Type="String" />
+            <Parameter Name="mop" Mode="In" Type="String" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="action" Mode="In" Type="String" />
+            <Parameter Name="Unqid" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AddorDeductRpt_Sp_Result">
@@ -49032,6 +48886,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ReqStockreturn_sp1" FunctionName="sarsobizModel.Store.ReqStockreturn_sp1" />
+          <FunctionImportMapping FunctionImportName="SP_InsertReg" FunctionName="sarsobizModel.Store.SP_InsertReg" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

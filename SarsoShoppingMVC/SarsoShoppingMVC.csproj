@@ -660,6 +660,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\SignIn.cshtml" />
     <Content Include="Views\Shared\_BrandLogo.cshtml" />
+    <Content Include="Views\Home\StartYourBusiness.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

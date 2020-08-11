@@ -77,8 +77,8 @@
                                 </div>
                                 <!-- End Dropdow Menu -->
                             </li>
-                            <li class="level1"><a href="#" title="About us">About us</a> </li>
-                            <li class="level1"><a href="#" title="Start your Business">Start your Business</a> </li>
+                            <li class="level1"><a href="~/Home/About" title="About us">About us</a> </li>
+                            <li class="level1"><a href="~/Home/StartYourBusiness" title="Start your Business">Start your Business</a> </li>
                             <li class="level1"><a href="#" title="Neeti">Neeti</a> </li>
                             <li class="level1 dropdown">
                                 <a href="#" title="Home">More</a>
@@ -93,6 +93,8 @@
                     </nav>
                     <div class="box-right">
                         <ul>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
                             <li class="settings hover-menu">
                                 <a href="#" title="settings"> <span class="lock"><i class="icon"></i></span> </a>
                                 <ul class="submenu list-menu align-left">
@@ -106,6 +108,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            }
                             <li> <span class="search" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="icon"></i></span></li>
 
                             <li> <span class="shopcart"><a href="#"><i class="icon"></i></a></span></li>
