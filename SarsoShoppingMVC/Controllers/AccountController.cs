@@ -68,7 +68,7 @@ namespace SarsoShoppingMVC.Controllers
                             if (IsUserCreated > 0)
                             {
                                 objResponse.status = true;
-                                objResponse.Message = "Dear " + objMem.FName + " " + objMem.LName + ", You have been successfully registered with SARSO wwith Login ID <b>"+IsUserCreated+"</b>, your login details has been sent to your registered mobile number. Experience the new Art of shopping with www.sarsobiz.net.";
+                                objResponse.Message = "Dear " + objMem.FName + " " + objMem.LName + ", You have been successfully registered with SARSO with Login ID "+IsUserCreated+ ". Experience the new Art of shopping with www.swadharma.life.";
                             }
                             else
                             {

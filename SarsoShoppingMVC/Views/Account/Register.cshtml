@@ -92,23 +92,23 @@
                         <div class="row">
                             <div class="form-group col-md-6 ">
                                 <label for="inputfname" class="control-label">Email <span class="color">*</span></label>
-                                @Html.TextBoxFor(m => m.Email, new { @placeholder = "Enter your Email Id...", @class = "form-control", @required = "required" })
+                                @Html.TextBoxFor(m => m.Email, new { @type="email",@placeholder = "Enter your Email Id...", @class = "form-control", @required = "required" })
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputlname" class="control-label">Mobile <span class="color">*</span></label>
-                                @Html.TextBoxFor(m => m.MobileNo, new { @placeholder = "Enter your Mobile No...", @class = "form-control", @required = "required" })
+                                @Html.TextBoxFor(m => m.MobileNo, new { type = "tel", @pattern = "[6789][0-9]{9}", @oninvalid="this.setCustomValidity('Enter Valid Mobile Number')",@oninput="this.setCustomValidity('')", @placeholder = "Enter your Mobile No (1234567890)", @class = "form-control", @required = "required" })
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <label for="inputphone" class="control-label">Password<span class="color">*</span></label>
-                                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter Password...", @class = "form-control", @required = "required" })
+                                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter Password...", @class = "form-control", @required = "required",type="password" })
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <label for="inputstreet" class="control-label">Confirm Password<span class="color">*</span></label>
-                                @Html.TextBoxFor(m => m.cnfPassword, new { @placeholder = "Enter Confirm Password...", @class = "form-control", @required = "required" })
+                                @Html.TextBoxFor(m => m.cnfPassword, new { @placeholder = "Enter Confirm Password...", @class = "form-control", @required = "required",type = "password" })
                             </div>
                         </div>
                         <div class="row">    <input type="submit" id="RegisterSubmit" class="link-v1 box lh-50 rt full" value="REGISTER" /></div>
