@@ -27,7 +27,7 @@
     $("#RegistrationForm").on("submit", function () {
         $("#RegisterSubmit").attr("disabled", true);
         $("#UserNo").val(Uniqid());
-        //$('#Registerinfo').modal('toggle');
+       
         var formdata = new FormData($("#RegistrationForm")[0]);
         $.ajax({
             url: '/Account/PartialInsertReg',
@@ -39,14 +39,16 @@
             data: formdata,
             success: function (objResponse) {
                 $("#RegisterSubmit").attr("disabled", false);
+                $("#RegistrationForm").find("input[type=text],input[type=email],input[type=tel],input[type=password], textarea").val("");
+                $("#SponserName").html("");
                 if (objResponse != null) {
-                    alert(objResponse.Message);
+                    $("#RegisterMsg").html(objResponse.Message);
                 }
                 else {
-                    alert('Registration Failed Please try again');
+                    $("#RegisterMsg").html('Registration Failed Please try again');
                 }
 
-                //$('#Registerinfo').modal('toggle');
+                $('#Registerinfo').modal('toggle');
             },
             error: function (xhr, data) {
 
@@ -73,6 +75,7 @@
             data: formdata,
             success: function (objResponse) {
                 $("#LoginSubmit").attr("disabled", false);
+               
                 if (objResponse != null && objResponse.Message == "success") {
                     window.location.href = "/Home/Index";
                 }
