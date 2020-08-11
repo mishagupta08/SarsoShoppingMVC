@@ -79,7 +79,9 @@
                             <label for="inputlname" class="control-label">PASSWORD <span class="color">*</span></label>
                             @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter Password...", @class = "form-control", @required = "required" })
                         </div>
-                       
+                        <div class="form-group">
+                            <span style="color:red;" id="LoginError"></span>                            
+                        </div>
                         <input type="submit" id="LoginSubmit" class="link-v1 box lh-50 rt full" value="SIGN IN" />
                         <div class="margin-top-10 text-left" style="border-bottom:1px solid #ccc; padding-bottom:20px;">
                             <p>  <a href="#"><span style="color:#373737;">FORGOT PASSWORD?</span></a></p>

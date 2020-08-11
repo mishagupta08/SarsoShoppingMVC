@@ -26,6 +26,14 @@ namespace SarsoShoppingMVC.Controllers
             return View();
         }
 
+        public ActionResult Logout()
+        {            
+            Session["LoginUserId"] = null;
+            Session["LoginUserName"] = null;
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index","Home");
+        }
+
         public ActionResult VerifySponsor(string SponsorId)
         {
             var SponserDetail = new CheckSponsor_SP_Result();
@@ -99,11 +107,21 @@ namespace SarsoShoppingMVC.Controllers
             {
                 using (var entities = new sarsobizEntities())
                 {
-                    var LoginCheck = entities.CheckDownto_SP("DistributorLogin", Convert.ToString(objMem.Regid) , objutility.Encrypt(objMem.Password)).FirstOrDefault();
-                    if (LoginCheck.Result!=null)
-                    {                       
-                        Session["LoginUser"] = "test";
-                        FormsAuthentication.SetAuthCookie("test", false);
+                    var LoginCheck = entities.SP_ValidateUser("DistributorLogin", Convert.ToString(objMem.Regid) , objutility.Encrypt(objMem.Password)).FirstOrDefault();
+                    if (LoginCheck.Result != null && LoginCheck.Result == "success")
+                    {
+                        objResponse.Message = "success";
+                        Session["LoginUserId"] = LoginCheck.Mid;
+                        Session["LoginUserName"] = LoginCheck.Name;
+                        FormsAuthentication.SetAuthCookie(LoginCheck.Name, false);
+                    }
+                    else if (LoginCheck.Result != null)
+                    {
+                        objResponse.Message = LoginCheck.Result;
+                    }
+                    else
+                    {
+                        objResponse.Message = "Something Went wrong.";
                     }
 
 
@@ -113,7 +131,7 @@ namespace SarsoShoppingMVC.Controllers
             {
                 throw Ex;
             }
-            return Json(IsUserCreated, JsonRequestBehavior.AllowGet);
+            return Json(objResponse, JsonRequestBehavior.AllowGet);
         }
 
         protected override void OnException(ExceptionContext filterContext)

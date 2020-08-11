@@ -13368,6 +13368,11 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
           <Parameter Name="landmob" Type="nvarchar" Mode="In" />
           <Parameter Name="remark" Type="nvarchar(max)" Mode="In" />
         </Function>
+        <Function Name="SP_ValidateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="action" Type="varchar" Mode="In" />
+          <Parameter Name="idno" Type="varchar" Mode="In" />
+          <Parameter Name="downto" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SpellInteger_fn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
           <Parameter Name="number" Type="int" Mode="In" />
         </Function>
@@ -34205,6 +34210,11 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Unqid" Mode="In" Type="String" />
             <Parameter Name="Ip" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_ValidateUser" ReturnType="Collection(sarsobizModel.SP_ValidateUser_Result)">
+            <Parameter Name="action" Mode="In" Type="String" />
+            <Parameter Name="idno" Mode="In" Type="String" />
+            <Parameter Name="downto" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AddorDeductRpt_Sp_Result">
           <Property Type="Int64" Name="RowNumber" Nullable="true" />
@@ -37069,6 +37079,11 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
           <Property Type="String" Name="ClientActivestatus" Nullable="false" MaxLength="10" />
           <Property Type="DateTime" Name="ClientActivateDate" Nullable="false" Precision="23" />
           <Property Type="Decimal" Name="oldpv" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="SP_ValidateUser_Result">
+          <Property Type="Int32" Name="Mid" Nullable="true" />
+          <Property Type="String" Name="Result" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -48887,6 +48902,15 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ReqStockreturn_sp1" FunctionName="sarsobizModel.Store.ReqStockreturn_sp1" />
           <FunctionImportMapping FunctionImportName="SP_InsertReg" FunctionName="sarsobizModel.Store.SP_InsertReg" />
+          <FunctionImportMapping FunctionImportName="SP_ValidateUser" FunctionName="sarsobizModel.Store.SP_ValidateUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="sarsobizModel.SP_ValidateUser_Result">
+                <ScalarProperty Name="Mid" ColumnName="Mid" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

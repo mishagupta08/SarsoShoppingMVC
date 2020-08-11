@@ -12047,5 +12047,22 @@ namespace SarsoShoppingData
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SP_InsertReg", usernoParameter, sprnoParameter, spseriesParameter, titleParameter, fnameParameter, lnameParameter, sexParameter, stateParameter, mobileParameter, eMailParameter, lpasswordParameter, tpasswordParameter, sesidParameter, decpwdParameter, ddnoParameter, dddateParameter, ddbankParameter, ddbranchParameter, mopParameter, amountParameter, actionParameter, unqidParameter, ipParameter);
         }
+    
+        public virtual ObjectResult<SP_ValidateUser_Result> SP_ValidateUser(string action, string idno, string downto)
+        {
+            var actionParameter = action != null ?
+                new ObjectParameter("action", action) :
+                new ObjectParameter("action", typeof(string));
+    
+            var idnoParameter = idno != null ?
+                new ObjectParameter("idno", idno) :
+                new ObjectParameter("idno", typeof(string));
+    
+            var downtoParameter = downto != null ?
+                new ObjectParameter("downto", downto) :
+                new ObjectParameter("downto", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_ValidateUser_Result>("SP_ValidateUser", actionParameter, idnoParameter, downtoParameter);
+        }
     }
 }

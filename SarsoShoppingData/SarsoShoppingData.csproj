@@ -1429,6 +1429,9 @@
     <Compile Include="sp_unilvltreeview_Result.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_ValidateUser_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="SS_Member_Reg.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>

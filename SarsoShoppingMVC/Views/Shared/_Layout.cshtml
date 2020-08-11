@@ -93,7 +93,7 @@
                     </nav>
                     <div class="box-right">
                         <ul>
-                            @if (!User.Identity.IsAuthenticated)
+                            @if (Session["LoginUserName"] == null)
                             {
                             <li class="settings hover-menu">
                                 <a href="#" title="settings"> <span class="lock"><i class="icon"></i></span> </a>
@@ -108,6 +108,11 @@
                                     </li>
                                 </ul>
                             </li>
+                            }
+                            else
+                            {
+                                <li><span style="color:white;font-weight:bold;">Welcome : @Session["LoginUserName"]</span> </li>
+                                <li><a style="color:white;font-weight:bold;" href="~/Account/Logout">Logout</a> </li>
                             }
                             <li> <span class="search" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="icon"></i></span></li>
 

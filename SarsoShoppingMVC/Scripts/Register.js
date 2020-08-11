@@ -61,6 +61,7 @@
     $("#LoginForm").on("submit", function () {
         $("#LoginSubmit").attr("disabled", true);
         $("#UserNo").val(Uniqid());
+        $("#LoginError").html("");
         var formdata = new FormData($("#LoginForm")[0]);
         $.ajax({
             url: '/Account/Login',
@@ -72,9 +73,12 @@
             data: formdata,
             success: function (objResponse) {
                 $("#LoginSubmit").attr("disabled", false);
-                if (objResponse != null) {
-                    alert(objResponse.Message);
+                if (objResponse != null && objResponse.Message == "success") {
+                    window.location.href = "/Home/Index";
                 }
+				else{
+                    $("#LoginError").html(objResponse.Message);
+				}
             },
 
             error: function (xhr, data) {
