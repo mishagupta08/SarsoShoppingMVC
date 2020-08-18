@@ -3905,7 +3905,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 .panel {
 	margin-bottom: 20px;
-	background-color: #fff;
+	background-color: none;
 	border: 1px solid transparent;
 	border-radius: 4px;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5567,6 +5567,7 @@ a, p, strong, ul, h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
 }
+strong{font: 600 15px "Futura Hv";}
 h1 {
 	font-size: 24px;
 }
@@ -5860,7 +5861,7 @@ h3.title-v3 {
 	text-transform: capitalize;
 	width: 100%;
 	padding-bottom: 5px;
-	margin-bottom: 15px;
+	margin-bottom: 15px; letter-spacing:1px;
 }
 h3.title-v5 {
 	font-family: 'Playfair Display', sans-serif;
@@ -5889,8 +5890,9 @@ h3.title-v5 {
 .iconsbox p {
 	text-align: center;
 	line-height: normal;
-	margin: 20px 0 0 0;
+	margin: 20px 0 20px 0; 
 }
+.iconsbox p span{font-family: 'Futura Hv', sans-serif; color:#fff;}
 .amrita {
 	display: block;
 }
@@ -6377,6 +6379,12 @@ ul.bastian li p span {
 .bg9 {
 	background: #d1c0b9;
 }
+.bg10 {
+	background: #b0bbb7;
+}
+.bg11 {
+	background: #e4ded4;
+}
 /* Product Hover effects */
 .product-box .image {
 	display: block;
@@ -6570,6 +6578,9 @@ padding:
 }
 .margin-top-30 {
 	margin-top: 30px;
+}
+.margin-top-60 {
+	margin-top: 60px;
 }
 .margin-top-10 {
 	margin-top: 10px;
@@ -9509,7 +9520,7 @@ ul.tabs.tabs-title li span.count {
 	margin-bottom: 25px; letter-spacing:1px;
 }
 .newsletter-bottom form {
-	max-width: 700px;
+	max-width: 600px;
 	position: relative;
 	margin: auto;
 }
@@ -12888,8 +12899,8 @@ label.star:before {
 	height: 2px;
 }
 .title-box p {
-	font: 400 13px/20px "Poppins";
-	color: #858585;
+	font: 400 16px "FuturaBT-Book";
+	color: #373737;
 	margin-bottom: 15px;
 }
 .title-box.center {
@@ -12900,7 +12911,7 @@ label.star:before {
 	margin-left: -25px;
 }
 .accordion .panel-title a {
-	font: 600 18px "Poppins";
+	font: 600 18px "Futura Hv";
 	color: #e95252;
 }
 .accordion .panel-title a:before {
@@ -12912,15 +12923,19 @@ label.star:before {
 	float: right;
 }
 .accordion .panel-title a.collapsed {
-	color: #000;
+	color: #c1b283;
 }
 .accordion .panel-title a.collapsed:before {
 	background: url(../images/icon-accor.png) no-repeat scroll center bottom 10px;
 }
 .accordion .panel-collapse {
-	font: 400 13px/25px "Poppins";
-	color: #858585;
+	font-family: 'FuturaBT-Book', sans-serif;
+font-size: 15px;
+color: #373737;
+line-height: 25px;
+font-weight: normal; text-align:justify;
 }
+.accordion .panel-collapse b, .accordion .panel-collapse strong{font: 600 15px "Futura Hv";}
 .accordion .panel {
 	border: none;
 	box-shadow: none;
@@ -18904,19 +18919,20 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 	text-align: center;
 	padding: 0 45px;
 	font-size: 16px;
-	border: 1px solid #c1b283;
-	color: #c1b283;
+	border:none;
+	color: #373737;
+	background: #fff; letter-spacing:1px;
 }
 .tp-banner-container .link-1 a {
-	color: #c1b283;
-	font-weight: 700;
+	color: #373737;
+	background: #fff;
+	font-weight: 700; letter-spacing:1px;
 }
 .tp-banner-container .link-1:hover {
-	border: 1px solid #c1b283;
-	background: #c1b283;
+	background: #fff; 
 }
 .tp-banner-container .link-1:hover a {
-	color: #fff;
+	color: #373737;
 }
 .tp-banner-container .link-1.link-2 {
 	background: transparent;
@@ -19004,8 +19020,8 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 	font-family: "Oswald";
 }
 .tp-banner-container .font-play {
-	font-family: 'Quicksand', sans-serif;
-	font-weight: 700;
+	font-family: 'Futura Hv', sans-serif;
+	
 }
 .tp-banner-container .font-pop {
 	font-family: "Poppins";
@@ -19485,7 +19501,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 .newsletter-bottom form input {
 	text-align: left;
-	float: left;
+	float: left; margin-bottom:10px;
 }
 .newsletter-bottom form button {
 	position: relative;
@@ -20019,13 +20035,14 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 .accordion .panel-title a {
 	color: #c1b283;
-	font: 700 18px/25px "FuturaBT-Book";
+	font-family: 'Futura Hv', sans-serif;
+	font-size:16px; letter-spacing:1px;
 }
 #collapse-v2-Three {
-	padding-top: 30px;
+	padding-top: 0;
 }
 #collapse-v2-Three #customer h3 {
-	margin-bottom: 20px;
+	margin-bottom: 0;
 }
 .accordion .panel-default:last-child .panel-heading {
 	border: none;
@@ -21778,6 +21795,7 @@ h3.title-v5 {
 	text-align: center;
 	margin-bottom: 20px;
 }
+.margin-top-60{margin-top:10px;}
 .pad100 {
 	padding: 20px;
 } /*Mobile View*/

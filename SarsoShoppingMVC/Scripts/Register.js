@@ -23,7 +23,6 @@
         });
     });
 
-
     $("#RegistrationForm").on("submit", function () {
         $("#RegisterSubmit").attr("disabled", true);
         $("#UserNo").val(Uniqid());

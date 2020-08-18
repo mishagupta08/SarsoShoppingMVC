@@ -661,6 +661,13 @@
     <Content Include="Views\Account\SignIn.cshtml" />
     <Content Include="Views\Shared\_BrandLogo.cshtml" />
     <Content Include="Views\Home\StartYourBusiness.cshtml" />
+    <Content Include="Views\Home\Neeti.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\TermsAndConditions.cshtml" />
+    <Content Include="Views\Home\ReturnAProduct.cshtml" />
+    <Content Include="Views\Home\HoDoIPay.cshtml" />
+    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
