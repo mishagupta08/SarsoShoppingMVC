@@ -1,0 +1,315 @@
+﻿@using PagedList.Mvc;
+@model SarsoShoppingData.PagewiseProducts
+<div class="container-fluid container-fluid0">
+    <div class="tp-banner-container hidden-dot ver3">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/assets/images/pagebanner/category-banner.jpg" alt="Category Banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <!-- LAYER NR. 9 -->
+
+                    <div class="tp-caption color-white customin randomrotateout font-play tp-resizeme size-60"
+                         data-x="800"
+                         data-y="230"
+                         data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                         data-speed="500"
+                         data-start="2000"
+                         data-easing="Power4.easeOut"
+                         data-splitin="chars"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                         style="z-index: 3">Swadharma</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End container -->
+</div>
+<!-- End Banner Grid -->
+<div class="container space-padding-tb-50">
+    <div id="primary" class="col-xs-12 col-md-9">
+        <div class="wrap-breadcrumb">
+            <div class="ordering">
+                <div class="float-left">
+                    <span class="col active"></span>
+                    <span class="list"></span>
+                    <p class="result-count">Showing 1-12 of 30 results</p>
+                </div>
+                <div class="float-right">
+                    <form action="#" method="get" class="order-by">
+                        <p>Sort by :</p>
+                        <select class="orderby" name="orderby">
+                            <option>popularity</option>
+                            <option selected="selected">average rating</option>
+                            <option>newness</option>
+                            <option>price: low to high</option>
+                            <option>price: high to low</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="products ver2 grid_full grid_sidebar hover-shadow furniture">
+            @foreach (var product in Model.ProductList)
+            {
+                var imageName = product.PCode + ".png";
+                var quickViewName = "Quick_" + product.PCode;
+                <div class="item-inner">
+                    <div class="product">
+                        <div class="product-images"  style="min-height:100px;">
+                            <a href="#" title="product-images">
+                                <img class="primary_image" src="~/Image/SarsoBiz_up_fls/RProducts/@imageName" alt="imageName" />
+                            </a>
+                            <div class="action">
+                                <a class="zoom" href="#" title="Quick view"><i class="icon icon-magnifier-add" data-toggle="modal" data-target=".@quickViewName"></i></a>
+                                <a class="add-cart" href="#" title="Add to cart" onclick="AddProductInCart(@product.PCode, 1)"><i class="icon-bag"></i></a>
+                            </div>
+                        </div>
+                        <a href="#" title="Swadharma Product 1"><p class="product-title">@product.PName</p></a>
+                        <p class="product-price">Rs.@product.offprice</p>
+                        <p class="description"><span>@Html.Raw(product.Descr)</span></p>
+
+                        <div class="social box">
+                            <h3>Share this :</h3>
+                            <a class="twitter" href="#" title="social"><i class="fa fa-twitter-square"></i></a>
+                            <a class="dribbble" href="#" title="social"><i class="fa fa-dribbble"></i></a>
+                            <a class="skype" href="#" title="social"><i class="fa fa-skype"></i></a>
+                            <a class="pinterest" href="#" title="social"><i class="fa fa-pinterest"></i></a>
+                            <a class="facebook" href="#" title="social"><i class="fa fa-facebook-square"></i></a>
+                        </div>
+                    </div>                   
+                </div>
+
+            
+            }
+                </div>
+        <!-- End product-content products  -->
+        @*<div class="pagination-container">
+            <nav class="pagination">
+                <a class="prev page-numbers" href="#"><i class="fa fa-angle-left"></i></a>
+                <span class="page-numbers current">1</span>
+                <a class="page-numbers" href="#">2</a>
+                <a class="page-numbers" href="#">3</a>
+                <a class="next page-numbers" href="#"><i class="fa fa-angle-right"></i></a>
+            </nav>
+        </div>*@
+
+
+        <div class="pagination-container">
+            <center>
+                <span class="page-link">Page@(Model.pagerCount.PageCount < Model.pagerCount.PageNumber ? 0 : Model.pagerCount.PageNumber) of @Model.pagerCount.PageCount</span>
+
+                @Html.PagedListPager(Model.pagerCount, page => Url.Action("ProductList", "Home", new { Category = ViewBag.Category, Category1 = ViewBag.Category1, page }),
+
+    new PagedListRenderOptions
+    {
+        DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+        DisplayLinkToLastPage = PagedListDisplayMode.Never,
+        DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+        DisplayLinkToNextPage = PagedListDisplayMode.Always,
+        MaximumPageNumbersToDisplay = 3
+
+    })
+            </center>
+
+        </div>
+
+        <!-- End pagination-container -->
+    </div>
+    <!-- End Primary -->
+
+    <div id="secondary" class="widget-area col-xs-12 col-md-3">
+        <aside class="widget widget_product_categories">
+            <h3 class="widget-title">Categories</h3>
+            <ul class="product-categories">
+                <li>
+                    <a href="#" title="Personal Care">Personal Care</a>
+                    <ul class="children">
+                        <li><a href="#" title="Care 1">Care 1</a></li>
+                        <li><a href="#" title="Care 1">Care 1</a></li>
+                        <li><a href="#" title="Care 1">Care 1</a></li>
+                        <li><a href="#" title="Care 1">Care 1</a></li>
+                        <li><a href="#" title="Care 1">Care 1</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" title="Health Care">Health Care</a>
+                    <ul> 
+                        <li><a href="#" title="Care 1">Care 1</a></li>
+                                <li><a href="#" title="Care 1">Care 1</a></li>
+                                <li><a href="#" title="Care 1">Care 1</a></li>
+                                <li><a href="#" title="Care 1">Care 1</a></li>
+                                <li><a href="#" title="Care 1">Care 1</a></li>
+                            </ul>
+                </li>
+                <li><a href="#" title="Spirituality">Spirituality</a></li>
+                <li><a href="#" title="Combos">Combos</a></li>
+                <li><a href="#" title="All Product">All Product</a></li>
+            </ul>
+        </aside>
+
+        <aside class="widget widget_by_price">
+            <h3 class="widget-title">By Price</h3>
+            <div class="layout-slider">
+                <span><input id="Slider1" type="text" name="price" value="200;800" /></span>
+            </div>
+            <a class="link-v1 space-30" href="#" title="fillter">fillter</a>
+        </aside>
+
+        <aside class="widget widget_feature">
+            <h3 class="widget-title">Feature Products</h3>
+            <ul>
+                <li>
+                    <a class="images" href="#" title="images">
+                        <img class="img-responsive" src="~/assets/images/products/1.jpg" alt="images">
+                    </a>
+                    <div class="text">
+                        <h2>
+                            <a href="#" title="Butterfly Bar Stool">Swadharma Juice</a>
+                        </h2>
+                        <p><span>Rs.350</span></p>
+                    </div>
+                </li>
+                <li>
+                    <a class="images" href="#" title="images">
+                        <img class="img-responsive" src="~/assets/images/products/1.jpg" alt="images">
+                    </a>
+                    <div class="text">
+                        <h2>
+                            <a href="#" title="Butterfly Bar Stool">Swadharma Juice</a>
+                        </h2>
+                        <p><span>Rs.350</span></p>
+                    </div>
+                </li>
+                <li>
+                    <a class="images" href="#" title="images">
+                        <img class="img-responsive" src="~/assets/images/products/1.jpg" alt="images">
+                    </a>
+                    <div class="text">
+                        <h2>
+                            <a href="#" title="Butterfly Bar Stool">Swadharma Juice</a>
+                        </h2>
+                        <p><span>Rs.350</span></p>
+                    </div>
+                </li>
+
+            </ul>
+        </aside>
+    </div>
+    <!-- End Secondary -->
+</div>
+<!-- end product sidebar -->
+<div class="container-fluid0">
+    <div class="newsletter-bottom center">
+        <div class="items">
+            <img class="img-responsive" src="~/assets/images/newsletter-bottom.jpg" alt="Newsletter">
+            <div class="text">
+                <h3>Sign Up Special Promotions</h3>
+                <p>Get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                <form action="#" method="get" accept-charset="utf-8">
+                    <input type="text" onblur="if (this.value == '') {this.value = 'Enter your email...';}" onfocus="if(this.value != '') {this.value = '';}" value="Enter your email..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+                    <button class="button" title="Join" type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End newsletter -->
+<div class="container brand-logos space-30 space-padding-tb-100">
+    @{Html.RenderPartial("~/Views/Shared/_BrandLogo.cshtml");   }
+    </div>
+
+
+@foreach (var product in Model.ProductList)
+            {
+                var imageName = product.PCode + ".png";
+                var quickViewName = "Quick_" + product.PCode;
+
+
+                <div class="quickview-wrapper open @quickViewName" style="display:none;">
+                    <div onclick="hideQuickView()" class="overlay-bg"></div>
+                    <div class="quick-modal show">
+                        <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+                        <div id="quickview-content">
+                            <div class="woocommerce product product-details-content">
+                                <div class="product-images">
+                                    <div class="main-image images"><img id="images-select" alt="" src="~/Image/SarsoBiz_up_fls/RProducts/@imageName"></div>
+                                    <div class="quick-thumbnails">
+                                        <ul class="thumb-content">
+                                            <li class="thumb"><a href="~/Image/SarsoBiz_up_fls/RProducts/@imageName" title="thumb product view1" onclick="swap1(this);return false;"><img src="~/Image/SarsoBiz_up_fls/RProducts/@imageName" alt="thumb product1" /></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-info box-detalis-v2">
+                                    <div class="product-name">
+                                        <h1>@product.PName</h1>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="overflow-h">
+                                            <div class="icon-rating">
+                                                <input type="radio" checked="" name="star-horizontal-rating" id="star-horizontal-rating-1">
+                                                <label for="star-horizontal-rating-1"><i class="fa fa-star-half-o"></i></label>
+                                                <input type="radio" checked="" name="star-horizontal-rating" id="star-horizontal-rating-2">
+                                                <label for="star-horizontal-rating-2"><i class="fa fa-star"></i></label>
+                                                <input type="radio" checked="" name="star-horizontal-rating" id="star-horizontal-rating-3">
+                                                <label for="star-horizontal-rating-3"><i class="fa fa-star"></i></label>
+                                                <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-4">
+                                                <label for="star-horizontal-rating-4"><i class="fa fa-star"></i></label>
+                                                <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-5">
+                                                <label for="star-horizontal-rating-5"><i class="fa fa-star"></i></label>
+                                            </div>
+                                            <span>(4 reviews)</span>
+                                        </div>
+                                    </div>
+                                    <div class="wrap-price">
+                                        <p class="price">Rs.@product.offprice</p>
+                                    </div>
+                                    <div class="options padding-0">
+                                        <div style="height:100px;overflow-x:auto;margin-bottom:20px;">
+                                            <p>@product.Descr</p>
+                                        </div>
+                                        <div class="action">
+                                            <form enctype="multipart/form-data">
+                                                <div class="product-signle-options product_15 clearfix">
+                                                    <div class="selector-wrapper size">
+                                                        <div class="quantity">
+                                                            <span class="minus"><i class="fa fa-minus"></i></span>
+                                                            <input type="text" size="4" class="qty" title="Qty" value="1" data-step="1">
+                                                            <span class="plus"><i class="fa fa-plus"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <a href="#" title="Add to cart" class="link-ver1 rt add-cart"><span>Add to cart</span></a>
+                                        </div>
+                                        <div class="infomation">
+                                            <p class="sku"><span>Product Code: </span>@product.PCode</p>
+                                            <p class="category"><span>Category: </span> @product.Category > @product.SubCategory > @product.SubCategoryone</p>
+                                            <p class="tags"><span>Tags: </span>@product.Category , @product.SubCategory , @product.SubCategoryone</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End product-info -->
+                            </div>
+                            <!-- End product -->
+                        </div>
+                        <!-- End quick view -->
+                    </div>
+                    <!-- End quick modal -->
+                </div>
+}
+
+<script type="text/javascript" src="~/assets/js/price-range.js"></script>
+<script type="text/javascript">
+      jQuery("#Slider1").slider({
+        from: 0,
+        to: 1000,
+        step: 100,
+        smooth: true,
+        round: 0,
+        skin: "plastic"
+        });
+</script>
+<script type="text/javascript" src="~/Scripts/cart.js?v=1"></script>

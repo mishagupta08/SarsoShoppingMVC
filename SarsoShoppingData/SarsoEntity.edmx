@@ -37085,6 +37085,9 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
           <Property Type="String" Name="Result" Nullable="true" MaxLength="200" />
           <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
         </ComplexType>
+        <ComplexType Name="Get" />
+        <ComplexType Name="Getrpcategories_SP_Result" />
+        <ComplexType Name="ComplexType1" />
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

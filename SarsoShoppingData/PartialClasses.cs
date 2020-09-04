@@ -16,4 +16,10 @@ namespace SarsoShoppingData
         public string cnfPassword { get; set; }
         public string UserNo { get; set; }
     }
+
+    public partial class repurchaseproduct
+    {
+        public Nullable<decimal> MRP { get; set; }
+        public int MostpopularCnt { get; set; }
+    }
 }

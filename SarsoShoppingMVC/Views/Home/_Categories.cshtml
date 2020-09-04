@@ -1,0 +1,23 @@
+﻿@model IEnumerable<string>
+<div class="sub-menu dropdown-menu">
+    <ul class="menu-level-1">
+        @*<li class="level2">
+            <a href="#">Swadharma</a>
+            <ul class="menu-level-2">
+                <li class="level3"><a href="#" title="Personal Care">Personal Care</a></li>
+                <li class="level3"><a href="#" title="Health Care">Health Care</a></li>
+                <li class="level3"><a href="#" title="Spirituality">Spirituality</a></li>
+                <li class="level3"><a href="#" title="Combos">Combos</a></li>
+            </ul>
+        </li>*@
+        <li class="level2">
+            <a href="#">SARSO</a>
+            <ul class="menu-level-2">
+                @foreach (var cat in Model)
+                {
+                    <li class="level3"><a href="~/Home/ProductList?Category=@cat&Category1=test" title="@cat">@cat</a></li>
+                }
+             </ul>
+        </li>
+    </ul>
+</div>

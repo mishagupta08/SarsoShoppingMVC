@@ -46,35 +46,15 @@
             <div class="header-top">
                 <div class="container-fluid0">
                     <p class="icon-menu-mobile"><i class="fa fa-bars"></i></p>
-                    <div class="logo"><a href="#" title="Sarso"> <img src="~/assets/images/logo.png" alt="Sarso"> </a></div>
+                    <div class="logo"><a href="~/Home/Index" title="Sarso"> <img src="~/assets/images/logo.png" alt="Sarso"> </a></div>
                     <div class="logo-mobile"><a href="#" title="Sarso"><img src="~/assets/images/logo-mobile.png" alt="Sarso"></a></div>
                     <nav class="mega-menu">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <ul class="nav navbar-nav" id="navbar">
                             <li class="level1 dropdown">
-                                <a href="#" title="Page">SHOP</a>
-                                <div class="sub-menu dropdown-menu">
-                                    <ul class="menu-level-1">
-                                        <li class="level2">
-                                            <a href="#">Swadharma</a>
-                                            <ul class="menu-level-2">
-                                                <li class="level3"><a href="#" title="Personal Care">Personal Care</a></li>
-                                                <li class="level3"><a href="#" title="Health Care">Health Care</a></li>
-                                                <li class="level3"><a href="#" title="Spirituality">Spirituality</a></li>
-                                                <li class="level3"><a href="#" title="Combos">Combos</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="level2">
-                                            <a href="#">SARSO</a>
-                                            <ul class="menu-level-2">
-                                                <li class="level3"><a href="#" title="Men">Men</a></li>
-                                                <li class="level3"><a href="#" title="Women">Women</a></li>
-                                                <li class="level3"><a href="#" title="Home Decor">Home Decor</a></li>
-                                                <li class="level3"><a href="#" title="Personal Care">Personal Care </a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a href="#" title="Page">SHOP</a>                              
+                                @{Html.RenderAction("GetCategories", "Home");}
+                                
                                 <!-- End Dropdow Menu -->
                             </li>
                             <li class="level1"><a href="~/Home/About" title="About us">About us</a> </li>
@@ -116,7 +96,7 @@
                             }
                             <li> <span class="search" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="icon"></i></span></li>
 
-                            <li> <span class="shopcart"><a href="#"><i class="icon"></i></a></span></li>
+                            <li> <span class="shopcart"><a href="#"><i class="icon"></i></a></span><span style="color:white;font-weight:bold;" id="cartCount">0</span></li>
                         </ul>
                     </div>
                 </div>
