@@ -125,15 +125,18 @@ namespace SarsoShoppingMVC.Controllers
 
                 dt = new DataTable();
                 dt = objSrepo.Call_Getrpcategories("SCProd_Attribute_Names", ProdID, "");
-
                 List<Prod_attributes> objProdAttr = ConvertDataTable<Prod_attributes>(dt);
                 objProduct.productAttr = objProdAttr.ToList();
 
                 dt = new DataTable();
                 dt = objSrepo.Call_Getrpcategories("SCProd_Attribute_Fileds", ProdID, "");
-
                 List<Prod_attributes_fields> objProdAttrFields = ConvertDataTable<Prod_attributes_fields>(dt);
                 objProduct.productAttrFields = objProdAttrFields.ToList();
+
+                dt = new DataTable();
+                dt = objSrepo.Call_Getrpcategories("SCProd_Product_images", ProdID, "");
+                List<ProductImage> objProdImage = ConvertDataTable<ProductImage>(dt);
+                objProduct.productImage = objProdImage.ToList();
             }
             catch (Exception ex)
             {

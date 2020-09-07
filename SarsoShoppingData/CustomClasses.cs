@@ -23,5 +23,8 @@ namespace SarsoShoppingData
         public repurchaseproduct product { get; set; }
         public List<Prod_attributes> productAttr { get; set; }
         public List<Prod_attributes_fields> productAttrFields { get; set; }
+        public List<ProductImage> productImage { get; set; }
     }
+
+   
 }
