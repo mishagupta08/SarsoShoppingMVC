@@ -20,6 +20,9 @@ namespace SarsoShoppingData
     public partial class repurchaseproduct
     {
         public Nullable<decimal> MRP { get; set; }
+        public string pcode { get; set; }
+        public string Pname { get; set; }
         public int MostpopularCnt { get; set; }
+
     }
 }

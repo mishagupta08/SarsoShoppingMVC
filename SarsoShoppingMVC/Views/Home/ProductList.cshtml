@@ -54,20 +54,20 @@
         <div class="products ver2 grid_full grid_sidebar hover-shadow furniture">
             @foreach (var product in Model.ProductList)
             {
-                var imageName = product.PCode + ".png";
-                var quickViewName = "Quick_" + product.PCode;
+                var imageName = product.pcode + ".png";
+                var quickViewName = "Quick_" + product.pcode;
                 <div class="item-inner">
                     <div class="product">
                         <div class="product-images"  style="min-height:100px;">
-                            <a href="#" title="product-images">
+                            <a href="~/Home/ProductDetail?ProdID=@product.pcode" title="product-images">
                                 <img class="primary_image" src="~/Image/SarsoBiz_up_fls/RProducts/@imageName" alt="imageName" />
                             </a>
                             <div class="action">
                                 <a class="zoom" href="#" title="Quick view"><i class="icon icon-magnifier-add" data-toggle="modal" data-target=".@quickViewName"></i></a>
-                                <a class="add-cart" href="#" title="Add to cart" onclick="AddProductInCart(@product.PCode, 1)"><i class="icon-bag"></i></a>
+                                <a class="add-cart" href="#" title="Add to cart" onclick="AddProductInCart(@product.pcode, 1)"><i class="icon-bag"></i></a>
                             </div>
                         </div>
-                        <a href="#" title="Swadharma Product 1"><p class="product-title">@product.PName</p></a>
+                        <a href="~/Home/ProductDetail?ProdID=@product.pcode" title="@product.Pname"><p class="product-title">@product.Pname</p></a>
                         <p class="product-price">Rs.@product.offprice</p>
                         <p class="description"><span>@Html.Raw(product.Descr)</span></p>
 
@@ -224,8 +224,8 @@
 
 @foreach (var product in Model.ProductList)
             {
-                var imageName = product.PCode + ".png";
-                var quickViewName = "Quick_" + product.PCode;
+                var imageName = product.pcode + ".png";
+                var quickViewName = "Quick_" + product.pcode;
 
 
                 <div class="quickview-wrapper open @quickViewName" style="display:none;">
@@ -244,7 +244,7 @@
                                 </div>
                                 <div class="product-info box-detalis-v2">
                                     <div class="product-name">
-                                        <h1>@product.PName</h1>
+                                        <h1>@product.Pname</h1>
                                     </div>
                                     <div class="rating">
                                         <div class="overflow-h">
@@ -285,7 +285,7 @@
                                             <a href="#" title="Add to cart" class="link-ver1 rt add-cart"><span>Add to cart</span></a>
                                         </div>
                                         <div class="infomation">
-                                            <p class="sku"><span>Product Code: </span>@product.PCode</p>
+                                            <p class="sku"><span>Product Code: </span>@product.pcode</p>
                                             <p class="category"><span>Category: </span> @product.Category > @product.SubCategory > @product.SubCategoryone</p>
                                             <p class="tags"><span>Tags: </span>@product.Category , @product.SubCategory , @product.SubCategoryone</p>
                                         </div>

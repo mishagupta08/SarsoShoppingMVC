@@ -12,7 +12,7 @@ namespace SarsoShoppingMVC.Controllers
         // GET: Shop
         public ActionResult AddProductInToCart(String ProductCode,int Qty)
         {
-            int count = 0;
+            int? count = 0;
             try
             {
                 using (var entities = new sarsobizEntities())

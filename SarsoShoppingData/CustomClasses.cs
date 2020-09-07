@@ -17,4 +17,11 @@ namespace SarsoShoppingData
         public string SearchString { get; set; }
 
     }
+
+    public class ProductDetails
+    {
+        public repurchaseproduct product { get; set; }
+        public List<Prod_attributes> productAttr { get; set; }
+        public List<Prod_attributes_fields> productAttrFields { get; set; }
+    }
 }

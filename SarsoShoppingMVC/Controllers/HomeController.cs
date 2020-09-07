@@ -1,14 +1,12 @@
 ﻿using PagedList;
 using SarsoShoppingData;
+using SarsoShoppingMVC.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SarsoShoppingMVC.Controllers
@@ -57,27 +55,13 @@ namespace SarsoShoppingMVC.Controllers
             return PartialView("_Categories", catList);
         }
 
-        public ActionResult ProductList(string Category, string Category1,int? page)
-         {
+        public ActionResult ProductList(string Category, string Category1, int? page)
+        {
             DataTable dt = new DataTable();
             PagewiseProducts FinalList = new PagewiseProducts();
-            string constr = ConfigurationManager.ConnectionStrings["sarsobizServices"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("Getrpcategories_SP"))
-                {
-                    cmd.Parameters.Add("@action", SqlDbType.VarChar).Value = "CatogoryProducts";                     
-                    cmd.Parameters.Add("@category", SqlDbType.VarChar).Value = Category;
-                    cmd.Parameters.Add("@category1", SqlDbType.VarChar).Value = "";
+            ShopRepository objSrepo = new ShopRepository();
 
-                    cmd.Connection = con;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {                        
-                        sda.Fill(dt);
-                    }
-                }
-            }
+            dt = objSrepo.Call_Getrpcategories("CatogoryProducts", Category, "");
 
             List<repurchaseproduct> productList = new List<repurchaseproduct>();
             productList = ConvertDataTable<repurchaseproduct>(dt);
@@ -88,10 +72,13 @@ namespace SarsoShoppingMVC.Controllers
             {
                 totalcount = productList.Count;
                 productList = (productList.Skip(((page ?? 1) - 1) * NoOfRecord).Take(NoOfRecord)).ToList();
-                productList = productList.Select(r=>new repurchaseproduct {
-                    Descr = !string.IsNullOrEmpty(r.Descr) ?Regex.Replace(r.Descr, @"<[^>]+>|&nbsp;", "").Trim() : "",
+                productList = productList.Select(r => new repurchaseproduct
+                {
+                    Descr = !string.IsNullOrEmpty(r.Descr) ? Regex.Replace(r.Descr, @"<[^>]+>|&nbsp;", "").Trim() : "",
                     PCode = r.PCode,
                     PName = r.PName,
+                    pcode = r.pcode,
+                    Pname = r.Pname,
                     offprice = r.offprice,
                     Category = r.Category,
                     SubCategory = r.SubCategory,
@@ -111,9 +98,72 @@ namespace SarsoShoppingMVC.Controllers
             ViewBag.Category1 = Category1;
 
             return View("ProductList", FinalList);
-        }                                                                                                           
+        }
+
+        public ActionResult ProductDetail(string ProdID)
+        {
+            ProductDetails objProduct = new ProductDetails();
+            ShopRepository objSrepo = new ShopRepository();
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = objSrepo.Call_Getrpcategories("SC1Product", ProdID, "");
+
+                List<repurchaseproduct> objpList = ConvertDataTable<repurchaseproduct>(dt);
+                objProduct.product = objpList.Select(r => new repurchaseproduct
+                {
+                    Descr = !string.IsNullOrEmpty(r.Descr) ? Regex.Replace(r.Descr, @"<[^>]+>|&nbsp;", "").Trim() : "",
+                    PCode = r.PCode,
+                    PName = r.PName,
+                    pcode = r.pcode,
+                    Pname = r.Pname,
+                    offprice = r.offprice,
+                    Category = r.Category,
+                    SubCategory = r.SubCategory,
+                    SubCategoryone = r.SubCategoryone
+                }).FirstOrDefault();
+
+                dt = new DataTable();
+                dt = objSrepo.Call_Getrpcategories("SCProd_Attribute_Names", ProdID, "");
+
+                List<Prod_attributes> objProdAttr = ConvertDataTable<Prod_attributes>(dt);
+                objProduct.productAttr = objProdAttr.ToList();
+
+                dt = new DataTable();
+                dt = objSrepo.Call_Getrpcategories("SCProd_Attribute_Fileds", ProdID, "");
+
+                List<Prod_attributes_fields> objProdAttrFields = ConvertDataTable<Prod_attributes_fields>(dt);
+                objProduct.productAttrFields = objProdAttrFields.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            return View(objProduct);
+        }
 
         public ActionResult Neeti()
+        {
+            return View();
+        }
+
+        public ActionResult Swadharma()
+        {
+            return View();
+        }
+
+        public ActionResult SwadharmaStory()
+        {
+            return View();
+        }
+
+        public ActionResult Tamra()
+        {
+            return View();
+        }
+
+        public ActionResult Sootram()
         {
             return View();
         }
@@ -147,7 +197,6 @@ namespace SarsoShoppingMVC.Controllers
         {
             return View();
         }
-
 
         private static List<T> ConvertDataTable<T>(DataTable dt)
         {
