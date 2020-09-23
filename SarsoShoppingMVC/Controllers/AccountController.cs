@@ -111,7 +111,9 @@ namespace SarsoShoppingMVC.Controllers
                     if (LoginCheck.Result != null && LoginCheck.Result == "success")
                     {
                         objResponse.Message = "success";
+                        objResponse.Regid = LoginCheck.Mid??0;
                         Session["LoginUserId"] = LoginCheck.Mid;
+                        Session["LoginRegId"] = LoginCheck.Mid;
                         Session["LoginUserName"] = LoginCheck.Name;
                         FormsAuthentication.SetAuthCookie(LoginCheck.Name, false);
                     }

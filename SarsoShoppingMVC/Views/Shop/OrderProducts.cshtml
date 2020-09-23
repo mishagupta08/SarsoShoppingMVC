@@ -1,0 +1,34 @@
+﻿@model SarsoShoppingData.CartDetails
+<div class="product-name">
+    <ul>
+        <li class="head">
+            <span class="name">PRODUCTS NAME</span>
+            <span class="qty">QTY</span>
+            <span class="total">SUB TOTAL</span>
+        </li>
+@foreach (var prod in Model.CartProducts)
+{
+        <li>
+            <span class="name">@prod.Pname</span>
+            <span class="qty">@prod.qty</span>
+            <span class="total">Rs.@prod.price</span>
+        </li>
+}
+    </ul>
+</div>
+<!-- End product-name -->
+<ul class="product-order">
+    <li>
+        <span class="left">CART SUBTOTAL</span>
+        <span class="right" >Rs.@Model.TotalPrice</span>
+        <input type="hidden" id="inputamt" value="@Model.TotalPrice" />
+    </li>
+    <li>
+        <span class="left">SHIPPING &amp; HANDLING</span>
+        <span class="right">Free Shipping</span>
+    </li>
+    <li>
+        <span class="left">ORDER TOTAL</span>
+        <span class="right brand">Rs.@Model.TotalPrice</span>
+    </li>
+</ul>

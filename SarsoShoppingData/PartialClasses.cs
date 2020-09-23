@@ -23,6 +23,7 @@ namespace SarsoShoppingData
         public string pcode { get; set; }
         public string Pname { get; set; }
         public int MostpopularCnt { get; set; }
+        public int qty { get; set; }
 
     }
 }

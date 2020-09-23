@@ -1,0 +1,79 @@
+﻿@model SarsoShoppingData.CartDetails
+<table class="table cart-table space-80">
+    <thead>
+        <tr>
+            <th class="product-photo">PRODUCT</th>
+            <th class="produc-name"></th>
+            <th class="produc-price">PRICE</th>
+            <th class="product-quantity">QTY</th>
+            <th class="total-price">TOTAL</th>
+            <th class="product-remove"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var prod in Model.CartProducts)
+        {
+            var imageName = prod.pcode + ".png";
+
+            <tr class="item_cart">
+                <td class="product-photo"><img src="~/Image/SarsoBiz_up_fls/RProducts/@imageName" alt="Futurelife"></td>
+                <td class="produc-name"><a href="#" title="">@prod.Pname</a></td>
+                <td class="produc-price"><input value="@prod.price" size="4" type="text"></td>
+                <td class="product-quantity">
+                    <form enctype="multipart/form-data">
+                        <div class="product-signle-options product_15 clearfix">
+                            <div class="selector-wrapper size">
+                                <div class="quantity">
+                                    <input data-step="1" title="Qty" class="qty" size="4" type="text" value="@prod.qty">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </td>
+                <td class="total-price"></td>
+                <td class="product-remove"><a class="remove" href="#" title="close"><img src="~/assets/images/icon-delete-cart.png" alt="close"></a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="box space-30">
+    <div class="float-right">
+        <a class="link-v1 lh-50 space-20" href="#" title="UPDATE SHOPPING CART">UPDATE SHOPPING CART</a> <a class="link-v1 lh-50" href="#" title="UPDATE SHOPPING CART" style="background:#fff; color:#373737;
+                              border:1px solid #373737;">CONTINUE SHOPPING</a>
+    </div>
+    <!-- End float-right -->
+</div>
+<!-- End box -->
+<div class="box cart-total space-30">
+    <div class="row">
+        <div class="col-md-4 space-30"> </div>
+        <div class="col-md-3 space-30"> </div>
+        <!-- End col-md-4 -->
+        <div class="col-md-5 space-30">
+            <div class="item">
+                @{ 
+                    var showCGST = Model.CGST ? "display:block" : "display:none";
+                    var showSGST = Model.SGST ? "display:block" : "display:none";
+                    var showIGST = Model.IGST ? "display:block" : "display:none";
+                }
+
+                <p class="box"><span class="float-left">TOTAL</span><span class="float-right">Rs. @Model.TotalPrice</span></p>
+                <p class="box"><span class="float-left">TOTAL CV</span><span class="float-right">Rs. @Model.TotalCV</span></p>
+                <p class="box" style="@showCGST"><span class="float-left">CGST TaxAmount</span><span class="float-right">Rs. @Model.CGSTTax</span></p>
+                <p class="box" style="@showSGST"><span class="float-left">SGST TaxAmount</span><span class="float-right">Rs. @Model.SGSTTax</span></p>
+                <p class="box" style="@showIGST"><span class="float-left">ICGST TaxAmount</span><span class="float-right">Rs. @Model.IGSTTaxAmt</span></p>
+                <p class="box space-30"><span class="float-left">SUBTOTAL</span><span class="float-right total">Rs.@Model.TotalPrice</span></p>
+                <p class="box">
+                    <span class="float-left">
+                        <input name="" type="checkbox" value="" style="margin-right:10px;">
+                        I agree with the terms of service and I adhere to theme unconditionally
+                    </span>
+                </p>
+                <a class="link-v1 lh-50 rt" href="~/Shop/ShippingAddress" title="PROCEED TO CHECKOUT">PROCEED TO CHECKOUT</a>
+            </div>
+        </div>
+        <!-- End col-md-4 -->
+    </div>
+</div>
+

@@ -1,0 +1,135 @@
+﻿@model SarsoShoppingData.MemberDetailes_Sp_Result
+<div class="container-fluid container-fluid0">
+    <div class="tp-banner-container hidden-dot ver3">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/assets/images/pagebanner/category-banner.jpg" alt="Category Banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <!-- LAYER NR. 9 -->
+
+                    <div class="tp-caption color-white customin randomrotateout font-play tp-resizeme size-60"
+                         data-x="800"
+                         data-y="230"
+                         data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                         data-speed="500"
+                         data-start="2000"
+                         data-easing="Power4.easeOut"
+                         data-splitin="chars"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                         style="z-index: 3">CHECKOUT</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End container -->
+</div>
+<!-- End Banner Grid -->
+<div class="main-content">
+
+    <div class="container container-ver2 space-padding-tb-30">
+        
+    </div>
+    <!-- End container -->
+    <div class="cart-box-container check-out">
+        <div class="container container-ver2">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="title-brand">BILLING ADDRESS</h3>
+                    <form class="form-horizontal">
+                        <div class="form-group col-md-6">
+                            <label for="inputfname" class="control-label">First Name <span class="color">*</span></label>
+                            <input type="text" value="@Model.fname" placeholder="Enter your first name..." id="inputfname" required="required" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputlname" class="control-label">Last Name <span class="color">*</span></label>
+                            <input type="text" value="@Model.lname" placeholder="Enter your last name..." id="inputlname"  required="required" class="form-control">
+                        </div>
+                                                
+                        <div class="form-group col-md-12">
+                            <label for="inputphone" class="control-label">Mobile<span class="color">*</span></label>
+                            <input type="text" value="@Model.Mobile" placeholder="Enter your phone..." id="inputphone"  required="required" class="form-control">
+                        </div>
+                                                
+                        <div class="form-group col-md-12">
+                            <label for="inputstreet" class="control-label">Adress<span class="color">*</span></label>
+                            <input type="text" placeholder="Enter your street address..." id="inputaddress"  required="required" class="form-control space-20">                            
+                        </div>
+
+                        
+
+                        <div class="form-group col-md-6">
+                            <label for="inputcountry" class="control-label">Town/City<span class="color">*</span></label>
+                            <input type="text" placeholder="Enter your city..." id="inputcity" required="required" class="form-control space-20">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputstreet" class="control-label">District<span class="color">*</span></label>
+                            <input type="text" placeholder="Enter your District..." id="inputdistrict" required="required" class="form-control space-20">
+                        </div>
+
+                        <div>
+                            <div class="form-group col-md-6">
+                                <label for="inputfState" class="control-label">State <span class="color">*</span></label>
+
+                                <select id="inputstate" class="form-control" required="required">
+                                    @foreach (var state in ViewBag.StateList)
+                                    {
+
+                                        <option value="@state.StateName">@state.StateName</option>
+                                    }
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-md-6">
+                                <label for="inputpostcode" class="control-label">POSTCODE <span class="color">*</span></label>
+                                <input type="text" value="@Model.Pin" required="required" placeholder="Enter your postcode..." id="inputpostcode" class="form-control">
+                            </div>
+                        </div>
+                        @*<span class="form-check space-20">Ship to a different address?</span>*@
+                    </form>
+
+
+                </div>
+                <!-- End col-md-8 -->
+                <div class="col-md-6 space-30">
+                    <div class="box">
+                        <h3 class="title-brand">YOUR ORDER</h3>
+                        <div class="info-order" id="OrderInfo">
+                          
+                        </div>
+                        <!-- End info-order -->
+                        <div class="payment-order box float-left">
+                            <ul class="tabs">
+                                <li>
+                                    <input type="radio" checked="checked" name="mop" value="PaytmOnLine"> Paytm
+                                </li>                               
+                            </ul>
+                        </div>
+                        <a class="link-v1 box lh-50 rt full" href="#" onclick="CheckOut()" title="PLACE ORDER">PLACE ORDER</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End row -->
+        </div>
+        <!-- End container -->
+    </div>
+    <!-- End cat-box-container -->
+</div>
+
+<!-- End newsletter -->
+<div class="container brand-logos space-30 space-padding-tb-100">
+    @{Html.RenderPartial("~/Views/Shared/_BrandLogo.cshtml");   }
+</div>
+
+<script src="~/Scripts/Cart.js?v=1"></script>
+
+
+<script>
+    $(document).ready(function () {
+        GetOrderProducts();
+    });
+</script>

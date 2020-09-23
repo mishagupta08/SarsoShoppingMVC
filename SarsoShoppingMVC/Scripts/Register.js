@@ -76,6 +76,9 @@
                 $("#LoginSubmit").attr("disabled", false);
                
                 if (objResponse != null && objResponse.Message == "success") {
+                    if (isUndefinedOrNull(window.sessionStorage.getItem("ScRegid")) == '') {
+                        window.sessionStorage.setItem("ScRegid", objResponse.Regid);
+                    }
                     window.location.href = "/Home/Index";
                 }
 				else{
@@ -109,12 +112,3 @@
    
 });
 
-function Uniqid() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for (var i = 0; i < 20; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
-}

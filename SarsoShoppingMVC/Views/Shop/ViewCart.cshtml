@@ -1,0 +1,92 @@
+﻿<div class="container-fluid container-fluid0">
+    <div class="tp-banner-container hidden-dot ver3">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/assets/images/pagebanner/category-banner.jpg" alt="Category Banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <!-- LAYER NR. 9 -->
+
+                    <div class="tp-caption color-white customin randomrotateout font-play tp-resizeme size-60"
+                         data-x="780"
+                         data-y="230"
+                         data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                         data-speed="500"
+                         data-start="2000"
+                         data-easing="Power4.easeOut"
+                         data-splitin="chars"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                         style="z-index: 3">MY CART</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End container -->
+</div>
+<!-- End Banner Grid -->
+<div class="main-content">
+    <div class="cart-box-container">
+
+    </div>
+</div>
+<div class="container quickshop">
+    <div class="col-md-11 float-none center-block pad40">
+        <h3 class="title-v2">Quick Shop</h3>
+        <p>Single or Group Order, QUICK SHOP lets you order products fast and quick. Get Started!! </p>
+        <div class="wrap-form space-30 space-padding-tb-10">
+            <div class="col-md-6 padding-left-0">
+                <input type="text" placeholder="Add products by name or item number" id="inputfname" class="form-control space-padding-tb-10">
+            </div>
+            <div class="col-md-2">
+                <div class="box text-left space-padding-tb-10"> <a class="link-v5 lh-20" href="#" title="Add More" data-toggle="modal" data-target=".open"><i class="fa fa-plus" style="color:#666"></i> <span style="color:#666;">ADD MORE</span></a> </div>
+
+            </div>
+            <div class="col-md-4"><div class="box text-left"> <a class="link-v1 lh-20" href="#" title="Add to cart">Add to cart</a> </div></div>
+        </div>
+    </div>
+</div>
+<div class="container container-ver2">
+    <div class="box cart-container">
+         <span id="cartProducts">
+                
+         </span> 
+        
+        <!-- End box -->
+        
+        <!-- End box -->
+    </div>
+    <!-- End container -->
+</div>
+<!-- End cat-box-container -->
+
+<!-- end product sidebar -->
+<div class="container-fluid0">
+    <div class="newsletter-bottom center">
+        <div class="items">
+            <img class="img-responsive" src="~/assets/images/newsletter-bottom.jpg" alt="Newsletter">
+            <div class="text">
+                <h3>Sign Up Special Promotions</h3>
+                <p>Get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                <form action="#" method="get" accept-charset="utf-8">
+                    <input type="text" onblur="if (this.value == '') {this.value = 'Enter your email...';}" onfocus="if(this.value != '') {this.value = '';}" value="Enter your email..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+                    <button class="button" title="Join" type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End newsletter -->
+<div class="container brand-logos space-30 space-padding-tb-100">
+    @{Html.RenderPartial("~/Views/Shared/_BrandLogo.cshtml");   }
+    </div>
+
+<script src="~/Scripts/Cart.js?v=1"></script>
+
+
+<script>
+    $(document).ready(function () {
+        GetCartProducts();
+    });
+</script>
