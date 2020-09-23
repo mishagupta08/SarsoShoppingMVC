@@ -10,11 +10,11 @@ using System.Web.Mvc;
 
 namespace SarsoShoppingMVC.Controllers
 {
-    
+
     public class ShopController : Controller
     {
         public ShopRepository objSRepo = null;
-        public ActionResult AddProductInToCart(String ProductCode,int Qty,string ItemCode, string UniqId)
+        public ActionResult AddProductInToCart(String ProductCode, int Qty, string ItemCode, string UniqId)
         {
             int? count = 0;
             string Message = string.Empty;
@@ -22,10 +22,10 @@ namespace SarsoShoppingMVC.Controllers
             {
                 using (var entities = new sarsobizEntities())
                 {
-                   var Result = entities.TempCart_SP("Add", UniqId, ProductCode, ItemCode, "", Qty).ToList();
-                    if (Result!=null)
+                    var Result = entities.TempCart_SP("Add", UniqId, ProductCode, ItemCode, "", Qty).ToList();
+                    if (Result != null)
                     {
-                         count = Result.Select(r=>r.qty).Sum();
+                        count = Result.Select(r => r.qty).Sum();
                         Message = Result.FirstOrDefault().result + "-" + count;
                     }
 
@@ -40,7 +40,7 @@ namespace SarsoShoppingMVC.Controllers
 
         public ActionResult GetItemCode(String ProductCode, string Fields)
         {
-           string itemCode = "";
+            string itemCode = "";
             try
             {
                 using (var entities = new sarsobizEntities())
@@ -50,7 +50,7 @@ namespace SarsoShoppingMVC.Controllers
                         Fields = "";
                     }
 
-                    itemCode = entities.GetItemCodesFromAttributes_Sp(ProductCode,Fields).FirstOrDefault();                    
+                    itemCode = entities.GetItemCodesFromAttributes_Sp(ProductCode, Fields).FirstOrDefault();
                 }
             }
             catch (Exception ex)
@@ -66,8 +66,14 @@ namespace SarsoShoppingMVC.Controllers
             objSRepo = new ShopRepository();
             try
             {
-                var regId = Convert.ToString(Session["LoginRegId"]);                
-                MemDetail = objSRepo.GetMemberDetail(regId);
+                var regId = Convert.ToString(Session["LoginRegId"]);
+                var dt = objSRepo.GetMemberDetail(regId);
+                var MemDetailList = ConvertDataTable<MemberDetailes_Sp_Result>(dt);
+                
+                if (MemDetailList != null && MemDetailList.Count > 0)
+                {
+                    MemDetail = MemDetailList.FirstOrDefault();
+                }
             }
             catch (Exception ex)
             {
@@ -87,21 +93,22 @@ namespace SarsoShoppingMVC.Controllers
             string IsLoggedIn = string.Empty;
             IsLoggedIn = "No";
 
-            if(Session["LoginUserName"] != null)
-               IsLoggedIn = "Yes";            
+            if (Session["LoginUserName"] != null)
+                IsLoggedIn = "Yes";
 
-            return Json(IsLoggedIn,JsonRequestBehavior.AllowGet);
+            return Json(IsLoggedIn, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult CartProducts(string Actiontype,string UNQId,string ScRegid)
+        public ActionResult CartProducts(string Actiontype, string UNQId, string ScRegid)
         {
             objSRepo = new ShopRepository();
             var regId = Convert.ToString(Session["LoginRegId"]);
             CartDetails cartDetail = new CartDetails();
-            try {
+            try
+            {
                 var dt = objSRepo.TempCart(Actiontype, UNQId, "", "", regId, "0");
                 var cartProducts = ConvertDataTable<TempCart_SP_Result>(dt);
-                cartDetail =  CalculateTotals(cartProducts);         
+                cartDetail = CalculateTotals(cartProducts);
             }
             catch (Exception ex)
             {
@@ -132,13 +139,23 @@ namespace SarsoShoppingMVC.Controllers
             CartDetails cartDetail = new CartDetails();
             try
             {
-                cartDetail.TotalPrice = cartProduct.Select(item => item.price * item.qty).Sum()??0;
+                cartDetail.TotalPrice = cartProduct.Select(item => item.price * item.qty).Sum() ?? 0;
                 cartDetail.TotalCV = cartProduct.Select(item => item.pv * item.qty).Sum() ?? 0;
                 cartDetail.TotalDP = cartProduct.Select(item => item.DP * item.qty).Sum() ?? 0;
                 cartDetail.TotalQty = cartProduct.Select(item => item.qty).Sum() ?? 0;
                 cartDetail.CartProducts = cartProduct;
                 var regId = Convert.ToString(Session["LoginRegId"]);
-                var MemDetail = objSRepo.GetMemberDetail(regId);
+
+                //var MemDetail = objSRepo.GetMemberDetail(regId);
+                //-------
+                var dt = objSRepo.GetMemberDetail(regId);
+                var MemDetailList = ConvertDataTable<MemberDetailes_Sp_Result>(dt);
+                var MemDetail = new MemberDetailes_Sp_Result();
+                if (MemDetailList != null && MemDetailList.Count > 0)
+                {
+                    MemDetail = MemDetailList.FirstOrDefault();
+                }
+                //---------
 
                 if (MemDetail.state.ToUpper() == "HARYANA")
                 {
@@ -172,8 +189,8 @@ namespace SarsoShoppingMVC.Controllers
                     cartDetail.IGSTTaxAmt = cartProduct.Select(item => (item.price * item.qty) - (((item.price * item.qty) / (100 + (item.IGST))) * 100)).Sum() ?? 0;
                     cartDetail.TaxAmt = cartProduct.Select(item => (item.price * item.qty) - (((item.price * item.qty) / (100 + (item.IGST))) * 100)).Sum() ?? 0;
                 }
-                   
-                }
+
+            }
             catch (Exception ex)
             {
 
@@ -187,61 +204,74 @@ namespace SarsoShoppingMVC.Controllers
             objpay.regid = Convert.ToString(Session["LoginRegId"]);
             //var result = objTransacManager.CreditRequestOnlineInsert(objpay);
             Response.Redirect(@"~/SCPaymentGateway.aspx?Mobile=" + objpay.Mobile + "&UniQID=" + objpay.UniQID + "&shpcharge=" + objpay.shpcharge + "&ORDER_ID=" + objpay.ORDER_ID + "&regid=" + objpay.regid + "&scmemtype=" + objpay.scmemtype + "&amount=" + objpay.amount + "&coupon=" + objpay.coupon + "&email=" + objpay.email);
-            return new EmptyResult();            
+            return new EmptyResult();
         }
 
         [HttpPost]
         public ActionResult PlaceOrder(string UNQId, string regid, string downlineid, string mop, string mopamt, string Fname, string LName, string Mobile, string Address, string City, string District, string state, string PiCode)
         {
             int OrderNo = 0;
-            try {
+            try
+            {
                 objSRepo = new ShopRepository();
                 regid = Convert.ToString(Session["LoginRegId"]);
                 OrderNo = objSRepo.TempOrder(UNQId, regid, "0", mop, mopamt, Fname, LName, Mobile, Address, City, District, state, PiCode);
             }
-            catch (Exception Ex) {                
+            catch (Exception Ex)
+            {
                 throw Ex;
             }
-            return Json(OrderNo,JsonRequestBehavior.AllowGet);
+            return Json(OrderNo, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult ShippingAddress()
         {
             objSRepo = new ShopRepository();
             var regId = Convert.ToString(Session["LoginRegId"]);
-            var MemDetail = objSRepo.GetMemberDetail(regId);
+            //            var MemDetail = objSRepo.GetMemberDetail(regId);
+            //--------
+            var dt = objSRepo.GetMemberDetail(regId);
+            var MemDetailList = ConvertDataTable<MemberDetailes_Sp_Result>(dt);
+            var MemDetail = new MemberDetailes_Sp_Result();
+            if (MemDetailList != null && MemDetailList.Count > 0 )
+            {
+                MemDetail = MemDetailList.FirstOrDefault();
+            }            
+            
+            //----------
+
             var StateList = objSRepo.GetStates();
             ViewBag.StateList = StateList;
             return View(MemDetail);
         }
 
 
-    private static List<T> ConvertDataTable<T>(DataTable dt)
-    {
-        List<T> data = new List<T>();
-        foreach (DataRow row in dt.Rows)
+        private static List<T> ConvertDataTable<T>(DataTable dt)
         {
-            T item = GetItem<T>(row);
-            data.Add(item);
-        }
-        return data;
-    }
-    private static T GetItem<T>(DataRow dr)
-    {
-        Type temp = typeof(T);
-        T obj = Activator.CreateInstance<T>();
-
-        foreach (DataColumn column in dr.Table.Columns)
-        {
-            foreach (PropertyInfo pro in temp.GetProperties())
+            List<T> data = new List<T>();
+            foreach (DataRow row in dt.Rows)
             {
-                if (pro.Name == column.ColumnName)
-                    pro.SetValue(obj, dr[column.ColumnName], null);
-                else
-                    continue;
+                T item = GetItem<T>(row);
+                data.Add(item);
             }
+            return data;
         }
-        return obj;
+        private static T GetItem<T>(DataRow dr)
+        {
+            Type temp = typeof(T);
+            T obj = Activator.CreateInstance<T>();
+
+            foreach (DataColumn column in dr.Table.Columns)
+            {
+                foreach (PropertyInfo pro in temp.GetProperties())
+                {
+                    if (pro.Name == column.ColumnName)
+                        pro.SetValue(obj, dr[column.ColumnName], null);
+                    else
+                        continue;
+                }
+            }
+            return obj;
+        }
     }
-}
 }

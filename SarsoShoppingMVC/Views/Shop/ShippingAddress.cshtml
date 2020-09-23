@@ -56,23 +56,23 @@
                                                 
                         <div class="form-group col-md-12">
                             <label for="inputstreet" class="control-label">Adress<span class="color">*</span></label>
-                            <input type="text" placeholder="Enter your street address..." id="inputaddress"  required="required" class="form-control space-20">                            
+                            <input type="text" value="@{Model.Add1 + " " + @Model.Add2}" placeholder="Enter your street address..." id="inputaddress"  required="required" class="form-control space-20">                            
                         </div>
 
                         
 
                         <div class="form-group col-md-6">
                             <label for="inputcountry" class="control-label">Town/City<span class="color">*</span></label>
-                            <input type="text" placeholder="Enter your city..." id="inputcity" required="required" class="form-control space-20">
+                            <input type="text" placeholder="Enter your city..." value="@Model.City" id="inputcity" required="required" class="form-control space-20">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputstreet" class="control-label">District<span class="color">*</span></label>
-                            <input type="text" placeholder="Enter your District..." id="inputdistrict" required="required" class="form-control space-20">
+                            <input type="text" value="@Model.District" placeholder="Enter your District..." id="inputdistrict" required="required" class="form-control space-20">
                         </div>
 
                         <div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6">   
                                 <label for="inputfState" class="control-label">State <span class="color">*</span></label>
 
                                 <select id="inputstate" class="form-control" required="required">

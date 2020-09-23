@@ -40,7 +40,7 @@ namespace SarsoShoppingMVC.Models
                 throw Ex;
             }
             return dt;
-        }        
+        }
 
         public DataTable TempCart(string action, string UNQId, string Pcode, string ItemCode, string Attribute, string Qty)
         {
@@ -76,25 +76,33 @@ namespace SarsoShoppingMVC.Models
             return dt;
         }
 
-        public MemberDetailes_Sp_Result GetMemberDetail(string regId)
+        public DataTable GetMemberDetail(string regId)
         {
-            MemberDetailes_Sp_Result MemDetail = new MemberDetailes_Sp_Result();
+
+            DataTable dt = new DataTable();
             try
             {
-                using (var entities = new sarsobizEntities())
+                string constr = ConfigurationManager.ConnectionStrings["sarsobizServices"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(constr))
                 {
-                    if (!string.IsNullOrEmpty(regId))
+                    using (SqlCommand cmd = new SqlCommand("MemberDetailes_Sp"))
                     {
-                        decimal dregId = Convert.ToDecimal(regId);
-                        MemDetail = entities.MemberDetailes_Sp(dregId).FirstOrDefault();
+                        cmd.Parameters.Add("@regid", SqlDbType.VarChar).Value = regId;
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                        {
+                            sda.Fill(dt);
+                        }
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception Ex)
             {
-
+                throw Ex;
             }
-            return MemDetail;
+
+            return dt;
         }
 
         public List<GetStates_Sp_Result> GetStates()
@@ -104,7 +112,7 @@ namespace SarsoShoppingMVC.Models
             {
                 using (var entities = new sarsobizEntities())
                 {
-                    StateList = entities.GetStates_Sp(1).ToList();                    
+                    StateList = entities.GetStates_Sp(1).ToList();
                 }
             }
             catch (Exception ex)
@@ -115,7 +123,7 @@ namespace SarsoShoppingMVC.Models
         }
         public string GetCourier()
         {
-            string jsoNresult = string.Empty;            
+            string jsoNresult = string.Empty;
             try
             {
                 using (var entities = new sarsobizEntities())
@@ -135,7 +143,7 @@ namespace SarsoShoppingMVC.Models
             Int32 result;
             using (var entities = new sarsobizEntities())
             {
-                result = entities.TempOrder_SP(UNQId, Convert.ToInt32(regid), Convert.ToInt32(downlineid), mop, Convert.ToDecimal(mopamt), Fname, LName, Mobile, Address, City, District, state, PiCode).FirstOrDefault()??0;
+                result = entities.TempOrder_SP(UNQId, Convert.ToInt32(regid), Convert.ToInt32(downlineid), mop, Convert.ToDecimal(mopamt), Fname, LName, Mobile, Address, City, District, state, PiCode).FirstOrDefault() ?? 0;
             }
             return result;
         }
