@@ -171,6 +171,9 @@
     <Compile Include="ComplexType1.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="ComplexType2.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="CustomClasses.cs" />
     <Compile Include="Get.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
@@ -1380,6 +1383,9 @@
     <Compile Include="SCOnlinepaymentFailed_Sp_Result.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="SCOrderPG_SP_Result.cs">
+      <DependentUpon>SarsoEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="SearchMails_SP_Result.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
@@ -1787,7 +1793,6 @@
   <ItemGroup>
     <EntityDeploy Include="SarsoEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SarsoEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>

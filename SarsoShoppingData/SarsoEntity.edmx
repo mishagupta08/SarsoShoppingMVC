@@ -33549,15 +33549,6 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="Reqno" Mode="In" Type="String" />
             <Parameter Name="billno" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SCOrderPG_SP" ReturnType="Collection(Int32)">
-            <Parameter Name="UniqID" Mode="In" Type="String" />
-            <Parameter Name="regid" Mode="In" Type="Decimal" />
-            <Parameter Name="Ordertype" Mode="In" Type="String" />
-            <Parameter Name="shpchrg" Mode="In" Type="Decimal" />
-            <Parameter Name="sesid" Mode="In" Type="String" />
-            <Parameter Name="ipadd" Mode="In" Type="String" />
-            <Parameter Name="scmemtype" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SCOrderPGEBSpend_SP">
             <Parameter Name="UniqID" Mode="In" Type="String" />
             <Parameter Name="regid" Mode="In" Type="Decimal" />
@@ -34214,6 +34205,15 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
             <Parameter Name="action" Mode="In" Type="String" />
             <Parameter Name="idno" Mode="In" Type="String" />
             <Parameter Name="downto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SCOrderPG_SP" ReturnType="Collection(Int32)">
+            <Parameter Name="UniqID" Mode="In" Type="String" />
+            <Parameter Name="regid" Mode="In" Type="Decimal" />
+            <Parameter Name="Ordertype" Mode="In" Type="String" />
+            <Parameter Name="shpchrg" Mode="In" Type="Decimal" />
+            <Parameter Name="sesid" Mode="In" Type="String" />
+            <Parameter Name="ipadd" Mode="In" Type="String" />
+            <Parameter Name="scmemtype" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AddorDeductRpt_Sp_Result">
@@ -37088,6 +37088,12 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
         <ComplexType Name="Get" />
         <ComplexType Name="Getrpcategories_SP_Result" />
         <ComplexType Name="ComplexType1" />
+        <ComplexType Name="SCOrderPG_SP_Result" >
+          <Property Type="String" Name="res" Nullable="false" />
+          <Property Type="String" Name="billno" Nullable="false" />
+          <Property Type="String" Name="reqno" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ComplexType2" />
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -47989,7 +47995,6 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
           <FunctionImportMapping FunctionImportName="SCOrder_FCP_SP" FunctionName="sarsobizModel.Store.SCOrder_FCP_SP" />
           <FunctionImportMapping FunctionImportName="SCOrder_SP" FunctionName="sarsobizModel.Store.SCOrder_SP" />
           <FunctionImportMapping FunctionImportName="SCOrderInvoice_SP" FunctionName="sarsobizModel.Store.SCOrderInvoice_SP" />
-          <FunctionImportMapping FunctionImportName="SCOrderPG_SP" FunctionName="sarsobizModel.Store.SCOrderPG_SP" />
           <FunctionImportMapping FunctionImportName="SCOrderPGEBSpend_SP" FunctionName="sarsobizModel.Store.SCOrderPGEBSpend_SP" />
           <FunctionImportMapping FunctionImportName="SCOrderPGpend_SP" FunctionName="sarsobizModel.Store.SCOrderPGpend_SP" />
           <FunctionImportMapping FunctionImportName="SearchAllTables" FunctionName="sarsobizModel.Store.SearchAllTables" />
@@ -48914,6 +48919,7 @@ warning 6002: The table/view 'sarsobiz.dbo.vw_SSMPTabular_View' does not have a 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SCOrderPG_SP" FunctionName="sarsobizModel.Store.SCOrderPG_SP" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

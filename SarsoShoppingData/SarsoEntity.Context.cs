@@ -9714,39 +9714,6 @@ namespace SarsoShoppingData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SCOrderInvoice_SP", reqnoParameter, billnoParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> SCOrderPG_SP(string uniqID, Nullable<decimal> regid, string ordertype, Nullable<decimal> shpchrg, string sesid, string ipadd, string scmemtype)
-        {
-            var uniqIDParameter = uniqID != null ?
-                new ObjectParameter("UniqID", uniqID) :
-                new ObjectParameter("UniqID", typeof(string));
-    
-            var regidParameter = regid.HasValue ?
-                new ObjectParameter("regid", regid) :
-                new ObjectParameter("regid", typeof(decimal));
-    
-            var ordertypeParameter = ordertype != null ?
-                new ObjectParameter("Ordertype", ordertype) :
-                new ObjectParameter("Ordertype", typeof(string));
-    
-            var shpchrgParameter = shpchrg.HasValue ?
-                new ObjectParameter("shpchrg", shpchrg) :
-                new ObjectParameter("shpchrg", typeof(decimal));
-    
-            var sesidParameter = sesid != null ?
-                new ObjectParameter("sesid", sesid) :
-                new ObjectParameter("sesid", typeof(string));
-    
-            var ipaddParameter = ipadd != null ?
-                new ObjectParameter("ipadd", ipadd) :
-                new ObjectParameter("ipadd", typeof(string));
-    
-            var scmemtypeParameter = scmemtype != null ?
-                new ObjectParameter("scmemtype", scmemtype) :
-                new ObjectParameter("scmemtype", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SCOrderPG_SP", uniqIDParameter, regidParameter, ordertypeParameter, shpchrgParameter, sesidParameter, ipaddParameter, scmemtypeParameter);
-        }
-    
         public virtual int SCOrderPGEBSpend_SP(string uniqID, Nullable<decimal> regid, string ordertype, Nullable<decimal> shpchrg, string sesid, string ipadd, string scmemtype, ObjectParameter billnoout)
         {
             var uniqIDParameter = uniqID != null ?
@@ -12063,6 +12030,39 @@ namespace SarsoShoppingData
                 new ObjectParameter("downto", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_ValidateUser_Result>("SP_ValidateUser", actionParameter, idnoParameter, downtoParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> SCOrderPG_SP(string uniqID, Nullable<decimal> regid, string ordertype, Nullable<decimal> shpchrg, string sesid, string ipadd, string scmemtype)
+        {
+            var uniqIDParameter = uniqID != null ?
+                new ObjectParameter("UniqID", uniqID) :
+                new ObjectParameter("UniqID", typeof(string));
+    
+            var regidParameter = regid.HasValue ?
+                new ObjectParameter("regid", regid) :
+                new ObjectParameter("regid", typeof(decimal));
+    
+            var ordertypeParameter = ordertype != null ?
+                new ObjectParameter("Ordertype", ordertype) :
+                new ObjectParameter("Ordertype", typeof(string));
+    
+            var shpchrgParameter = shpchrg.HasValue ?
+                new ObjectParameter("shpchrg", shpchrg) :
+                new ObjectParameter("shpchrg", typeof(decimal));
+    
+            var sesidParameter = sesid != null ?
+                new ObjectParameter("sesid", sesid) :
+                new ObjectParameter("sesid", typeof(string));
+    
+            var ipaddParameter = ipadd != null ?
+                new ObjectParameter("ipadd", ipadd) :
+                new ObjectParameter("ipadd", typeof(string));
+    
+            var scmemtypeParameter = scmemtype != null ?
+                new ObjectParameter("scmemtype", scmemtype) :
+                new ObjectParameter("scmemtype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SCOrderPG_SP", uniqIDParameter, regidParameter, ordertypeParameter, shpchrgParameter, sesidParameter, ipaddParameter, scmemtypeParameter);
         }
     }
 }
