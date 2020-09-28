@@ -1,0 +1,45 @@
+﻿
+
+
+<script language="javascript">
+    $(document).ready(function () {
+        var reqno = window.sessionStorage.getItem("reqno");
+        var billno = window.sessionStorage.getItem("billno");
+
+        $.ajax({
+            url: '/Shop/GetInvoice',
+            type: 'GET',
+            async: false,
+            data: { reqno: reqno, billno: billno }
+        }).done(function (invoice) {
+            $("#div_print").html(invoice);
+        }).fail(function (error) {
+            alert(error.statusText);
+            $(".preloader").hide();
+        });
+    });
+
+    function printdiv(printpage) {
+        var headstr = "<html><head><title></title></head><body>";
+        var footstr = "</body>";
+        var newstr = document.all.item(printpage).innerHTML;
+        var oldstr = document.body.innerHTML;
+        document.body.innerHTML = headstr + newstr + footstr;
+        window.print();
+        document.body.innerHTML = oldstr;
+        return false;
+    }
+</script>
+
+<link href="~/assets/css/prd-cat-style.css" rel="stylesheet" />
+
+    <div class="container" id="div_print">
+     
+    </div>
+    <div class="container">
+        <div class="col-md-12 label-right">
+            <a onclick="printdiv('div_print');" style="cursor: pointer;"> Print </a>
+        </div>
+    </div>
+
+

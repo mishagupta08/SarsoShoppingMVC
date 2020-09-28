@@ -56,14 +56,17 @@
                     var showCGST = Model.CGST ? "display:block" : "display:none";
                     var showSGST = Model.SGST ? "display:block" : "display:none";
                     var showIGST = Model.IGST ? "display:block" : "display:none";
+                    var CGST = Model.CGST ? Model.CGSTTax.ToString("0.00") : "";
+                    var SGST = Model.SGST ? Model.SGSTTax.ToString("0.00") : "";
+                    var IGST = Model.IGST ? Model.IGSTTaxAmt.ToString("0.00") : "";
                 }
 
                 <p class="box"><span class="float-left">TOTAL</span><span class="float-right">Rs. @Model.TotalPrice</span></p>
                 <p class="box"><span class="float-left">TOTAL CV</span><span class="float-right">Rs. @Model.TotalCV</span></p>
-                <p class="box" style="@showCGST"><span class="float-left">CGST TaxAmount</span><span class="float-right">Rs. @Model.CGSTTax</span></p>
-                <p class="box" style="@showSGST"><span class="float-left">SGST TaxAmount</span><span class="float-right">Rs. @Model.SGSTTax</span></p>
-                <p class="box" style="@showIGST"><span class="float-left">ICGST TaxAmount</span><span class="float-right">Rs. @Model.IGSTTaxAmt</span></p>
-                <p class="box space-30"><span class="float-left">SUBTOTAL</span><span class="float-right total">Rs.@Model.TotalPrice</span></p>
+                <p class="box" style="@showCGST"><span class="float-left">CGST Tax AMOUNT</span><span class="float-right">Rs. @CGST</span></p>
+                <p class="box" style="@showSGST"><span class="float-left">SGST Tax AMOUNT</span><span class="float-right">Rs. @SGST</span></p>
+                <p class="box" style="@showIGST"><span class="float-left">ICGST Tax AMOUNT</span><span class="float-right">Rs. @IGST</span></p>
+                <p class="box space-30" style="MARGIN-TOP: 15PX;"><span class="float-left">SUBTOTAL</span><span class="float-right total">Rs.@Model.TotalPrice</span></p>
                 <p class="box">
                     <span class="float-left">
                         <input name="" type="checkbox" value="" style="margin-right:10px;">

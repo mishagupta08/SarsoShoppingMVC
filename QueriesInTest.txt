@@ -1,0 +1,20 @@
+ Alter Table rpcategories
+ Alter column SubCategoryTwo varchar(100)
+ 
+ 
+  Update [sarsobizdev].[dbo].[rpcategories]
+  set SubCategoryTwo = SubCategoryOne,
+  SubCategoryOne = SubCategory,
+  SubCategory = Category
+ 
+  Update [sarsobizdev].[dbo].[rpcategories]
+  set Category = 'Sarso'
+  where SubCategory = 'Men' or SubCategory = 'Women'
+ 
+  Update [sarsobizdev].[dbo].[rpcategories]
+  set Category = 'Swadharma'
+  where SubCategory = 'Health Care' or SubCategory = 'Personal Care'
+ 
+ Update [sarsobizdev].[dbo].[rpcategories]
+  set cstatus = 0
+  where Category not in ('Sarso','Swadharma')

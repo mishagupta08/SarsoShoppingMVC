@@ -1,0 +1,107 @@
+﻿@model SarsoShoppingData.ProductDetails
+
+@{var imageName = Model.product.pcode + ".png"; }
+
+
+@*<div class="quickview-wrapper open @quickViewName" style="display:none;">*@
+    <div onclick="hideQuickView()" class="overlay-bg"></div>
+    <div class="quick-modal show">
+        <span class="qvloading"></span><span class="closeqv"><i class="fa fa-times"></i></span>
+        <div id="quickview-content">
+            <div class="woocommerce product product-details-content">
+                <div class="product-images">
+                    <div class="main-image images"><img id="images-select" alt="" src="~/Image/SarsoBiz_up_fls/RProducts/@imageName"></div>
+                    <div class="quick-thumbnails">
+                        <ul class="thumb-content">
+                            <li class="thumb"><a href="~/Image/SarsoBiz_up_fls/RProducts/@imageName" title="thumb product view1" onclick="swap1(this);return false;"><img src="~/Image/SarsoBiz_up_fls/RProducts/@imageName" alt="thumb product1" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-info box-detalis-v2">
+                    <div class="product-name">
+                        <h1>@Model.product.Pname</h1>
+                    </div>
+                    <div class="rating">
+                        <div class="overflow-h">
+                            <div class="icon-rating">
+                                <input type="radio" checked="" name="star-horizontal-rating" id="star-horizontal-rating-1">
+                                <label for="star-horizontal-rating-1"><i class="fa fa-star-half-o"></i></label>
+                                <input type="radio" checked="" name="star-horizontal-rating" id="star-horizontal-rating-2">
+                                <label for="star-horizontal-rating-2"><i class="fa fa-star"></i></label>
+                                <input type="radio" checked="" name="star-horizontal-rating" id="star-horizontal-rating-3">
+                                <label for="star-horizontal-rating-3"><i class="fa fa-star"></i></label>
+                                <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-4">
+                                <label for="star-horizontal-rating-4"><i class="fa fa-star"></i></label>
+                                <input type="radio" name="star-horizontal-rating" id="star-horizontal-rating-5">
+                                <label for="star-horizontal-rating-5"><i class="fa fa-star"></i></label>
+                            </div>
+                            <span>(4 reviews)</span>
+                        </div>
+                    </div>
+                    <div class="wrap-price">
+                        <p class="price">Rs.@Model.product.offprice</p>
+                    </div>
+                    <div class="options padding-0">
+                        <div style="height:100px;overflow-x:auto;margin-bottom:20px;">
+                            <p>@Model.product.Descr</p>
+                        </div>
+                        <div class="action">
+                            <form enctype="multipart/form-data" name="ProductAddtoCart">
+                                <input type="hidden" name="ProductCode" value="@Model.product.pcode">
+                                @foreach (var attr in Model.productAttr)
+                                {
+                                    var fieldList = Model.productAttrFields.Where(r => r.Attribute_Name == attr.Attribute_Name).ToList();
+                                    <div class="box space-30">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="title">
+                                                    <h3>@attr.Attribute_Name</h3>
+                                                </div>
+
+                                                <select name="AttributeField" required="required">
+                                                    <option value="">@attr.Attribute_Name</option>
+                                                    @foreach (var field in fieldList)
+                                                    {
+                                                        <option value="@field.Field">@field.Field</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                <div class="box space-30">
+                                    <div class="action">
+
+                                        <div class="product-signle-options product_15 clearfix">
+                                            <div class="selector-wrapper size">
+                                                <div class="quantity">
+                                                    <span class="minus"><i class="fa fa-minus"></i></span>
+                                                    <input type="text" name="Quantity" size="4" class="qty" title="Qty" value="1" data-step="1">
+                                                    <span class="plus"><i class="fa fa-plus"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <a href="#" onclick="CheckLogin('QuickBuy')" title="Add to cart" class="link-v1 add-cart"><span>Add to cart</span></a>
+
+                                    </div>
+                                </div>
+                                <!-- End row -->
+                            </form>
+                        </div>
+                        @*<div class="infomation">
+                            <p class="sku"><span>Product Code: </span>@Model.product.pcode</p>
+                            <p class="category"><span>Category: </span> @Model.product.Category > @Model.product.SubCategory > @Model.product.SubCategoryone</p>
+                            <p class="tags"><span>Tags: </span>@Model.product.Category , @Model.product.SubCategory , @Model.product.SubCategoryone</p>
+                        </div>*@
+                    </div>
+                </div>
+                <!-- End product-info -->
+            </div>
+            <!-- End product -->
+        </div>
+        <!-- End quick view -->
+    </div>
+    <!-- End quick modal -->
+@*</div>*@

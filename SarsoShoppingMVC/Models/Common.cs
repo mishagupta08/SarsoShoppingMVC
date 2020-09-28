@@ -9,7 +9,7 @@ namespace SarsoShoppingMVC.Models
 {
     public class Common
     {
-        public static List<T> ConvertDataTable<T>(DataTable dt)
+        public List<T> ConvertDataTable<T>(DataTable dt)
         {
             List<T> data = new List<T>();
             foreach (DataRow row in dt.Rows)
@@ -19,7 +19,7 @@ namespace SarsoShoppingMVC.Models
             }
             return data;
         }
-        public static T GetItem<T>(DataRow dr)
+        public T GetItem<T>(DataRow dr)
         {
             Type temp = typeof(T);
             T obj = Activator.CreateInstance<T>();

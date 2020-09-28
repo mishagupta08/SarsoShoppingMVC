@@ -181,6 +181,7 @@
     <Compile Include="Getrpcategories_SP_Result.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Invoice.cs" />
     <Compile Include="PartialClasses.cs" />
     <Compile Include="ClickShare.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>

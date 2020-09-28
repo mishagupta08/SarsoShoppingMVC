@@ -1,4 +1,5 @@
 ﻿@model SarsoShoppingData.MemberDetailes_Sp_Result
+@{var address = Model.Add1 + " " + @Model.Add2;}
 <div class="container-fluid container-fluid0">
     <div class="tp-banner-container hidden-dot ver3">
         <div class="tp-banner">
@@ -56,7 +57,7 @@
                                                 
                         <div class="form-group col-md-12">
                             <label for="inputstreet" class="control-label">Adress<span class="color">*</span></label>
-                            <input type="text" value="@{Model.Add1 + " " + @Model.Add2}" placeholder="Enter your street address..." id="inputaddress"  required="required" class="form-control space-20">                            
+                            <input type="text" value="@address" placeholder="Enter your address..." id="inputaddress"  required="required" class="form-control space-20">                            
                         </div>
 
                         

@@ -226,9 +226,7 @@
   
     <script type="text/javascript">
          $(document).ready(function () {
-
              $('img').on('dragstart', function (event) { event.preventDefault(); });
-
              // wow js
              new WOW().init();
          });
@@ -245,13 +243,12 @@
     <script src="~/Scripts/Common.js"></script>
     <script type="text/javascript">
         $(document).on('ready', function () {
-
             if (isUndefinedOrNull(window.sessionStorage.getItem("SCUniqid")) == '') {
                 window.sessionStorage.setItem("SCUniqid", Uniqid());
             }
 
-            //alert(window.sessionStorage.getItem("SCUniqid"));
-
+            getCartCount();
+            
            $('.slider-for').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -302,6 +299,23 @@
           });        
 
         });
+
+        function getCartCount() {
+            var UniqId = window.sessionStorage.getItem("SCUniqid");
+
+            $.ajax({
+                url: '/Shop/getCartCount',
+                type: 'GET',
+                async: false,
+                data: { UniqId: UniqId }
+            }).done(function (count) {
+                $("#cartCount").html(count);
+            }).fail(function (error) {
+                alert(error.statusText);
+                $(".preloader").hide();
+            });
+            return false;
+        }
     </script>
 
     <div class="modal fade wow zoomIn" id="LoginPopUp" tabindex="-1" role="dialog" aria-hidden="true">

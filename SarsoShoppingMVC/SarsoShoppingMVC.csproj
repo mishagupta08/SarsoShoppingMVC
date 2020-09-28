@@ -211,6 +211,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="CreditResponse.aspx.cs">
+      <DependentUpon>CreditResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreditResponse.aspx.designer.cs">
+      <DependentUpon>CreditResponse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +247,7 @@
     <Content Include="assets\css\components\Layout\_footers.css" />
     <Content Include="assets\css\components\Layout\_loading.css" />
     <Content Include="assets\css\fonts.css" />
+    <Content Include="assets\css\prd-cat-style.css" />
     <Content Include="assets\css\slick-theme.css" />
     <Content Include="assets\css\slick.css" />
     <Content Include="assets\css\style.css" />
@@ -406,6 +414,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="CreditResponse.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -703,6 +712,9 @@
     <Content Include="Views\Shop\CartProducts.cshtml" />
     <Content Include="Views\Shop\ShippingAddress.cshtml" />
     <Content Include="Views\Shop\OrderProducts.cshtml" />
+    <Content Include="Views\Shop\QuickBuy.cshtml" />
+    <Content Include="Views\Shop\RepurchaseInvoice.cshtml" />
+    <Content Include="Views\Shop\_Invoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

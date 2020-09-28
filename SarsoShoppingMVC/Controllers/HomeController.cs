@@ -40,12 +40,12 @@ namespace SarsoShoppingMVC.Controllers
         [ChildActionOnly]
         public ActionResult GetCategories()
         {
-            List<string> catList = new List<string>();
+            List<rpcategory> catList = new List<rpcategory>();
             try
             {
                 using (var entities = new sarsobizEntities())
                 {
-                    catList = entities.rpcategories.Select(r => r.Category).Distinct().ToList();
+                    catList = entities.rpcategories.Where(r=>r.cstatus==true).ToList();
                 }
             }
             catch (Exception Ex)
@@ -56,12 +56,16 @@ namespace SarsoShoppingMVC.Controllers
         }
 
         public ActionResult ProductList(string Category, string Category1, int? page)
+
         {
             DataTable dt = new DataTable();
             PagewiseProducts FinalList = new PagewiseProducts();
             ShopRepository objSrepo = new ShopRepository();
 
-            dt = objSrepo.Call_Getrpcategories("CatogoryProducts", Category, "");
+            if(!String.IsNullOrEmpty(Category1))
+               dt = objSrepo.Call_Getrpcategories("SubCatogoryProducts", Category, Category1);
+            else
+               dt = objSrepo.Call_Getrpcategories("CatogoryProducts", Category, Category1);
 
             List<repurchaseproduct> productList = new List<repurchaseproduct>();
             productList = ConvertDataTable<repurchaseproduct>(dt);
@@ -101,6 +105,23 @@ namespace SarsoShoppingMVC.Controllers
         }
 
         public ActionResult ProductDetail(string ProdID)
+        {
+            ProductDetails objProduct = new ProductDetails();
+            try
+            {
+                 objProduct = GetProductInfo(ProdID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            return View(objProduct);
+        }
+
+        
+
+        public ProductDetails GetProductInfo(string ProdID)
         {
             ProductDetails objProduct = new ProductDetails();
             ShopRepository objSrepo = new ShopRepository();
@@ -144,7 +165,7 @@ namespace SarsoShoppingMVC.Controllers
                 throw ex;
 
             }
-            return View(objProduct);
+            return objProduct;
         }
 
         public ActionResult Neeti()

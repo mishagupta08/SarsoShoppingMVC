@@ -7,7 +7,7 @@ using System.Web.UI;
 using SarsoShoppingData;
 using SarsoShoppingMVC.Models;
 
-namespace SarsoShoppingMVC
+namespace CreditResponse
 {
     public partial class CreditResponse : System.Web.UI.Page
     {
