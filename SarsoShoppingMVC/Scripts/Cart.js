@@ -132,8 +132,8 @@ function CheckOut()
    
     var UniqId = window.sessionStorage.getItem("SCUniqid");
     var ScRegid = window.sessionStorage.getItem("ScRegid");
-    var mop = "PaytmOnLine";
-    var mopamt = 1;//$("#inputamt").val();
+    var mop = "PaytmOnLine";    
+    var mopamt = $("#OrderTotal").val();
     var Fname = $("#inputfname").val();
     var LName= $("#inputlname").val();
     var Mobile = $("#inputphone").val();

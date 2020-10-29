@@ -68,8 +68,7 @@ public partial class SCPaymentGateway : System.Web.UI.Page
         string WEBSITE = ConfigurationManager.AppSettings["WEBSITE"];
         string MerchantKey = ConfigurationManager.AppSettings["MerchantKey"];
         string custId = regid;
-        //string TXN_AMOUNT = amount;
-        string TXN_AMOUNT = "1.00";
+        string TXN_AMOUNT = amount;        
 
         Dictionary<string, string> parameters = new Dictionary<string, string>();
         parameters.Add("REQUEST_TYPE", REQUEST_TYPE);

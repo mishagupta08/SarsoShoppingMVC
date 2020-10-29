@@ -715,6 +715,7 @@
     <Content Include="Views\Shop\QuickBuy.cshtml" />
     <Content Include="Views\Shop\RepurchaseInvoice.cshtml" />
     <Content Include="Views\Shop\_Invoice.cshtml" />
+    <Content Include="Views\Home\_CategorySideBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

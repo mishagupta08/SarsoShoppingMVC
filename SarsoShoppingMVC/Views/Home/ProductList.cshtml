@@ -1,5 +1,8 @@
 ﻿@using PagedList.Mvc;
 @model SarsoShoppingData.PagewiseProducts
+
+<link rel="stylesheet" type="text/css" href="~/assets/vendor/range-price.css" />
+
 <div class="container-fluid container-fluid0">
     <div class="tp-banner-container hidden-dot ver3">
         <div class="tp-banner">
@@ -51,16 +54,16 @@
                 </div>
             </div>
         </div>
-        <div class="products ver2 grid_full grid_sidebar hover-shadow furniture">
+        <div class="row products ver2 grid_full grid_sidebar hover-shadow furniture">
             @foreach (var product in Model.ProductList)
             {
                 var imageName = product.pcode + ".png";
                 var quickViewName = "Quick_" + product.pcode;
-                <div class="item-inner">
+                <div class="item-inner col-lg-3">
                     <div class="product">
                         <div class="product-images"  style="min-height:100px;">
                             <a href="~/Home/ProductDetail?ProdID=@product.pcode" title="product-images">
-                                <img class="primary_image" src="~/Image/SarsoBiz_up_fls/RProducts/@imageName" alt="imageName" />
+                                <img style="max-height:175px;" class="primary_image" src="~/Image/SarsoBiz_up_fls/RProducts/@imageName" alt="imageName" />
                             </a>
                             <div class="action">
                                 <a class="zoom" href="#" title="Quick view"><i class="icon icon-magnifier-add" data-toggle="modal" data-target=".@quickViewName"></i></a>
@@ -68,7 +71,15 @@
                             </div>
                         </div>
                         <a href="~/Home/ProductDetail?ProdID=@product.pcode" title="@product.Pname"><p class="product-title">@product.Pname</p></a>
-                        <p class="product-price">Rs.@product.offprice</p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p class="product-price">DP - Rs.@product.offprice</p>
+                        }
+                        else
+                        {
+                            <p class="product-price">MRP - Rs.@product.MRP</p>
+                        }
+                        <p class="product-cv">CV - @product.PV</p>
                         <p class="description"><span>@Html.Raw(product.Descr)</span></p>
 
                         <div class="social box">
@@ -81,20 +92,8 @@
                         </div>
                     </div>                   
                 </div>
-
-
             }
-                </div>
-        <!-- End product-content products  -->
-        @*<div class="pagination-container">
-            <nav class="pagination">
-                <a class="prev page-numbers" href="#"><i class="fa fa-angle-left"></i></a>
-                <span class="page-numbers current">1</span>
-                <a class="page-numbers" href="#">2</a>
-                <a class="page-numbers" href="#">3</a>
-                <a class="next page-numbers" href="#"><i class="fa fa-angle-right"></i></a>
-            </nav>
-        </div>*@
+           </div>       
 
 
         <div class="pagination-container">
@@ -121,42 +120,24 @@ new PagedListRenderOptions
     <!-- End Primary -->
 
     <div id="secondary" class="widget-area col-xs-12 col-md-3">
-        <aside class="widget widget_product_categories">
-            <h3 class="widget-title">Categories</h3>
-            <ul class="product-categories">
-                <li>
-                    <a href="#" title="Personal Care">Personal Care</a>
-                    <ul class="children">
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" title="Health Care">Health Care</a>
-                    <ul>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                        <li><a href="#" title="Care 1">Care 1</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" title="Spirituality">Spirituality</a></li>
-                <li><a href="#" title="Combos">Combos</a></li>
-                <li><a href="#" title="All Product">All Product</a></li>
-            </ul>
-        </aside>
+        
+        @{ Html.RenderAction("GetCategorySideBar", "Home",new { Category = ViewBag.Category });}
 
         <aside class="widget widget_by_price">
             <h3 class="widget-title">By Price</h3>
             <div class="layout-slider">
-                <span><input id="Slider1" type="text" name="price" value="200;800" /></span>
+                <span><input id="PriceFilter" type="text" name="FilterPrice" value="200;800" /></span>
+            </div>
+            <input type="button" class="link-v1 space-30"  id="FilterPrice" title="Filter" value="Filter">
+        </aside>
+
+        @*<aside class="widget widget_by_CV">
+            <h3 class="widget-title">By CV</h3>
+            <div class="layout-slider">
+                <span><input id="CVFilter" type="text" name="FilterCV" value="200;800" /></span>
             </div>
             <a class="link-v1 space-30" href="#" title="fillter">fillter</a>
-        </aside>
+        </aside>*@
 
         <aside class="widget widget_feature">
             <h3 class="widget-title">Feature Products</h3>
@@ -166,10 +147,18 @@ new PagedListRenderOptions
                         <img class="img-responsive" src="~/assets/images/products/2.jpg" alt="images">
                     </a>
                     <div class="text">
-                        <h2>
+                        <h2 class="side-product-title" >
                             <a href="~/Home/ProductDetail?ProdID=1821" title="Swadharma Face Care Gift Set">Face Care Gift Set</a>
                         </h2>
-                        <p><span>Rs.1990</span></p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p><span style="font-size: 15px;">DP - Rs.1999.00</span></p>
+                        }
+                        else
+                        {
+                            <p><span style="font-size: 15px;">MRP - Rs.2000.00</span></p>
+                        }
+                        <p><span style="font-size: 15px;">CV - 670</span></p>
                     </div>
                 </li>
                 <li>
@@ -177,10 +166,18 @@ new PagedListRenderOptions
                         <img class="img-responsive" src="~/assets/images/products/3.jpg" alt="images">
                     </a>
                     <div class="text">
-                        <h2>
+                        <h2 class="side-product-title" >
                             <a href="~/Home/ProductDetail?ProdID=1822" title="Swadharma Hair Care Kit">Hair Care Kit</a>
                         </h2>
-                        <p><span>Rs.1799</span></p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p><span style="font-size: 15px;">DP - Rs.1799.00</span></p>
+                        }
+                        else
+                        {
+                            <p><span style="font-size: 15px;">MRP - Rs.1800.00</span></p>
+                        }
+                        <p><span style="font-size: 15px;">CV - 600</span></p>
                     </div>
                 </li>
                 <li>
@@ -188,10 +185,18 @@ new PagedListRenderOptions
                         <img class="img-responsive" src="~/assets/images/products/1.jpg" alt="images">
                     </a>
                     <div class="text">
-                        <h2>
+                        <h2 class="side-product-title" >
                             <a href="~/Home/ProductDetail?ProdID=1813" title="Swadharma Sea Buckthorn Juice Powder">Sea Buckthorn Juice Powder</a>
                         </h2>
-                        <p><span>Rs.1199</span></p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p><span style="font-size: 15px;">DP - Rs.1199.00</span></p>
+                        }
+                        else
+                        {
+                            <p><span style="font-size: 15px;">MRP - Rs.1200.00</span></p>
+                        }
+                        <p><span style="font-size: 15px;">CV - 400</span></p>
                     </div>
                 </li>
 
@@ -301,15 +306,37 @@ new PagedListRenderOptions
                 </div>
 }
 
+<script type="text/javascript" src="~/Scripts/cart.js?v=1"></script>
+
 <script type="text/javascript" src="~/assets/js/price-range.js"></script>
 <script type="text/javascript">
-      jQuery("#Slider1").slider({
-        from: 0,
-        to: 1000,
-        step: 100,
-        smooth: true,
-        round: 0,
-        skin: "plastic"
+    $(document).ready(function () {
+        $("#PriceFilter").slider({
+            from: 0,
+            to: 5000,
+            step: 100,
+            smooth: true,
+            round: 0,
+            skin: "plastic"
         });
+
+        $("#FilterPrice").click(function () {
+            PriceFilter();
+        });
+    });
+    function PriceFilter()
+    {
+        alert($("#PriceFilter").val());
+    }
+      //jQuery("#CVFilter").slider({
+      //    from: 0,
+      //    to: 1000,
+      //    step: 100,
+      //    smooth: true,
+      //    round: 0,
+      //    skin: "plastic"
+      //});
+
+     
+
 </script>
-<script type="text/javascript" src="~/Scripts/cart.js?v=1"></script>

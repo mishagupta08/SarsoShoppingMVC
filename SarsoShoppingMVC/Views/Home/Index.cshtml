@@ -26,7 +26,7 @@
     <div class="col-md-6 center-block float-none space-padding-tb-100">
         <h3 class="title-v2 text-center">At a Glance</h3>
         <p class="text-justify">
-            For nearly a decade, SARSO has been successful to give people an entrepreneurial direction operating through Direct Selling model. We have defied business confinement to brick-and-mortar spaces and enabled people work within their own space and time. <br>
+            For nearly a decade, SWADHARMA has been successful to give people an entrepreneurial direction operating through Direct Selling model. We have defied business confinement to brick-and-mortar spaces and enabled people work within their own space and time. <br>
             <br>
             Today while making tons of people self-employed, we are working with a radical approach to restore wellness in India through our flagship brand Swadharma and its valuable product range. Our strong education line Neeti that nurtures our Distributors with wisdom for life &amp; livelihood and an ethical ecosystem that functions for doing greater good give us a distinctive presence in the segment.
         </p>
@@ -121,11 +121,18 @@
                         </div>
                         <a href="~/Home/ProductDetail?ProdID=1813" title="Swadharma Sea Buckthorn Juice Powder">
                             <p class="product-title">Swadharma Sea Buckthorn Juice Powder</p>
-                        </a>
-                        <p class="product-price">Rs.1199.00</p>
-                    </div>
-                    <!-- End item -->
-                    <div class="product">
+                        </a>                       
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p class="product-price">DP - Rs.1199.00</p>
+                        }
+                        else
+                        {
+                            <p class="product-price">MRP - Rs.1200.00</p> 
+                        }
+                        <p class="product-cv">CV - 400</p> 
+                       </div>
+                       <div class="product">
                         <div class="product-images">
                             <a href="~/Home/ProductDetail?ProdID=1821" title="Swadharma Fair Care Gift Set"> <img class="primary_image" src="~/assets/images/products/2.jpg" alt="" /> <img class="secondary_image" src="~/assets/images/products/2.jpg" alt="" /> </a>
                             <div class="action"> <a class="zoom" href="#" title="Quick view"><i class="icon icon-magnifier-add "></i></a> <a class="add-cart" href="#" title="Add to cart"><i class="icon-bag"></i></a> </div>
@@ -133,7 +140,15 @@
                         <a href="~/Home/ProductDetail?ProdID=1821" title="Swadharma Fair Care Gift Set ">
                             <p class="product-title">Swadharma Face Care Gift Set</p>
                         </a>
-                        <p class="product-price">Rs.1999.00</p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p class="product-price">DP - Rs.1999.00</p>
+                        }
+                        else
+                        {
+                            <p class="product-price">MRP - Rs.2000.00</p>
+                        }
+                           <p class="product-cv">CV - 670</p> 
                     </div>
                     <!-- End item -->
                     <div class="product">
@@ -144,7 +159,15 @@
                         <a href="~/Home/ProductDetail?ProdID=1822" title="Swadharma Hair Care Kit ">
                             <p class="product-title">Swadharma Hair Care Kit </p>
                         </a>
-                        <p class="product-price">Rs.1799.00</p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p class="product-price">DP - Rs.1799.00</p>
+                        }
+                        else
+                        {
+                            <p class="product-price">MRP - Rs.1800.00</p>
+                        }
+                        <p class="product-cv">CV - 600</p> 
                     </div>
                     <div class="product">
                         <div class="product-images">
@@ -154,7 +177,15 @@
                         <a href="~/Home/ProductDetail?ProdID=1794" title="Swadharma Facial Toner">
                             <p class="product-title">Swadharma Facial Toner</p>
                         </a>
-                        <p class="product-price">Rs.299.00</p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p class="product-price">DP - Rs.299.00</p>
+                        }
+                        else
+                        {
+                            <p class="product-price">MRP - Rs.300.00</p>
+                        }
+                        <p class="product-cv">CV - 100</p> 
                     </div>
                     <div class="product">
                         <div class="product-images">
@@ -164,7 +195,15 @@
                         <a href="~/Home/ProductDetail?ProdID=1793" title="Swadharma Tricho Conditioner">
                             <p class="product-title">Swadharma Tricho Conditioner</p>
                         </a>
-                        <p class="product-price">Rs.499.00</p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p class="product-price">DP - Rs.499.00</p>
+                        }
+                        else
+                        {
+                            <p class="product-price">MRP - Rs.500.00</p>
+                        }
+                        <p class="product-cv">CV - 170</p> 
                     </div>
                 </div>
                 <!-- End product-tab-content products -->

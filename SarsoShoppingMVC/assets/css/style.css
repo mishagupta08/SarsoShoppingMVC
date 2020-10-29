@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /** 1. Import vendor **/
 /** 1.1. Vendor **/
 /** 1.1.1.	Google fonts **/
@@ -13746,7 +13746,19 @@ nav.pagination .next:hover i, nav.pagination .prev:hover i {
 	font-weight: 300;
 	text-align: center;
 	margin-top: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 235px;
 }
+
+.side-product-title {
+	 white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 235px;
+}
+
 .products .product .description {
 	display: none;
 	font-family: 'FuturaBT-Book', sans-serif;
@@ -13755,6 +13767,16 @@ nav.pagination .next:hover i, nav.pagination .prev:hover i {
 	margin-bottom: 15px;
 }
 .products .product .product-price {
+	font-size: 16px;
+	color: #373737;
+	line-height: 20px;
+	position: relative;
+	font-family: "FuturaBT-Book";
+	font-weight: 400;	
+	vertical-align: bottom;
+	text-align: center;
+}
+.products .product .product-cv {
 	font-size: 16px;
 	color: #373737;
 	line-height: 20px;

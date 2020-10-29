@@ -24,7 +24,13 @@ namespace SarsoShoppingData
         public string Pname { get; set; }
         public int MostpopularCnt { get; set; }
         public int qty { get; set; }
+        public decimal pv { get; set; }
         public string product { get; set; }
 
     }
-}
+
+    public partial class rpcategory
+    {
+        public int PrdCnt { get; set; }
+    }
+    }

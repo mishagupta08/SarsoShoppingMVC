@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
@@ -13,6 +12,9 @@ namespace SarsoShoppingMVC.Controllers
 {
     public class HomeController : Controller
     {
+        ShopRepository objSrepo = null;
+        Common objCmn = null;
+
         public ActionResult Index()
         {
             return View();
@@ -55,12 +57,33 @@ namespace SarsoShoppingMVC.Controllers
             return PartialView("_Categories", catList);
         }
 
+        [ChildActionOnly]
+        public ActionResult GetCategorySideBar(string Category)
+     {
+            List<rpcategory> catList = new List<rpcategory>();
+            objSrepo = new ShopRepository();
+            try
+            {
+                using (var entities = new sarsobizEntities())
+                {
+                    catList =  entities.rpcategories.OrderBy(r=>r.sorting).Where(r => r.cstatus == true && r.Category == Category).Distinct().ToList();
+                }
+                ViewBag.Category = Category;
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            return PartialView("_CategorySideBar", catList);
+        }
+
         public ActionResult ProductList(string Category, string Category1, int? page)
 
         {
             DataTable dt = new DataTable();
             PagewiseProducts FinalList = new PagewiseProducts();
-            ShopRepository objSrepo = new ShopRepository();
+            objSrepo = new ShopRepository();
+            objCmn = new Common();
 
             if(!String.IsNullOrEmpty(Category1))
                dt = objSrepo.Call_Getrpcategories("SubCatogoryProducts", Category, Category1);
@@ -68,9 +91,9 @@ namespace SarsoShoppingMVC.Controllers
                dt = objSrepo.Call_Getrpcategories("CatogoryProducts", Category, Category1);
 
             List<repurchaseproduct> productList = new List<repurchaseproduct>();
-            productList = ConvertDataTable<repurchaseproduct>(dt);
+            productList = objCmn.ConvertDataTable<repurchaseproduct>(dt);
             page = page ?? 1;
-            int NoOfRecord = 20;
+            int NoOfRecord = 12;
             double totalcount = 0;
             if (productList != null)
             {
@@ -83,6 +106,8 @@ namespace SarsoShoppingMVC.Controllers
                     PName = r.PName,
                     pcode = r.pcode,
                     Pname = r.Pname,
+                    MRP = r.MRP,
+                    PV = r.pv,
                     offprice = r.offprice,
                     Category = r.Category,
                     SubCategory = r.SubCategory,
@@ -124,13 +149,14 @@ namespace SarsoShoppingMVC.Controllers
         public ProductDetails GetProductInfo(string ProdID)
         {
             ProductDetails objProduct = new ProductDetails();
-            ShopRepository objSrepo = new ShopRepository();
+            objSrepo = new ShopRepository();
+            objCmn = new Common();
             try
             {
                 DataTable dt = new DataTable();
                 dt = objSrepo.Call_Getrpcategories("SC1Product", ProdID, "");
 
-                List<repurchaseproduct> objpList = ConvertDataTable<repurchaseproduct>(dt);
+                List<repurchaseproduct> objpList = objCmn.ConvertDataTable<repurchaseproduct>(dt);
                 objProduct.product = objpList.Select(r => new repurchaseproduct
                 {
                     Descr = !string.IsNullOrEmpty(r.Descr) ? Regex.Replace(r.Descr, @"<[^>]+>|&nbsp;", "").Trim() : "",
@@ -140,6 +166,7 @@ namespace SarsoShoppingMVC.Controllers
                     Pname = r.Pname,
                     offprice = r.offprice,
                     MRP = r.MRP,
+                    PV = r.pv,
                     Category = r.Category,
                     SubCategory = r.SubCategory,
                     SubCategoryone = r.SubCategoryone
@@ -147,17 +174,17 @@ namespace SarsoShoppingMVC.Controllers
 
                 dt = new DataTable();
                 dt = objSrepo.Call_Getrpcategories("SCProd_Attribute_Names", ProdID, "");
-                List<Prod_attributes> objProdAttr = ConvertDataTable<Prod_attributes>(dt);
+                List<Prod_attributes> objProdAttr = objCmn.ConvertDataTable<Prod_attributes>(dt);
                 objProduct.productAttr = objProdAttr.ToList();
 
                 dt = new DataTable();
                 dt = objSrepo.Call_Getrpcategories("SCProd_Attribute_Fileds", ProdID, "");
-                List<Prod_attributes_fields> objProdAttrFields = ConvertDataTable<Prod_attributes_fields>(dt);
+                List<Prod_attributes_fields> objProdAttrFields = objCmn.ConvertDataTable<Prod_attributes_fields>(dt);
                 objProduct.productAttrFields = objProdAttrFields.ToList();
 
                 dt = new DataTable();
                 dt = objSrepo.Call_Getrpcategories("SCProd_Product_images", ProdID, "");
-                List<ProductImage> objProdImage = ConvertDataTable<ProductImage>(dt);
+                List<ProductImage> objProdImage = objCmn.ConvertDataTable<ProductImage>(dt);
                 objProduct.productImage = objProdImage.ToList();
             }
             catch (Exception ex)
@@ -223,33 +250,6 @@ namespace SarsoShoppingMVC.Controllers
             return View();
         }
 
-        private static List<T> ConvertDataTable<T>(DataTable dt)
-        {
-            List<T> data = new List<T>();
-            foreach (DataRow row in dt.Rows)
-            {
-                T item = GetItem<T>(row);
-                data.Add(item);
-            }
-            return data;
-        }
-        private static T GetItem<T>(DataRow dr)
-        {
-            Type temp = typeof(T);
-            T obj = Activator.CreateInstance<T>();
-
-            foreach (DataColumn column in dr.Table.Columns)
-            {
-                foreach (PropertyInfo pro in temp.GetProperties())
-                {
-                    if (pro.Name == column.ColumnName)
-                        pro.SetValue(obj, dr[column.ColumnName], null);
-                    else
-                        continue;
-                }
-            }
-            return obj;
-        }
-
+        
     }
 }

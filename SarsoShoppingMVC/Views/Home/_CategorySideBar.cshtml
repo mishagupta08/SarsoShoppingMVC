@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SarsoShoppingData.rpcategory>
+@{  
+    var catList = Model !=null ? Model.OrderBy(r=>r.sorting).Select(r => r.SubCategory).Distinct().ToList() : new List<string>();
+    var MainCat = Model != null ? Model.Select(r => r.Category).FirstOrDefault() : string.Empty;
+}
+<aside class="widget widget_product_categories">
+    <h3 class="widget-title">Categories</h3>
+    <ul class="product-categories">                    
+        @foreach (var subCat in catList)
+        {
+            <li>
+                <a href="~/Home/ProductList?Category=@MainCat&Category1=@subCat" title="@subCat">@subCat</a>
+            </li>
+        }
+                    @*@foreach (var cat in MainCat)
+                    {                        
+                        <li class="active">
+                            <a href="~/Home/ProductList?Category=@cat" title="@cat">@cat</a>
+                            <ul class="children">
+                                @foreach (var subCat in catList)
+                                {
+                                    <li>
+                                        <a href="~/Home/ProductList?Category=@cat&Category1=@subCat" title="@subCat">@subCat</a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                                }*@
+                        
+    </ul>
+</aside>

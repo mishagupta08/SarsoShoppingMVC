@@ -5,7 +5,7 @@
         @{var Categories = Model.OrderBy(r => r.Category).Select(r => r.Category).Distinct().ToList();}
       @foreach (var cat in Categories)
       {
-          var subcatList = Model.Where(r => r.Category == cat).OrderBy(r => r.SubCategory).Select(r => r.SubCategory).Distinct().ToList();
+          var subcatList = Model.OrderBy(r=>r.sorting).Where(r => r.Category == cat).Select(r => r.SubCategory).Distinct().ToList();
         <li class="level2">
             <a href="~/Home/ProductList?Category=@cat">@cat</a>
             <ul class="menu-level-2">

@@ -311,6 +311,8 @@ namespace SarsoShoppingMVC.Controllers
                     PName = r.PName,
                     pcode = r.pcode,
                     Pname = r.Pname,
+                    MRP = r.MRP,
+                    PV = r.pv,
                     product = r.product,
                     offprice = r.offprice,
                     Category = r.Category,
