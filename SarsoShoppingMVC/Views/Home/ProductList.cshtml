@@ -43,12 +43,12 @@
                 <div class="float-right">
                     <form action="#" method="get" class="order-by">
                         <p>Sort by :</p>
-                        <select class="orderby" name="orderby">
-                            <option>popularity</option>
+                        <select class="orderby" name="orderby" id="SortProductList">
+                            @*<option>popularity</option>
                             <option selected="selected">average rating</option>
-                            <option>newness</option>
-                            <option>price: low to high</option>
-                            <option>price: high to low</option>
+                            <option>newness</option>*@
+                            <option value="L">price: low to high</option>
+                            <option value="H">price: high to low</option>
                         </select>
                     </form>
                 </div>
@@ -100,7 +100,7 @@
             <center>
                 <span class="page-link">Page@(Model.pagerCount.PageCount < Model.pagerCount.PageNumber ? 0 : Model.pagerCount.PageNumber) of @Model.pagerCount.PageCount</span>
 
-                @Html.PagedListPager(Model.pagerCount, page => Url.Action("ProductList", "Home", new { Category = ViewBag.Category, Category1 = ViewBag.Category1, page }),
+                @Html.PagedListPager(Model.pagerCount, page => Url.Action("ProductList", "Home", new { Category = ViewBag.Category, Category1 = ViewBag.Category1,filterby= ViewBag.Filter,limit= ViewBag.Limit,sortby= ViewBag.SortBy, page }),
 
 new PagedListRenderOptions
 {
@@ -126,18 +126,18 @@ new PagedListRenderOptions
         <aside class="widget widget_by_price">
             <h3 class="widget-title">By Price</h3>
             <div class="layout-slider">
-                <span><input id="PriceFilter" type="text" name="FilterPrice" value="200;800" /></span>
+                <span><input id="PriceFilter" type="text" name="FilterPrice" value="@ViewBag.PriceLimit" /></span>
             </div>
             <input type="button" class="link-v1 space-30"  id="FilterPrice" title="Filter" value="Filter">
         </aside>
 
-        @*<aside class="widget widget_by_CV">
+        <aside class="widget widget_by_CV">
             <h3 class="widget-title">By CV</h3>
             <div class="layout-slider">
-                <span><input id="CVFilter" type="text" name="FilterCV" value="200;800" /></span>
+                <span><input id="CVFilter" type="text" name="FilterCV" value="@ViewBag.CVLimit" /></span>
             </div>
-            <a class="link-v1 space-30" href="#" title="fillter">fillter</a>
-        </aside>*@
+            <input type="button" class="link-v1 space-30" id="FilterCV" title="Filter" value="Filter">
+        </aside>
 
         <aside class="widget widget_feature">
             <h3 class="widget-title">Feature Products</h3>
@@ -320,23 +320,35 @@ new PagedListRenderOptions
             skin: "plastic"
         });
 
-        $("#FilterPrice").click(function () {
-            PriceFilter();
+        $("#CVFilter").slider({
+            from: 0,
+            to: 5000,
+            step: 100,
+            smooth: true,
+            round: 0,
+            skin: "plastic"
         });
-    });
-    function PriceFilter()
-    {
-        alert($("#PriceFilter").val());
-    }
-      //jQuery("#CVFilter").slider({
-      //    from: 0,
-      //    to: 1000,
-      //    step: 100,
-      //    smooth: true,
-      //    round: 0,
-      //    skin: "plastic"
-      //});
 
-     
+        $("#FilterPrice").click(function () {
+            var limit = $("#PriceFilter").val();
+            FilterProducts("price", limit);
+        });
+
+        $("#FilterCV").click(function () {
+            var limit = $("#CVFilter").val();
+            FilterProducts("cv", limit);
+        });
+
+        $("#SortProductList").change(function () {
+            var value = $("#SortProductList").val();
+            window.location.href = "ProductList?Category=" + '@ViewBag.Category' + "&Category1=" + '@ViewBag.Category1' + "&filterby=" + '@ViewBag.Filter' + "&limit=" + '@ViewBag.Limit' + "&sortBy=" + value;
+        });
+
+    });
+
+    function FilterProducts(Filterby, limit)
+    {
+        window.location.href = "ProductList?Category="+'@ViewBag.Category'+"&Category1=" +'@ViewBag.Category1'+"&filterby="+Filterby+"&limit="+limit;
+    }
 
 </script>

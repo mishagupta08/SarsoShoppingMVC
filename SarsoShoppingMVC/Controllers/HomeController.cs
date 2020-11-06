@@ -77,15 +77,16 @@ namespace SarsoShoppingMVC.Controllers
             return PartialView("_CategorySideBar", catList);
         }
 
-        public ActionResult ProductList(string Category, string Category1, int? page)
+        public ActionResult ProductList(string Category, string Category1,string filterby,string limit,string sortBy, int? page)
 
         {
             DataTable dt = new DataTable();
             PagewiseProducts FinalList = new PagewiseProducts();
             objSrepo = new ShopRepository();
             objCmn = new Common();
-
-            if(!String.IsNullOrEmpty(Category1))
+            ViewBag.CVLimit = "0;5000";
+            ViewBag.PriceLimit = "0;5000";
+            if (!String.IsNullOrEmpty(Category1))
                dt = objSrepo.Call_Getrpcategories("SubCatogoryProducts", Category, Category1);
             else
                dt = objSrepo.Call_Getrpcategories("CatogoryProducts", Category, Category1);
@@ -97,7 +98,56 @@ namespace SarsoShoppingMVC.Controllers
             double totalcount = 0;
             if (productList != null)
             {
-                totalcount = productList.Count;
+                decimal Low = 0;
+                decimal high = 0;
+                if (!string.IsNullOrEmpty(limit))
+                {
+                    var limits = limit.Split(';');
+                    Low = Convert.ToDecimal(limits[0]);
+                    high = Convert.ToDecimal(limits[1]);
+                }
+                if (filterby == "price")
+                {
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        productList = productList.Where(r => r.DP >= Low && r.DP <= high).ToList();
+                    }
+                    else
+                    {
+                        productList = productList.Where(r => r.MRP >= Low && r.MRP <= high).ToList();
+                   }                  
+                    ViewBag.PriceLimit = limit;
+                }
+                else if (filterby == "cv")
+                {
+                    productList = productList.Where(r => r.pv >= Low && r.pv <= high).ToList();
+                    ViewBag.CVLimit = limit;
+                }
+               
+                    if (string.IsNullOrEmpty(sortBy) || sortBy == "L")
+                    {
+                        if (User.Identity.IsAuthenticated)
+                        {
+                            productList = productList.OrderBy(r=>r.DP).ToList();
+                        }
+                        else
+                        {
+                            productList = productList.OrderBy(r => r.MRP).ToList();
+                        }
+                    }
+                    else if (sortBy == "H")
+                    {
+                        if (User.Identity.IsAuthenticated)
+                        {
+                            productList = productList.OrderByDescending(r => r.DP).ToList();
+                        }
+                        else
+                        {
+                            productList = productList.OrderByDescending(r => r.MRP).ToList();
+                        }
+                    }                
+
+                    totalcount = productList.Count;
                 productList = (productList.Skip(((page ?? 1) - 1) * NoOfRecord).Take(NoOfRecord)).ToList();
                 productList = productList.Select(r => new repurchaseproduct
                 {
@@ -125,7 +175,9 @@ namespace SarsoShoppingMVC.Controllers
             FinalList.pagerCount = list.ToPagedList(Convert.ToInt32(page ?? 1), NoOfRecord);
             ViewBag.Category = Category;
             ViewBag.Category1 = Category1;
-
+            ViewBag.Filter = filterby;
+            ViewBag.Limit = limit;
+            ViewBag.SortBy = sortBy;
             return View("ProductList", FinalList);
         }
 

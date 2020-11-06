@@ -108,9 +108,10 @@ namespace SarsoShoppingMVC.Controllers
 
         public ActionResult ViewCart()
         {
-           
+            if (Session["LoginUserName"] != null)
                 return View();
-            
+            else
+                return RedirectToAction("Login", "Account");            
         }
 
         public ActionResult CheckLogin()
