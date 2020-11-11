@@ -117,6 +117,11 @@ namespace CreditResponse
                                             lblerrormsg =
                                                 "PAYMENT SUCCESS BILL FAILED Amount Mismatch for Order id: " +
                                                 lbl_ORDERID;
+
+                                            ScriptManager.RegisterClientScriptBlock(this, GetType(), "clientScript",
+                                                                                    "javascript:TransactionError('" +
+                                                                                    lblerrormsg + "')", true);
+
                                         }
                                     }
                                 }
@@ -130,6 +135,10 @@ namespace CreditResponse
 
                                     LogOnlineData("PAYMENT SUCCESS BILL FAILED");
                                     lblerrormsg = "PAYMENT SUCCESS BILL FAILED for Order id: " + lbl_ORDERID;
+
+                                    ScriptManager.RegisterClientScriptBlock(this, GetType(), "clientScript",
+                                                                                    "javascript:TransactionError('" +
+                                                                                    lblerrormsg + "')", true);
                                 }
 
                             }
@@ -142,6 +151,10 @@ namespace CreditResponse
 
                                 LogOnlineData("PAYMENT SUCCESS BILL FAILED");
                                 lblerrormsg = "PAYMENT SUCCESS BILL FAILED for Order id: " + lbl_ORDERID;
+
+                                ScriptManager.RegisterClientScriptBlock(this, GetType(), "clientScript",
+                                                                                    "javascript:TransactionError('" +
+                                                                                    lblerrormsg + "')", true);
                             }
                         }
 
@@ -155,6 +168,10 @@ namespace CreditResponse
                             LogOnlineData("PAYMENT SUCCESS BILL FAILED Checksum Mismatch");
                             lblerrormsg = "PAYMENT SUCCESS BILL FAILED Checksum Mismatch for Order id: " +
                                                lbl_ORDERID;
+
+                            ScriptManager.RegisterClientScriptBlock(this, GetType(), "clientScript",
+                                                                                    "javascript:TransactionError('" +
+                                                                                    lblerrormsg + "')", true);
                         }
 
                     }
@@ -169,11 +186,19 @@ namespace CreditResponse
                         lblerrormsg =
                             "Transaction is Pending with the Gateway. Please check with the Admin for Order id: " +
                             lbl_ORDERID;
+
+                        ScriptManager.RegisterClientScriptBlock(this, GetType(), "clientScript",
+                                                                                    "javascript:TransactionError('" +
+                                                                                    lblerrormsg + "')", true);
                     }
                     else
                     {
                         //Response.Redirect("OnlineError.aspx?errmsg=Transaction Failed.");
                         lblerrormsg = lbl_RESPMSG + "Transaction Failed for Order id: " + lbl_ORDERID;
+
+                        ScriptManager.RegisterClientScriptBlock(this, GetType(), "clientScript",
+                                                                                    "javascript:TransactionError('" +
+                                                                                    lblerrormsg + "')", true);
                     }
                 }
             }

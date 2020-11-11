@@ -285,6 +285,10 @@
     <Content Include="assets\images\close-menu-right.png" />
     <Content Include="assets\images\close-newsletter.png" />
     <Content Include="assets\images\clothing.jpg" />
+    <Content Include="assets\images\credential1.jpg" />
+    <Content Include="assets\images\credential2.jpg" />
+    <Content Include="assets\images\credential3.jpg" />
+    <Content Include="assets\images\credential5.jpg" />
     <Content Include="assets\images\cruelty_free_icon.png" />
     <Content Include="assets\images\distributor.jpg" />
     <Content Include="assets\images\distributor1.jpg" />
@@ -716,6 +720,13 @@
     <Content Include="Views\Shop\RepurchaseInvoice.cshtml" />
     <Content Include="Views\Shop\_Invoice.cshtml" />
     <Content Include="Views\Home\_CategorySideBar.cshtml" />
+    <Content Include="Views\Shop\TransactionError.cshtml" />
+    <Content Include="Views\Home\UserDetail.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Home\Sustainability.cshtml" />
+    <Content Include="Views\Home\Certification.cshtml" />
+    <Content Include="Views\Home\Media.cshtml" />
+    <Content Include="Views\Home\five_tips_to_be_a_direct_selling_champion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

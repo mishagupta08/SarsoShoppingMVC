@@ -303,5 +303,32 @@ namespace SarsoShoppingMVC.Controllers
         }
 
         
+        public ActionResult UserDetail()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Blog()
+        {
+            return View();
+        }
+        public ActionResult Media()
+        {
+            return View();
+        }
+        public ActionResult Certification()
+        {
+            return View();
+        }
+        public ActionResult Sustainability()
+        {
+            return View();
+        }
+        public ActionResult five_tips_to_be_a_direct_selling_champion()
+        {
+            return View();
+        }
+
+
     }
 }

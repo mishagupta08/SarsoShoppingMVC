@@ -72,33 +72,8 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="box-right">
-                        <ul>
-                            @if (Session["LoginUserName"] == null)
-                            {
-                            <li class="settings hover-menu">
-                                <a href="#" title="settings"> <span class="lock"><i class="icon"></i></span> </a>
-                                <ul class="submenu list-menu align-left">
-                                    <li class="hassub">
-                                        <div class="container-fluid">
-                                            <ul class="infor">
-                                                <li><span class="fa fa-unlock-alt"></span><a id="openLogin" href="~/Account/Login" title="Login">Login</a></li>
-                                                <li><span class="fa fa-user"></span><a href="~/Account/SignIn" title="Register">Register</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            }
-                            else
-                            {
-                                <li><span style="color:white;font-weight:bold;">Welcome : @Session["LoginUserName"]</span> </li>
-                                <li><a style="color:white;font-weight:bold;" href="~/Account/Logout">Logout</a> </li>
-                            }
-                            <li> <span class="search" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="icon"></i></span></li>
-
-                            <li> <span class="shopcart"><a href="~/Shop/ViewCart"><i class="icon"></i></a></span><span style="color:white;font-weight:bold;" id="cartCount">0</span></li>
-                        </ul>
+                    <div class="box-right" id="HeaderUserDetail">
+                        @{Html.RenderAction("UserDetail", "Home");}
                     </div>
                 </div>
             </div>
@@ -124,11 +99,11 @@
                                 <ul class="list-footer">
                                     <li><span>There’s More to Know</span></li>
                                     <li><a href="#" title="News">News</a></li>
-                                    <li><a href="#" title="Sustainability">Sustainability</a></li>
-                                    <li><a href="#" title="BLOG">BLOG</a></li>
-                                    <li><a href="#" title="Merchandise Bank Owner">Merchandise Bank Owner</a></li>
-                                    <li><a href="#" title="Media">Media</a></li>
-                                    <li><a href="#" title="Certifications">Certifications</a></li>
+                                    <li><a href="~/Home/Sustainability" title="Sustainability">Sustainability</a></li>
+                                    <li><a href="~/Home/Blog" title="BLOG">BLOG</a></li>
+                                    <li><a href="http://franchise.sarsobiz.net" title="Merchandise Bank Owner">Merchandise Bank Owner</a></li>
+                                    <li><a href="~/Home/Media" title="Media">Media</a></li>
+                                    <li><a href="~/Home/Certification" title="Certifications">Certifications</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3 col-sm-4 footerbox">
@@ -281,10 +256,13 @@
                   success: function (objResponse) {
                       $("#LoginSubmitPopUp").attr("disabled", false);
                       if (objResponse != null && objResponse.Message == "success") {
+                          $('#HeaderUserDetail').load('/Home/UserDetail');
                           if (isUndefinedOrNull(window.sessionStorage.getItem("ScRegid")) == '') {
                               window.sessionStorage.setItem("ScRegid", objResponse.Regid);
-                          }
-                          window.location.reload();
+                          }                         
+                          $("#LoginPopUp").modal("toggle");                                                                            
+                          getCartCount();
+                          setTimeout(function () { getItemCode("DetailBuy"); }, 1000);
                       }
                       else {
                           $("#LoginErrorPopUp").html(objResponse.Message);

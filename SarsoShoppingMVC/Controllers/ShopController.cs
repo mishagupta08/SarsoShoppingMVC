@@ -41,6 +41,29 @@ namespace SarsoShoppingMVC.Controllers
             return Json(Message, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult DeleteCartProduct(String ProductCode, string ItemCode, string UniqId)
+        {
+            int? count = 0;
+            string Message = string.Empty;
+            try
+            {
+                using (var entities = new sarsobizEntities())
+                {
+                    var Result = entities.TempCart_SP("Delete", UniqId, ProductCode, ItemCode, "", 0).ToList();
+                    if (Result != null)
+                    {
+                        count = Result.Select(r => r.qty).Sum();
+                        Message = Result.FirstOrDefault().result + "-" + count;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Json(Message, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult getCartCount(string UniqId)
         {
             int? count = 0;
@@ -330,7 +353,6 @@ namespace SarsoShoppingMVC.Controllers
 
         }
 
-
         public ActionResult GetInvoice(string reqno, string billno)
         {
             Invoice InvoicePrint = new Invoice();
@@ -369,5 +391,12 @@ namespace SarsoShoppingMVC.Controllers
             }
             return PartialView("_Invoice", InvoicePrint);
         }
+
+        public ActionResult TransactionError()
+        {
+            return View();
+
+        }
+        
     }
 }

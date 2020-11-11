@@ -12,6 +12,11 @@
                 window.sessionStorage.setItem("billno", billno);
                 window.location.href = "/Shop/RepurchaseInvoice";
             }
+
+            function TransactionError(Message) {                
+                window.sessionStorage.setItem("TransMessage", Message);                
+                window.location.href = "/Shop/TransactionError";
+            }
     </script>
 </head>
 

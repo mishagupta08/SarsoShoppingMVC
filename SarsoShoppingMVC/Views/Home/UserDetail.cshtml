@@ -1,0 +1,27 @@
+﻿<ul>
+    @if (Session["LoginUserName"] == null)
+    {
+        <li class="settings hover-menu">
+            <a href="#" title="settings"> <span class="lock"><i class="icon"></i></span> </a>
+            <ul class="submenu list-menu align-left">
+                <li class="hassub">
+                    <div class="container-fluid">
+                        <ul class="infor">
+                            <li><span class="fa fa-unlock-alt"></span><a id="openLogin" href="~/Account/Login" title="Login">Login</a></li>
+                            <li><span class="fa fa-user"></span><a href="~/Account/SignIn" title="Register">Register</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li><span style="color:white;font-weight:bold;">Welcome : @Session["LoginUserName"]</span> </li>
+                                <li><a style="color:white;font-weight:bold;" href="~/Account/Logout">Logout</a> </li>
+    }
+    <li> <span class="search" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="icon"></i></span></li>
+
+    <li> <span class="shopcart"><a href="~/Shop/ViewCart"><i class="icon"></i></a></span><span style="color:white;font-weight:bold;" id="cartCount">0</span></li>
+</ul>
+
