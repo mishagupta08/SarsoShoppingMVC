@@ -43,11 +43,13 @@ namespace SarsoShoppingMVC.Controllers
         public ActionResult GetCategories()
         {
             List<rpcategory> catList = new List<rpcategory>();
+            objSrepo = new ShopRepository();
+            objCmn = new Common();
             try
             {
                 using (var entities = new sarsobizEntities())
                 {
-                    catList = entities.rpcategories.Where(r=>r.cstatus==true).ToList();
+                    catList = entities.rpcategories.Where(r=>r.cstatus==true && r.Category != "Ayurveda").OrderBy(r=>r.sorting).ToList();                    
                 }
             }
             catch (Exception Ex)
@@ -126,6 +128,7 @@ namespace SarsoShoppingMVC.Controllers
                
                     if (string.IsNullOrEmpty(sortBy) || sortBy == "L")
                     {
+                        sortBy = "L";
                         if (User.Identity.IsAuthenticated)
                         {
                             productList = productList.OrderBy(r=>r.DP).ToList();
