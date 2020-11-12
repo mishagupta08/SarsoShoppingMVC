@@ -166,7 +166,7 @@ function CheckOut()
     }).done(function (response) {
         var scorderresult = response;
         if (parseInt(scorderresult) > 0) {
-            var patmparams = 'UniQID:' + UniqId + ',regid:' + ScRegid + ',amount:' + '1' + ',Mobile:' + Mobile + ',shpcharge:' + 0 + ',scmemtype:' + '' + ',email:' + 'support@sarsomail.net' + ',coupon:' + isUndefinedOrNull(null);
+            var patmparams = 'UniQID:' + UniqId + ',regid:' + ScRegid + ',amount:' + mopamt + ',Mobile:' + Mobile + ',shpcharge:' + 0 + ',scmemtype:' + '' + ',email:' + 'support@sarsomail.net' + ',coupon:' + isUndefinedOrNull(null);
             postwithCode('_self', 'payPaytm', patmparams);
         }
     }).fail(function (error) {

@@ -2,10 +2,10 @@
 <div class="sub-menu dropdown-menu">
     <ul class="menu-level-1">
 
-        @{var Categories = Model.OrderBy(r => r.Category).Select(r => r.Category).Distinct().ToList();}
+        @{var Categories = Model.OrderBy(r => r.sorting).Select(r => r.Category).Distinct().ToList();}
       @foreach (var cat in Categories)
       {
-          var subcatList = Model.OrderBy(r=>r.sorting).Where(r => r.Category == cat).Select(r => r.SubCategory).Distinct().ToList();
+          var subcatList = Model.OrderBy(r=>r.SubCategory).Where(r => r.Category == cat).Select(r => r.SubCategory).Distinct().ToList();
         <li class="level2">
             <a href="~/Home/ProductList?Category=@cat">@cat</a>
             <ul class="menu-level-2">

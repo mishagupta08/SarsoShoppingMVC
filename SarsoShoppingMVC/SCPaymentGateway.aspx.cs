@@ -48,8 +48,8 @@ public partial class SCPaymentGateway : System.Web.UI.Page
             {
 
                 var cnt = entities.SCOnlineInsert_Sp("INSERT", Convert.ToInt32(regid), Convert.ToDecimal(amount), Mobile, UniQID, "PENDING", "PENDING", "", "", "PAYTM", 0, scmemtype, coupon);
-                //PaymentGateWay(UniQID, regid, amount, Mobile, scmemtype, email);
-                PaymentGateWay(UniQID, regid, "1", Mobile, scmemtype, email);
+               PaymentGateWay(UniQID, regid, amount, Mobile, scmemtype, email);
+           
             }
         }
     }

@@ -32,21 +32,50 @@
 </script>
 
 <link href="~/assets/css/prd-cat-style.css" rel="stylesheet" />
-<div class="container">
-    <div class="col-md-12 label-right">
-        <a href="~/Home/Index" style="cursor: pointer;"> Back to Home </a>
+
+<div class="container-fluid container-fluid0">
+    <div class="tp-banner-container hidden-dot ver3">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/assets/images/pagebanner/category-banner.jpg" alt="Category Banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <!-- LAYER NR. 9 -->
+
+                    <div class="tp-caption color-white customin randomrotateout font-play tp-resizeme size-60"
+                         data-x="800"
+                         data-y="230"
+                         data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                         data-speed="500"
+                         data-start="2000"
+                         data-easing="Power4.easeOut"
+                         data-splitin="chars"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                         style="z-index: 3">Invoice</div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <br/>
+    <!-- End container -->
 </div>
 
-    <div class="container" id="div_print">
-     
-    </div>
 
+
+<div class="main-content">
     <div class="container">
         <div class="col-md-12 label-right">
             <a onclick="printdiv('div_print');" style="cursor: pointer;"> Print </a>
         </div>
     </div>
+    <div class="cart-box-container check-out">
+        <div class="container container-ver2">
+            <div class="row" id="div_print" style="border:1px solid #000">
+                
+            </div>
+        </div>
+    </div>
+</div>
 
 
