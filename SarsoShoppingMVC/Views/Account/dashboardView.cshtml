@@ -1,27 +1,9 @@
 ﻿@{
     ViewBag.pageTitle = "Dahsboard";
-    Layout = "~/Views/Shared/dashboardLayout.cshtml";
+    Layout = "~/Views/Shared/SkoteShared/Layouts/_layout_horizontal.cshtml";
+
 }
 
-<div class="container-fluid container-fluid0" style="max-width:100%;">
-    <div class="tp-banner-container hidden-dot ver3">
-        <div class="tp-banner">
-            <ul>
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000">
-                    <!-- MAIN IMAGE -->
-                    <img src="~/assets/images/pagebanner/category-banner.jpg" alt="Category Banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-                    <!-- LAYER NR. 9 -->
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- End container -->
-</div>
-<!-- End Banner Grid -->
 @{Html.RenderPartial("~/Views/Account/myProfileView.cshtml");   }
-
-<div class="container brand-logos space-30 space-padding-tb-100">
-    @{Html.RenderPartial("~/Views/Shared/_BrandLogo.cshtml");   }
-</div>
 
 
