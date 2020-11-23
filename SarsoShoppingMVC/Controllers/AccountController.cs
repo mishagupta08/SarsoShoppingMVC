@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Web.Security;
 using SarsoShoppingMVC.Models;
 using SarsoBizServices;
+using System.Collections.Generic;
 
 namespace SarsoShoppingMVC.Controllers
 {
@@ -41,6 +42,7 @@ namespace SarsoShoppingMVC.Controllers
 
             objCommon = new Common();
             //GetUserProfileDetail(model);
+            GetUserOrdersDetail(model);
             ViewBag.ModeName = Contants.LAYOUT_HORIZONTAL;
             return View("dashboardView");
         }
@@ -98,15 +100,27 @@ namespace SarsoShoppingMVC.Controllers
         {
             var regId = Convert.ToString(Session["LoginRegId"]);
             var dt = objmem.MemeberReport(Convert.ToInt32(regId), "SICPRepurRpt", 3, Convert.ToInt32(0), Convert.ToInt32(0));
-
-            //if (dt.Rows.Count > 0)
-            //{
-            //    gvOrders.DataSource = dt;
-            //    gvOrders.DataBind();
-            //    if (ViewState["Ordercnt"] != null) return;
-            //    ViewState["Ordercnt"] = dt.Rows[0]["totcnt"];
-            //    lblorder.Text = "Repurchase Orders(" + dt.Rows.Count + ")";
-            //}
+            var rowCount = dt.Rows.Count;
+            if (rowCount > 0)
+            {
+                model.OrderList = new List<Orders>();
+                var order = new Orders();
+                for (var count = 0; count < rowCount; count++)
+                {
+                    order.Sno = dt.Rows[count]["sno"].ToString();
+                    order.Amount = dt.Rows[count]["Amount"].ToString();
+                    //order.BonusCvPoints = dt.Rows[count]["sno"].ToString();
+                    order.CourierDetail = dt.Rows[count]["CourierName"].ToString();
+                    order.CvPoints = dt.Rows[count]["totalpv"].ToString();
+                    order.DateOfPurchase = dt.Rows[count]["Date of Purchase"].ToString();
+                    order.InvoiceDetail = dt.Rows[count]["Invoice No"].ToString();
+                    order.InvDate = dt.Rows[count]["Inv Date"].ToString();
+                    order.PaymentReceipt = dt.Rows[count]["Payment Receipt"].ToString();
+                    order.RefNo = dt.Rows[count]["Ref No"].ToString();
+                    order.DispatchCourierName = dt.Rows[count]["DisCourierName"].ToString();
+                    order.CourierAddress = dt.Rows[count]["CourierAddress"].ToString();
+                }
+            }
             //else
             //{
 

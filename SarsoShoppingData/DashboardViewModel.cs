@@ -10,5 +10,7 @@ namespace SarsoShoppingData
         public Distributor DistributorDetail { get; set; }
 
         public MyProfile ProfileDetail { get; set; }
+
+        public List<Orders> OrderList { get; set; }
     }
 }

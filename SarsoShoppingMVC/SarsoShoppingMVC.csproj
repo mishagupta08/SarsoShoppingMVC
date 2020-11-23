@@ -1950,6 +1950,7 @@
     <Content Include="Views\Shared\SkoteShared\_topbar.cshtml" />
     <Content Include="Views\Shared\SkoteShared\_vendor_scripts.cshtml" />
     <Content Include="Views\Shared\dashboardLayout.cshtml" />
+    <Content Include="Views\Account\orderListView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
