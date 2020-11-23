@@ -1926,9 +1926,8 @@
     <Content Include="Views\Home\Certification.cshtml" />
     <Content Include="Views\Home\Media.cshtml" />
     <Content Include="Views\Home\five_tips_to_be_a_direct_selling_champion.cshtml" />
-    <Content Include="Views\Account\myProfileView.cshtml" />
     <Content Include="Views\Account\dashboardView.cshtml" />
-    <Content Include="Views\Account\myProfile.cshtml" />
+    <Content Include="Views\Account\myProfileView.cshtml" />
     <Content Include="Views\Shared\SkoteShared\Error.cshtml" />
     <Content Include="Views\Shared\SkoteShared\Layouts\_layout_boxed.cshtml" />
     <Content Include="Views\Shared\SkoteShared\Layouts\_layout_colored_sidebar.cshtml" />

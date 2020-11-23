@@ -33,6 +33,18 @@ namespace SarsoShoppingMVC.Controllers
             return View();
         }
 
+        public ActionResult MyProfile()
+        {
+            objSRepo = new ShopRepository();
+            var model = new DashboardViewModel();
+            objmem = new MemberService();
+            utility = new SiteUtility();
+
+            objCommon = new Common();
+            GetUserProfileDetail(model);
+            return View("myProfileView", model);
+        }
+
         public ActionResult Dashboard()
         {
             objSRepo = new ShopRepository();
@@ -41,10 +53,9 @@ namespace SarsoShoppingMVC.Controllers
             utility = new SiteUtility();
 
             objCommon = new Common();
-            //GetUserProfileDetail(model);
+            GetUserProfileDetail(model);
             GetUserOrdersDetail(model);
-            ViewBag.ModeName = Contants.LAYOUT_HORIZONTAL;
-            return View("dashboardView");
+            return View("dashboardView", model);
         }
 
         private void GetUserProfileDetail(DashboardViewModel model)
@@ -99,7 +110,9 @@ namespace SarsoShoppingMVC.Controllers
         private void GetUserOrdersDetail(DashboardViewModel model)
         {
             var regId = Convert.ToString(Session["LoginRegId"]);
-            var dt = objmem.MemeberReport(Convert.ToInt32(regId), "SICPRepurRpt", 3, Convert.ToInt32(0), Convert.ToInt32(0));
+            //var dt = objmem.MemeberReport(Convert.ToInt32(regId), "SICPRepurRpt", 3, Convert.ToInt32(0), Convert.ToInt32(0));
+            var dt = objmem.MemeberReport(415513, "SICPRepurRpt", 3, 1, 10);
+
             var rowCount = dt.Rows.Count;
             if (rowCount > 0)
             {
@@ -107,6 +120,7 @@ namespace SarsoShoppingMVC.Controllers
                 var order = new Orders();
                 for (var count = 0; count < rowCount; count++)
                 {
+                    order = new Orders();
                     order.Sno = dt.Rows[count]["sno"].ToString();
                     order.Amount = dt.Rows[count]["Amount"].ToString();
                     //order.BonusCvPoints = dt.Rows[count]["sno"].ToString();
@@ -119,17 +133,10 @@ namespace SarsoShoppingMVC.Controllers
                     order.RefNo = dt.Rows[count]["Ref No"].ToString();
                     order.DispatchCourierName = dt.Rows[count]["DisCourierName"].ToString();
                     order.CourierAddress = dt.Rows[count]["CourierAddress"].ToString();
+
+                    model.OrderList.Add(order);
                 }
             }
-            //else
-            //{
-
-            //    // dt.Rows.Add(dt.NewRow());
-            //    gvOrders.DataSource = dt;
-            //    gvOrders.DataBind();
-            //    lblorder.Text = "Repurchase Orders(0)";
-            //    // GvpkgRpt.Rows[0].Visible = false;
-            //}
         }
 
         public ActionResult Logout()

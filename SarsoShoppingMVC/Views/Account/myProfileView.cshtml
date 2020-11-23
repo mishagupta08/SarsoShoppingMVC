@@ -1,164 +1,467 @@
-﻿@{
-    ViewBag.pageTitle = "My Profile View";
-    Layout = null;
+﻿@model SarsoShoppingData.DashboardViewModel
+@{
+    ViewBag.pageTitle = "MyProfile";
+    Layout = "~/Views/Shared/SkoteShared/Layouts/_layout_horizontal.cshtml";}
 }
+
+@section styles{
+    <!-- twitter-bootstrap-wizard css -->
+    <link rel="stylesheet" href="~/assets/skoteassets/libs/twitter-bootstrap-wizard/prettify.css">
+}
+
 <div class="row">
-    <div class="col-xl-4">
-        <div class="card overflow-hidden">
-            <div class="bg-soft-primary">
-                <div class="row">
-                    <div class="col-7">
-                        <div class="text-primary p-3">
-                            <h5 class="text-primary">Welcome Back !</h5>
-                            <p>Skote Dashboard</p>
-                        </div>
-                    </div>
-                    <div class="col-5 align-self-end">
-                        <img src="~/assets/images/profile-img.png" alt="" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-            <div class="card-body pt-0">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="avatar-md profile-user-wid mb-4">
-                            <img src="~/assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
-                        </div>
-                        <h5 class="font-size-15 text-truncate">Henry Price</h5>
-                        <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
-                    </div>
-
-                    <div class="col-sm-8">
-                        <div class="pt-4">
-
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="font-size-15">125</h5>
-                                    <p class="text-muted mb-0">Projects</p>
-                                </div>
-                                <div class="col-6">
-                                    <h5 class="font-size-15">$1245</h5>
-                                    <p class="text-muted mb-0">Revenue</p>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <a href="" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ml-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">Monthly Earning</h4>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p class="text-muted">This month</p>
-                        <h3>$34,252</h3>
-                        <p class="text-muted"><span class="text-success mr-2"> 12% <i class="mdi mdi-arrow-up"></i> </span> From previous period</p>
+                <h4 class="card-title mb-4">My Profile</h4>
 
-                        <div class="mt-4">
-                            <a href="" class="btn btn-primary waves-effect waves-light btn-sm">View More <i class="mdi mdi-arrow-right ml-1"></i></a>
+                <div id="basic-pills-wizard" class="twitter-bs-wizard">
+                    <ul class="twitter-bs-wizard-nav">
+                        <li class="nav-item">
+                            <a href="#seller-details" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">01</span>
+                                Sponsor
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#company-document" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">02</span>
+                                <span>Personal</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#bank-detail" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">03</span>
+                                Bank
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#confirm-detail" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">04</span>
+                                Nominee
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content twitter-bs-wizard-tab-content">
+                        <div class="tab-pane" id="seller-details">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="basicpill-firstname-input">Sponsor Id</label>
+                                            <label class="form-control" id="basicpill-firstname-input">@Model.ProfileDetail.sponserId</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="basicpill-lastname-input">Sponsor Name</label>
+                                            <label type="text" class="form-control" id="basicpill-lastname-input">@Model.ProfileDetail.sponserName</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="mt-4 mt-sm-0">
-                            <div id="radialBar-chart" class="apex-charts"></div>
+                        <div class="tab-pane" id="company-document">
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-pancard-input">Name</label>
+                                                <label type="text" class="form-control" id="basicpill-pancard-input">@Model.ProfileDetail.name</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-vatno-input">Distributor Id</label>
+                                                <label type="text" class="form-control" id="basicpill-vatno-input">@Model.ProfileDetail.distributorId</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-cstno-input">Email</label>
+                                                <label type="text" class="form-control" id="basicpill-cstno-input">@Model.ProfileDetail.email</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-servicetax-input">Mobile No</label>
+                                                <label type="text" class="form-control" id="basicpill-servicetax-input">@Model.ProfileDetail.mobileNo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-companyuin-input">Date Of Birth</label>
+                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.dateOfBirth</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-declaration-input">Correspondence Adress</label>
+                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondenceAdress</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-companyuin-input">Correspondence State</label>
+                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.CorrespondenceState</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-declaration-input">Correspondence District</label>
+                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondenceDistrict</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-companyuin-input">Correspondence City</label>
+                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.CorrespondenceCity</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-declaration-input">Correspondence Pincode</label>
+                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondencePincode</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        <div class="tab-pane" id="bank-detail">
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-namecard-input">Payee Name</label>
+                                                <label class="form-control" id="basicpill-namecard-input">@Model.ProfileDetail.PayeeName</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-namecard-input">Bank Name</label>
+                                                <label class="form-control" id="basicpill-namecard-input">@Model.ProfileDetail.BankName</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-cardno-input">Branch Name</label>
+                                                <label class="form-control" id="basicpill-cardno-input">@Model.ProfileDetail.BranchName</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-card-verification-input">IFSC Code</label>
+                                                <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.IFSCCode</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-expiration-input">Account No</label>
+                                                <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.AccountNo</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-card-verification-input">Pan No</label>
+                                                <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.PanNo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="confirm-detail">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="basicpill-expiration-input">Nominee Name</label>
+                                        <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.NomineeName</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="basicpill-card-verification-input">Relationship</label>
+                                        <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.Relationship</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="basicpill-expiration-input">Nominee DOB</label>
+                                        <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.NomineeDob</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                    <ul class="pager wizard twitter-bs-wizard-pager-link">
+                        <li class="previous"><a href="#">Previous</a></li>
+                        <li class="next"><a href="#">Next</a></li>
+                    </ul>
                 </div>
-                <p class="text-muted mb-0">We craft digital, graphic and dimensional thinking.</p>
             </div>
         </div>
     </div>
-    <div class="col-xl-8">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted font-weight-medium">Orders</p>
-                                <h4 class="mb-0">1,235</h4>
-                            </div>
 
-                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
-                                <span class="avatar-title">
-                                    <i class="bx bx-copy-alt font-size-24"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted font-weight-medium">Revenue</p>
-                                <h4 class="mb-0">$35, 723</h4>
-                            </div>
-
-                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
-                                <span class="avatar-title rounded-circle bg-primary">
-                                    <i class="bx bx-archive-in font-size-24"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted font-weight-medium">Average Price</p>
-                                <h4 class="mb-0">$16.2</h4>
-                            </div>
-
-                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
-                                <span class="avatar-title rounded-circle bg-primary">
-                                    <i class="bx bx-purchase-tag-alt font-size-24"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end row -->
-
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4 float-sm-left">Email Sent</h4>
-                <div class="float-sm-right">
-                    <ul class="nav nav-pills">
+                <h4 class="card-title mb-4">Wizard with progressbar</h4>
+
+                <div id="progrss-wizard" class="twitter-bs-wizard">
+                    <ul class="twitter-bs-wizard-nav nav-justified">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Week</a>
+                            <a href="#progress-seller-details" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">01</span>
+                                Seller Details
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Month</a>
+                            <a href="#progress-company-document" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">02</span>
+                                Company Document
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#progress-bank-detail" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">03</span>
+                                Bank Details
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Year</a>
+                            <a href="#progress-confirm-detail" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">04</span>
+                                Confirm Detail
+                            </a>
                         </li>
                     </ul>
+
+                    <div id="bar" class="progress mt-4">
+                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"></div>
+                    </div>
+                    <div class="tab-content twitter-bs-wizard-tab-content">
+                        <div class="tab-pane" id="progress-seller-details">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="basicpill-firstname-input">Sponsor Id</label>
+                                            <label class="form-control" id="basicpill-firstname-input">@Model.ProfileDetail.sponserId</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="basicpill-lastname-input">Sponsor Name</label>
+                                            <label type="text" class="form-control" id="basicpill-lastname-input">@Model.ProfileDetail.sponserName</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="progress-company-document">
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-pancard-input">Name</label>
+                                                <label type="text" class="form-control" id="basicpill-pancard-input">@Model.ProfileDetail.name</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-vatno-input">Distributor Id</label>
+                                                <label type="text" class="form-control" id="basicpill-vatno-input">@Model.ProfileDetail.distributorId</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-cstno-input">Email</label>
+                                                <label type="text" class="form-control" id="basicpill-cstno-input">@Model.ProfileDetail.email</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-servicetax-input">Mobile No</label>
+                                                <label type="text" class="form-control" id="basicpill-servicetax-input">@Model.ProfileDetail.mobileNo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-companyuin-input">Date Of Birth</label>
+                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.dateOfBirth</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-declaration-input">Correspondence Adress</label>
+                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondenceAdress</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-companyuin-input">Correspondence State</label>
+                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.CorrespondenceState</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-declaration-input">Correspondence District</label>
+                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondenceDistrict</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-companyuin-input">Correspondence City</label>
+                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.CorrespondenceCity</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-declaration-input">Correspondence Pincode</label>
+                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondencePincode</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="progress-bank-detail">
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-namecard-input">Payee Name</label>
+                                                <label class="form-control" id="basicpill-namecard-input">@Model.ProfileDetail.PayeeName</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-namecard-input">Bank Name</label>
+                                                <label class="form-control" id="basicpill-namecard-input">@Model.ProfileDetail.BankName</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-cardno-input">Branch Name</label>
+                                                <label class="form-control" id="basicpill-cardno-input">@Model.ProfileDetail.BranchName</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-card-verification-input">IFSC Code</label>
+                                                <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.IFSCCode</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-expiration-input">Account No</label>
+                                                <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.AccountNo</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-card-verification-input">Pan No</label>
+                                                <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.PanNo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="progress-confirm-detail">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="basicpill-expiration-input">Nominee Name</label>
+                                        <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.NomineeName</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="basicpill-card-verification-input">Relationship</label>
+                                        <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.Relationship</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="basicpill-expiration-input">Nominee DOB</label>
+                                        <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.NomineeDob</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="pager wizard twitter-bs-wizard-pager-link">
+                        <li class="previous"><a href="#">Previous</a></li>
+                        <li class="next"><a href="#">Next</a></li>
+                    </ul>
                 </div>
-                <div class="clearfix"></div>
-                <div id="stacked-column-chart" class="apex-charts" dir="ltr"></div>
             </div>
         </div>
     </div>
 </div>
+<!-- end row -->
 @section scripts{
-    <!-- apexcharts -->
-    <script src="~/assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- twitter-bootstrap-wizard js -->
+    <script src="~/assets/skoteassets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
 
-    <script src="~/assets/js/pages/dashboard.init.js"></script>
+    <script src="~/assets/skoteassets/libs/twitter-bootstrap-wizard/prettify.js"></script>
 
-    <!-- App js -->
-    <script src="~/assets/js/app.js"></script>
+    <!-- form wizard init -->
+    <script src="~/assets/skoteassets/js/pages/form-wizard.init.js"></script>
+
+    <script src="~/assets/skoteassets/js/app.js"></script>
 }
