@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace SarsoShoppingData
+{
+    public class Distributor
+    {
+        public string Name { get; set; }
+
+        public decimal RegId { get; set; }
+
+        public string Rank { get; set; }
+
+        public double  WalletAmount { get; set; }
+
+        public double TotalPayoutEarned { get; set; }
+
+        public int PersonalRecruits { get; set; }
+    }
+}

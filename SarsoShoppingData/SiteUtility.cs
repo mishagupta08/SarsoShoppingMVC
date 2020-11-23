@@ -59,9 +59,9 @@ namespace SarsoShoppingData
                 tdes.Clear();
                 return Encoding.UTF8.GetString(resultArray);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return "";
+                return e.Message;
             }
         }
     }

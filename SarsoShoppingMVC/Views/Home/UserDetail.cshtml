@@ -5,7 +5,7 @@
             <a href="#" title="settings"> <span class="lock"><i class="icon"></i></span> </a>
             <ul class="submenu list-menu align-left">
                 <li class="hassub">
-                    <div class="container-fluid">
+                    <div class="container-fluid" style="max-width:100%;">
                         <ul class="infor">
                             <li><span class="fa fa-unlock-alt"></span><a id="openLogin" href="~/Account/Login" title="Login">Login</a></li>
                             <li><span class="fa fa-user"></span><a href="~/Account/SignIn" title="Register">Register</a></li>
@@ -17,8 +17,29 @@
     }
     else
     {
-        <li><span style="color:white;font-weight:bold;">Welcome : @Session["LoginUserName"]</span> </li>
-                                <li><a style="color:white;font-weight:bold;" href="~/Account/Logout">Logout</a> </li>
+        @*<li class="level1 dropdown">
+                <span style="color:white;font-weight:bold;">
+                    Welcome : @Session["LoginUserName"]
+                </span>
+                <ul class="menu-level-1 dropdown-menu">
+                    <li class="level1"><span class="fa fa-user"></span><a href="~/Account/MyProfile" title="Login">My Profile</a></li>
+                </ul>
+            </li>*@
+        <li class="settings hover-menu">
+            <span style="color:white;font-weight:bold;">
+                Welcome : @Session["LoginUserName"]
+            </span>
+            <ul class="submenu list-menu align-left">
+                <li class="hassub">
+                    <div class="container-fluid">
+                        <ul class="infor">
+                            <li><span class="fa fa-unlock-alt"></span><a href="~/Account/MyProfile" title="My Profile">My Profile</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li><a style="color:white;font-weight:bold;" href="~/Account/Logout">Logout</a> </li>
     }
     <li> <span class="search" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="icon"></i></span></li>
 

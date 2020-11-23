@@ -175,6 +175,8 @@
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomClasses.cs" />
+    <Compile Include="DashboardViewModel.cs" />
+    <Compile Include="Distributor.cs" />
     <Compile Include="Get.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
@@ -182,6 +184,8 @@
       <DependentUpon>SarsoEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs" />
+    <Compile Include="MyProfile.cs" />
+    <Compile Include="Orders.cs" />
     <Compile Include="PartialClasses.cs" />
     <Compile Include="ClickShare.cs">
       <DependentUpon>SarsoEntity.tt</DependentUpon>

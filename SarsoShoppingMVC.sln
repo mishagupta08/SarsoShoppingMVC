@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SarsoShoppingMVC", "SarsoSh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SarsoShoppingData", "SarsoShoppingData\SarsoShoppingData.csproj", "{0794FC28-87E3-4533-ACCC-A03AB423B4A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SarsoBizServices", "SarsoBizServices\SarsoBizServices\SarsoBizServices.csproj", "{0BABB284-5BF5-4C70-ACE5-FB8BD1227E9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SarsoBizDal", "SarsoBizServices\SarsoBizServices\SarsoBizDal\SarsoBizDal.csproj", "{EB3FCF06-E7D0-45D0-8406-A3CBB8B53414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{0794FC28-87E3-4533-ACCC-A03AB423B4A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0794FC28-87E3-4533-ACCC-A03AB423B4A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0794FC28-87E3-4533-ACCC-A03AB423B4A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BABB284-5BF5-4C70-ACE5-FB8BD1227E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BABB284-5BF5-4C70-ACE5-FB8BD1227E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BABB284-5BF5-4C70-ACE5-FB8BD1227E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BABB284-5BF5-4C70-ACE5-FB8BD1227E9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB3FCF06-E7D0-45D0-8406-A3CBB8B53414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3FCF06-E7D0-45D0-8406-A3CBB8B53414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3FCF06-E7D0-45D0-8406-A3CBB8B53414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3FCF06-E7D0-45D0-8406-A3CBB8B53414}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

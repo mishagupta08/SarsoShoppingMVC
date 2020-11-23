@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    @*<link rel="stylesheet" type="text/css" href="~/assets/css/style.css?v=1" />*@
+    @*<link rel="stylesheet" type="text/css" href="~/assets/css/fonts.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="~/assets/vendor/owl-slider.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/vendor/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/vendor/settings.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/css/animate.css" />
+    <link rel="shortcut icon" href="~/assets/images/favicon.png" />
+    <script type="text/javascript" src="~/assets/js/jquery-1.11.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>*@
+</head>
+<body>
+    <div class="awe-page-loading">
+        <div class="awe-loading-wrapper">
+            <div class="awe-loading-icon"> <img style="max-width:200px;" src="~/assets/images/swadharma_logo.png" alt="images"> </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+    @*<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content popup-search">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control control-search" placeholder="Search and hit enter...">
+                        <button class="button_search" type="button">Search</button>
+                    </div>
+                    <!-- /input-group -->
+
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>*@
+    <!-- End pushmenu -->
+    <div class="wrappage">
+        <!-- <div id="rtl">RTL</div> -->
+        <header id="header" class="header-v2 header-v3 absolute">
+            <div class="header-top">
+                <div class="container-fluid0">
+                    <p class="icon-menu-mobile"><i class="fa fa-bars"></i></p>
+                    <div class="logo"><a href="~/Home/Index" title="Sarso"> <img style="max-width:200px;" src="~/assets/images/swadharma-logo-white.png" alt="Sarso"> </a></div>
+                    <div class="logo-mobile"><a href="#" title="Sarso"><img src="~/assets/images/logo-mobile.png" alt="Sarso"></a></div>
+                   
+                    <div class="box-right" id="HeaderUserDetail">
+                        @{Html.RenderAction("UserDetail", "Home");}
+                    </div>
+                </div>
+            </div>
+            <!-- End container -->
+            <!-- End header-top -->
+        </header>
+        <!-- /header -->
+
+
+        @RenderBody()
+
+        <!-- End container -->
+        <!-- End brand -->
+        <!-- End instagram -->
+        <footer id="footer" class="footer-v3 align-left">
+            <div class="footer-inner">
+                <div class="container container-ver2">
+                    <div class="row space-30">
+                        <div class="col-md-3 col-sm-4 footerbox" style="border:none;">
+                            <ul class="list-footer">
+                                <li><span>There’s More to Know</span></li>
+                                <li><a href="#" title="News">News</a></li>
+                                <li><a href="~/Home/Sustainability" title="Sustainability">Sustainability</a></li>
+                                <li><a href="~/Home/Blog" title="BLOG">BLOG</a></li>
+                                <li><a href="http://franchise.sarsobiz.net" title="Merchandise Bank Owner">Merchandise Bank Owner</a></li>
+                                <li><a href="~/Home/Media" title="Media">Media</a></li>
+                                <li><a href="~/Home/Certification" title="Certifications">Certifications</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-4 footerbox">
+                            <ul class="list-footer">
+                                <li><span>How do I</span> </li>
+                                <li><a href="~/Home/HoDoIPay" title="Pay for my order">Pay for my order</a></li>
+                                <li><a href="~/Home/ReturnAProduct" title="Return a Product">Return a product</a></li>
+                                <li><a href="#" title="Add Grievances">Add Grievances / Feedback</a></li>
+                                <li><a href="#" title="Download SARSO App">Download SARSO App</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 col-sm-4 footerbox">
+                            <ul class="list-footer">
+                                <li><span>Others</span></li>
+                                <li><a href="http://franchise.sarsobiz.net" title="MBO Login">MBO Login</a></li>
+                                <li><a href="~/Home/ContactUs" title="#">Contact SARSO</a></li>
+                                <li><a href="#" title="#">Awards</a></li>
+                                <li><a href="~/Home/FAQ" title="">FAQs</a></li>
+                                <li><a href="#" title="#">Help</a></li>
+                                <li><a href="~/Home/PrivacyPolicy" title="">Privacy Policy</a></li>
+                                <li><a href="~/Home/TermsAndConditions" title="">Terms &amp; Conditions</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 col-sm-6 newsletter-bottom footerbox">
+                            <ul class="info-footer space-10">
+                                <li>Sign Up to Our Newsletter </li>
+                                <li>
+                                    <form action="#" method="get" accept-charset="utf-8">
+                                        <input type="text" onblur="if (this.value == '') {this.value = 'Enter your email...';}" onfocus="if(this.value != '') {this.value = '';}" value="Enter your email..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email">
+                                        <button class="button button1 hover-white" title="Subscribe" type="submit">SIGN UP</button>
+                                    </form>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <div class="fsdalogo"> <img src="~/assets/images/FDSA_logo.png" alt="Federation of Direct Selling Association" /></div>
+                        </div>
+                    </div>
+                    <div class="box bottom">
+                        <p class="float-left">Copyright &copy; 2020 Sarso Biz - All Rights Reserved.</p>
+                    </div>
+                    <!-- End box -->
+                </div>
+                <!-- End container -->
+            </div>
+            <!-- End footer-inner -->
+        </footer>
+    </div>
+    <!-- End wrappage -->
+    <!-- Youtube Videos -->
+
+    <div class="modal fade wow zoomIn ceo1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg popup-search">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <div class="iframe-container">
+                            <iframe allowFullScreen="allowFullScreen" src="https://www.youtube.com/embed/Nz37HYQn-uw?ecver=1&amp;cc_load_policy=1&amp;iv_load_policy=3&amp;yt:stretch=16:9&amp;autohide=0&amp;color=red&amp;width=560&amp;width=560?rel=0" allowtransparency="true" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade wow zoomIn get-in-touch" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg popup-search">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <div class="content-text center">
+                            <h3 style="text-transform: none">Ask a Question</h3>
+                            <form class="form-horizontal space-50">
+                                <div class="form-group col-md-6">
+                                    <input type="text" placeholder="Name*" id="inputName" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" placeholder="Email*" id="inputsumary" class="form-control">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input type="text" placeholder="Website" id="inputemail" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Comment" name="Comment" id="message" class="form-control"></textarea>
+                                </div>
+                                <div class="box text-center"> <a title="add tags" href="#" class="link-v1 rt lh-50">Send message</a> </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+         $(document).ready(function () {
+             $('img').on('dragstart', function (event) { event.preventDefault(); });
+             // wow js
+             new WOW().init();
+         });
+
+    </script>
+    <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/engo-plugins.js"></script>
+    <script type="text/javascript" src="~/assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/jquery.zoom.js"></script>
+    <script type="text/javascript" src="~/assets/js/store.js"></script>
+    <script src="~/Scripts/Common.js"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function () {
+            if (isUndefinedOrNull(window.sessionStorage.getItem("SCUniqid")) == '') {
+                window.sessionStorage.setItem("SCUniqid", Uniqid());
+            }
+
+            getCartCount();
+
+           $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            asNavFor: '.slider-nav'
+          });
+          $('.slider-nav').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            dots: false,
+            focusOnSelect: true
+          });
+          $('.zoom').zoom();
+
+
+          $("#LoginFormPopUp").on("submit", function () {
+
+              $("#LoginSubmitPopUp").attr("disabled", true);
+              $("#LoginErrorPopUp").html("");
+              var formdata = new FormData($("#LoginFormPopUp")[0]);
+              $.ajax({
+                  url: '/Account/Login',
+                  type: 'POST',
+                  dataType: 'json',
+                  async: false,
+                  processData: false,
+                  contentType: false,
+                  data: formdata,
+                  success: function (objResponse) {
+                      $("#LoginSubmitPopUp").attr("disabled", false);
+                      if (objResponse != null && objResponse.Message == "success") {
+                          $('#HeaderUserDetail').load('/Home/UserDetail');
+                          if (isUndefinedOrNull(window.sessionStorage.getItem("ScRegid")) == '') {
+                              window.sessionStorage.setItem("ScRegid", objResponse.Regid);
+                          }
+                          $("#LoginPopUp").modal("toggle");
+                          getCartCount();
+                          setTimeout(function () { getItemCode("DetailBuy"); }, 1000);
+                      }
+                      else {
+                          $("#LoginErrorPopUp").html(objResponse.Message);
+                      }
+                  },
+                  error: function (xhr, data) {
+                      console.log(xhr);
+                      console.log("Error:", data);
+                  }
+              });
+              return false;
+          });
+
+        });
+
+        function getCartCount() {
+            var UniqId = window.sessionStorage.getItem("SCUniqid");
+
+            $.ajax({
+                url: '/Shop/getCartCount',
+                type: 'GET',
+                async: false,
+                data: { UniqId: UniqId }
+            }).done(function (count) {
+                $("#cartCount").html(count);
+            }).fail(function (error) {
+                alert(error.statusText);
+                $(".preloader").hide();
+            });
+            return false;
+        }
+    </script>
+
+    <div class="modal fade wow zoomIn" id="LoginPopUp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg popup-search">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <div class="content-text center">
+                            <h3 style="text-transform: none">Login</h3>
+                            <form class="form-horizontal space-50" id="LoginFormPopUp">
+
+                                <div class="form-group col-md-6">
+                                    <input type="text" placeholder="Login ID*" id="Regid" name="Regid" class="form-control">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <input type="password" placeholder="Password*" id="Password" name="Password" class="form-control">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <span style="color:red;" id="LoginErrorPopUp"></span>
+                                </div>
+
+                                <div class="box text-center"> <input type="submit" class="link-v1 rt lh-50" id="LoginSubmitPopUp" value="Login" /> </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
