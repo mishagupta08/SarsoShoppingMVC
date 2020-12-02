@@ -1,252 +1,32 @@
 ﻿@model SarsoShoppingData.DashboardViewModel
 @{
     ViewBag.pageTitle = "MyProfile";
-    Layout = "~/Views/Shared/SkoteShared/Layouts/_layout_horizontal.cshtml";}
+    Layout = "~/Views/Shared/SkoteShared/Layouts/_layout_horizontal.cshtml";
 }
 
-@section styles{
-    <!-- twitter-bootstrap-wizard css -->
-    <link rel="stylesheet" href="~/assets/skoteassets/libs/twitter-bootstrap-wizard/prettify.css">
-}
 
-<div class="row">
+
+<link rel="stylesheet" href="~/assets/skoteassets/libs/twitter-bootstrap-wizard/prettify.css">
+
+
+<div class="row">  
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title mb-4">My Profile</h4>
-
-                <div id="basic-pills-wizard" class="twitter-bs-wizard">
-                    <ul class="twitter-bs-wizard-nav">
-                        <li class="nav-item">
-                            <a href="#seller-details" class="nav-link" data-toggle="tab">
-                                <span class="step-number mr-2">01</span>
-                                Sponsor
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#company-document" class="nav-link" data-toggle="tab">
-                                <span class="step-number mr-2">02</span>
-                                <span>Personal</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#bank-detail" class="nav-link" data-toggle="tab">
-                                <span class="step-number mr-2">03</span>
-                                Bank
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#confirm-detail" class="nav-link" data-toggle="tab">
-                                <span class="step-number mr-2">04</span>
-                                Nominee
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content twitter-bs-wizard-tab-content">
-                        <div class="tab-pane" id="seller-details">
-                            <form>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="basicpill-firstname-input">Sponsor Id</label>
-                                            <label class="form-control" id="basicpill-firstname-input">@Model.ProfileDetail.sponserId</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="basicpill-lastname-input">Sponsor Name</label>
-                                            <label type="text" class="form-control" id="basicpill-lastname-input">@Model.ProfileDetail.sponserName</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane" id="company-document">
-                            <div>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-pancard-input">Name</label>
-                                                <label type="text" class="form-control" id="basicpill-pancard-input">@Model.ProfileDetail.name</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-vatno-input">Distributor Id</label>
-                                                <label type="text" class="form-control" id="basicpill-vatno-input">@Model.ProfileDetail.distributorId</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-cstno-input">Email</label>
-                                                <label type="text" class="form-control" id="basicpill-cstno-input">@Model.ProfileDetail.email</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-servicetax-input">Mobile No</label>
-                                                <label type="text" class="form-control" id="basicpill-servicetax-input">@Model.ProfileDetail.mobileNo</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-companyuin-input">Date Of Birth</label>
-                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.dateOfBirth</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-declaration-input">Correspondence Adress</label>
-                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondenceAdress</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-companyuin-input">Correspondence State</label>
-                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.CorrespondenceState</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-declaration-input">Correspondence District</label>
-                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondenceDistrict</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-companyuin-input">Correspondence City</label>
-                                                <label class="form-control" id="basicpill-companyuin-input">@Model.ProfileDetail.CorrespondenceCity</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-declaration-input">Correspondence Pincode</label>
-                                                <label class="form-control" id="basicpill-Declaration-input">@Model.ProfileDetail.CorrespondencePincode</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="bank-detail">
-                            <div>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-namecard-input">Payee Name</label>
-                                                <label class="form-control" id="basicpill-namecard-input">@Model.ProfileDetail.PayeeName</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-namecard-input">Bank Name</label>
-                                                <label class="form-control" id="basicpill-namecard-input">@Model.ProfileDetail.BankName</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-cardno-input">Branch Name</label>
-                                                <label class="form-control" id="basicpill-cardno-input">@Model.ProfileDetail.BranchName</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-card-verification-input">IFSC Code</label>
-                                                <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.IFSCCode</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-expiration-input">Account No</label>
-                                                <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.AccountNo</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label for="basicpill-card-verification-input">Pan No</label>
-                                                <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.PanNo</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="confirm-detail">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="basicpill-expiration-input">Nominee Name</label>
-                                        <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.NomineeName</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="basicpill-card-verification-input">Relationship</label>
-                                        <label class="form-control" id="basicpill-card-verification-input">@Model.ProfileDetail.Relationship</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="basicpill-expiration-input">Nominee DOB</label>
-                                        <label class="form-control" id="basicpill-expiration-input">@Model.ProfileDetail.NomineeDob</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <ul class="pager wizard twitter-bs-wizard-pager-link">
-                        <li class="previous"><a href="#">Previous</a></li>
-                        <li class="next"><a href="#">Next</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title mb-4">Wizard with progressbar</h4>
 
                 <div id="progrss-wizard" class="twitter-bs-wizard">
                     <ul class="twitter-bs-wizard-nav nav-justified">
                         <li class="nav-item">
                             <a href="#progress-seller-details" class="nav-link" data-toggle="tab">
                                 <span class="step-number mr-2">01</span>
-                                Seller Details
+                                Sponser Details
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#progress-company-document" class="nav-link" data-toggle="tab">
                                 <span class="step-number mr-2">02</span>
-                                Company Document
+                               User Details
                             </a>
                         </li>
 
@@ -259,7 +39,7 @@
                         <li class="nav-item">
                             <a href="#progress-confirm-detail" class="nav-link" data-toggle="tab">
                                 <span class="step-number mr-2">04</span>
-                                Confirm Detail
+                                Nominee Detail
                             </a>
                         </li>
                     </ul>

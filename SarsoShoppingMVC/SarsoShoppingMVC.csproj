@@ -1081,8 +1081,6 @@
     <Content Include="assets\skoteassets\libs\parsleyjs\i18n\zh_cn.js" />
     <Content Include="assets\skoteassets\libs\parsleyjs\i18n\zh_tw.js" />
     <Content Include="assets\skoteassets\libs\parsleyjs\parsley.min.js" />
-    <Content Include="assets\skoteassets\libs\pdfmake\build\pdfmake.min.js" />
-    <Content Include="assets\skoteassets\libs\pdfmake\build\vfs_fonts.js" />
     <Content Include="assets\skoteassets\libs\pdfmake\webpack-standardfonts.config.js" />
     <Content Include="assets\skoteassets\libs\select2\css\select2.min.css" />
     <Content Include="assets\skoteassets\libs\select2\js\i18n\af.js" />
@@ -1367,8 +1365,6 @@
     <Content Include="assets\skoteassets\libs\tinymce\themes\silver\index.js" />
     <Content Include="assets\skoteassets\libs\tinymce\themes\silver\theme.min.js" />
     <Content Include="assets\skoteassets\libs\tinymce\tinymce.min.js" />
-    <Content Include="assets\skoteassets\libs\toastr\build\toastr.min.css" />
-    <Content Include="assets\skoteassets\libs\toastr\build\toastr.min.js" />
     <Content Include="assets\skoteassets\libs\toastr\demo.html" />
     <Content Include="assets\skoteassets\libs\toastr\karma.conf.js" />
     <Content Include="assets\skoteassets\libs\toastr\nuget\content\content\toastr.min.css" />
@@ -1950,10 +1946,13 @@
     <Content Include="Views\Shared\SkoteShared\_vendor_scripts.cshtml" />
     <Content Include="Views\Shared\dashboardLayout.cshtml" />
     <Content Include="Views\Account\orderListView.cshtml" />
+    <Content Include="Views\Home\_DashboardCategories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\css\components\Ecommerce\" />
+    <Folder Include="assets\skoteassets\libs\pdfmake\build\" />
+    <Folder Include="assets\skoteassets\libs\toastr\build\" />
     <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>

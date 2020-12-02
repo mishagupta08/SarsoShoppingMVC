@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SarsoShoppingData.rpcategory>
+<div class="dropdown-menu dropdown-megamenu">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="row">
+@{var Categories = Model.OrderBy(r => r.sorting).Select(r => r.Category).Distinct().ToList();}
+@foreach (var cat in Categories)
+{
+    var subcatList = Model.OrderBy(r => r.SubCategory).Where(r => r.Category == cat).Select(r => r.SubCategory).Distinct().ToList();
+
+                <div class="col-md-3">
+                    <h5 class="font-size-14 mt-0"><a href="~/Home/ProductList?Category=@cat">@cat</a></h5>
+                    <ul class="list-unstyled megamenu-list">                       
+                       @foreach (var subcat in subcatList)
+                        {
+                            <li><a href="~/Home/ProductList?Category=@cat&Category1=@subcat" title="@subcat">@subcat</a></li>
+                        }
+
+                    </ul>
+                </div>
+}                
+            </div>
+        </div>      
+    </div>
+</div>
+
+

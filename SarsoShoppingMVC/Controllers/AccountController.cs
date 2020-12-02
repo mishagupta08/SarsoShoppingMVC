@@ -111,7 +111,7 @@ namespace SarsoShoppingMVC.Controllers
         {
             var regId = Convert.ToString(Session["LoginRegId"]);
             //var dt = objmem.MemeberReport(Convert.ToInt32(regId), "SICPRepurRpt", 3, Convert.ToInt32(0), Convert.ToInt32(0));
-            var dt = objmem.MemeberReport(415513, "SICPRepurRpt", 3, 1, 10);
+            var dt = objmem.MemeberReport(Convert.ToInt32(regId), "SICPRepurRpt", 3, 0, 10);
 
             var rowCount = dt.Rows.Count;
             if (rowCount > 0)

@@ -60,6 +60,26 @@ namespace SarsoShoppingMVC.Controllers
         }
 
         [ChildActionOnly]
+        public ActionResult DashboardCategories()
+        {
+            List<rpcategory> catList = new List<rpcategory>();
+            objSrepo = new ShopRepository();
+            objCmn = new Common();
+            try
+            {
+                using (var entities = new sarsobizEntities())
+                {
+                    catList = entities.rpcategories.Where(r => r.cstatus == true && r.Category != "Ayurveda").OrderBy(r => r.sorting).ToList();
+                }
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            return PartialView("_DashboardCategories", catList);
+        }
+
+        [ChildActionOnly]
         public ActionResult GetCategorySideBar(string Category)
      {
             List<rpcategory> catList = new List<rpcategory>();
