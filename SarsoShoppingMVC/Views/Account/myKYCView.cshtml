@@ -1,0 +1,182 @@
+﻿
+@model SarsoShoppingData.KYC_SP_Result
+@{
+    ViewBag.pageTitle = "MyKYC";
+    Layout = "~/Views/Shared/SkoteShared/Layouts/_layout_horizontal.cshtml";
+}
+
+
+
+<link rel="stylesheet" href="~/assets/skoteassets/libs/twitter-bootstrap-wizard/prettify.css">
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">My KYC</h4>
+
+                <div id="progrss-wizard" class="twitter-bs-wizard">
+                    <ul class="twitter-bs-wizard-nav nav-justified">
+                        <li class="nav-item">
+                            <a href="#progress-seller-details" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">01</span>
+                                Upload PAN
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#progress-company-document" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">02</span>
+                                Upload BANK 
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#progress-bank-detail" class="nav-link" data-toggle="tab">
+                                <span class="step-number mr-2">03</span>
+                                Upload Address
+                            </a>
+                        </li>
+                        
+                    </ul>
+
+                    <div id="bar" class="progress mt-4">
+                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"></div>
+                    </div>
+                    <div class="tab-content twitter-bs-wizard-tab-content">
+                        <div class="tab-pane" id="progress-seller-details">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="basicpill-firstname-input">@Model.ProofType Number</label>
+                                            <label class="form-control" id="basicpill-firstname-input">@Model.PANNo</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="basicpill-lastname-input">@Model.ProofType Image</label>
+                                            @*<label type="text" class="form-control" id="basicpill-lastname-input">@Model.PANPhoto</label>*@
+                                            <img src="https://sarsobiz.net/Members_KYC/@Model.PANPhoto">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+
+                                            <label for="basicpill-firstname-input">Your Pan Status</label>
+                                            @if (Model.KYCSts.ToString() == "0")
+                                            {
+                                                <label class="form-control" id="basicpill-firstname-input" style="color:red;">Your PAN details are under verification</label>
+                                            }
+                                            else if (Model.KYCSts.ToString() == "1")
+                                            {
+                                                <label class="form-control" id="basicpill-firstname-input" style="color:green;">Your PAN details are Verified</label>
+                                            }
+                                            else if (Model.KYCSts.ToString() == "2")
+                                            {
+                                                <label class="form-control" id="basicpill-firstname-input" style="color:green;">Pan Details Submitted Successfully</label>
+                                            }
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="progress-company-document">
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-pancard-input">Bank Name</label>
+                                                <label type="text" class="form-control" id="basicpill-pancard-input">@Model.Bank</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-vatno-input">Bank Branch</label>
+                                                <label type="text" class="form-control" id="basicpill-vatno-input">@Model.Branch</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-cstno-input">Account No</label>
+                                                <label type="text" class="form-control" id="basicpill-cstno-input">@Model.Accno</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-servicetax-input">IFSC Code</label>
+                                                <label type="text" class="form-control" id="basicpill-servicetax-input">@Model.Ifscode</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-companyuin-input">Bank Status</label>
+                                                <label class="form-control" id="basicpill-companyuin-input">@Model.KYCSts</label>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                  
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="progress-bank-detail">
+                            <div>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-namecard-input">Select Proof Type</label>
+                                                <label class="form-control" id="basicpill-namecard-input">@Model.ProofType</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-namecard-input">Address Number</label>
+                                                <label class="form-control" id="basicpill-namecard-input">@Model.ChqLeaf</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="basicpill-cardno-input">Addressing Image</label>
+                                                <label class="form-control" id="basicpill-cardno-input">@Model.ChqLeaf</label>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                   
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <ul class="pager wizard twitter-bs-wizard-pager-link">
+                        <li class="previous"><a href="#">Previous</a></li>
+                        <li class="next"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+@section scripts{
+    <!-- twitter-bootstrap-wizard js -->
+    <script src="~/assets/skoteassets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="~/assets/skoteassets/libs/twitter-bootstrap-wizard/prettify.js"></script>
+    <!-- form wizard init -->
+    <script src="~/assets/skoteassets/js/pages/form-wizard.init.js"></script>
+    <script src="~/assets/skoteassets/js/app.js"></script>
+}
