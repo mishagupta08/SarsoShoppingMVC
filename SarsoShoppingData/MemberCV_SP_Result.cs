@@ -16,8 +16,11 @@ namespace SarsoShoppingData
         public decimal regid { get; set; }
         public string idno { get; set; }
         public string Name { get; set; }
-        public int Dno { get; set; }
+        public decimal Dno { get; set; }
         public string DesgName { get; set; }
+        public string Year { get; set; }
+        public string IBPhoto { get; set; }
+        public string imgdeisgtbl { get; set; }
         public Nullable<decimal> RetailProfit { get; set; }
         public Nullable<decimal> LVBonus { get; set; }
         public Nullable<decimal> OverridingBonus { get; set; }
@@ -26,9 +29,15 @@ namespace SarsoShoppingData
         public Nullable<decimal> AristocracyBonus { get; set; }
         public Nullable<decimal> RoyaltyBonus { get; set; }
         public Nullable<decimal> MRSBonus { get; set; }
+        public Nullable<decimal>  MatchBonus { get; set; }
+        public Nullable<decimal> HSOBonus { get; set; }
         public Nullable<decimal> PoolPBonus { get; set; }
         public Nullable<decimal> ALBonus { get; set; }
         public Nullable<decimal> LOYALBonus { get; set; }
+        public Nullable<decimal> PPTreasure { get; set; }
+        public Nullable<decimal> DiamondTreasure { get; set; }
+        public Nullable<decimal> EarlTreasure { get; set; }
+        public Nullable<decimal> goldkeytreasure { get; set; }
         public string achdate { get; set; }
     }
 }

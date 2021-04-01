@@ -7,6 +7,7 @@ using System.Web.Security;
 using SarsoShoppingMVC.Models;
 using SarsoBizServices;
 using System.Collections.Generic;
+using System.Data;
 
 namespace SarsoShoppingMVC.Controllers
 {
@@ -15,6 +16,7 @@ namespace SarsoShoppingMVC.Controllers
     {
         SiteUtility utility;
         private MemberService objmem;
+        private AdminService objadmin;
         public ShopRepository objSRepo = null;
         public Common objCommon = null;
 
@@ -33,6 +35,7 @@ namespace SarsoShoppingMVC.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult MyProfile()
         {
             objSRepo = new ShopRepository();
@@ -45,16 +48,132 @@ namespace SarsoShoppingMVC.Controllers
             return View("myProfileView", model);
         }
 
+        //public ActionResult UploadKYC()
+        //{
+        //    var model = new KYC();
+        //    model.KycDetail = new KYC_SP_Result();
+        //    model.KycDetail = GetUserKYCDetail(model);
+            
+        //    if (model.KycDetail.res.ToUpper() == "FAIL")
+        //    {
+        //        DivEdit.Visible = true;
+        //        DivView.Visible = false;
+
+        //        model.Action = 
+        //    }
+        //    if (dt.Rows[0]["res"].ToString() == "PEND" && dt.Rows[0]["ProofType"].ToString() == "Pan Card")
+        //    {
+        //        DivView.Visible = true;
+        //        DivEdit.Visible = false;
+        //        lblProofNumber.Text = dt.Rows[0]["ProofType"].ToString();
+        //        lblpan.Text = dt.Rows[0]["panno"].ToString();
+        //        lblRemarks.Text = dt.Rows[0]["Remarks"].ToString();
+        //        imgProof.ImageUrl = "../Members_KYC/" + dt.Rows[0]["PANPhoto"];
+        //        if (dt.Rows[0]["kycsts"].ToString() == "0")
+        //        {
+        //            //lblkycsts.Text = "Your PAN details are under verification";
+        //            lblkycsts.ForeColor = System.Drawing.Color.Red;
+        //            btnChange.Visible = false;
+        //        }
+        //    }
+        //    if (dt.Rows[0]["res"].ToString() == "NoKYC")
+        //    {
+        //        DivEdit.Visible = true;
+        //        DivView.Visible = false;
+        //        divPan.Visible = true;
+        //        divaddress.Visible = false;
+        //        divbank.Visible = false;
+        //        Label3.Text = "PAN Details Not Submitted";
+        //        Label3.ForeColor = System.Drawing.Color.Red;
+        //    }
+        //    if (dt.Rows[0]["res"].ToString() == "REJ" && dt.Rows[0]["ProofType"].ToString() == "Pan Card")
+        //    {
+        //        DivEdit.Visible = true;
+        //        DivView.Visible = false;
+        //        txtpancard.Text = dt.Rows[0]["ProofType"].ToString();
+        //        //Label3.Text = "PAN Details Rejected";
+
+        //        imgProof.ImageUrl = "../Members_KYC/" + dt.Rows[0]["PANPhoto"];
+        //        Label3.ForeColor = System.Drawing.Color.Red;
+        //    }
+        //    if (dt.Rows[0]["res"].ToString() == "SUCC" && dt.Rows[0]["ProofType"].ToString() == "Pan Card")
+        //    {
+        //        DivView.Visible = true;
+        //        DivEdit.Visible = false;
+        //        lblProofNumber.Text = dt.Rows[0]["ProofType"].ToString();
+        //        lblpan.Text = dt.Rows[0]["panno"].ToString();
+        //        lblRemarks.Text = dt.Rows[0]["Remarks"].ToString();
+        //        imgProof.ImageUrl = "../Members_KYC/" + dt.Rows[0]["PANPhoto"];
+        //        btnChange.Visible = false;
+        //        if (dt.Rows[0]["kycsts"].ToString() == "0")
+        //        {
+        //            //lblkycsts.Text = "Your PAN details are under verification";
+        //            lblkycsts.ForeColor = System.Drawing.Color.Red;
+        //        }
+        //        if (dt.Rows[0]["kycsts"].ToString() == "1")
+        //        {
+        //            lblkycsts.Text = "Your PAN details are Verified";
+        //            lblkycsts.ForeColor = System.Drawing.Color.Green;
+        //        }
+        //    }
+        
+
+
+
+
+        //    return View("myKYCView", KYCDEtails);
+        //}
+        [Authorize]
         public ActionResult Dashboard()
+
         {
             objSRepo = new ShopRepository();
             var model = new DashboardViewModel();
             objmem = new MemberService();
+            objadmin = new AdminService();
             utility = new SiteUtility();
+            var regId = Convert.ToInt32(Session["LoginRegId"]);
 
+            var sts = objadmin.GetValue("memberlogic", "mstatus", "regid", regId.ToString());
+            
             objCommon = new Common();
             GetUserProfileDetail(model);
             GetUserOrdersDetail(model);
+            GetUserCVDetail(model);
+            GetUserRankImage(model);
+            GetUserRank(model);
+            GetSICPDet(model);
+            GetUserOverAllCVDetail(model);
+            if (sts == "0")
+            {
+                model.DistributorDetail.Memtype = "Customer";
+            }
+            else if (sts == "1")
+            {
+                model.DistributorDetail.Memtype = "Distributor";
+            }
+            else if (sts == "2")
+            {
+                model.DistributorDetail.Memtype = "Distributor";
+            }
+            else
+            {
+                model.DistributorDetail.Memtype = "Block";
+            }
+            model.DistributorDetail.WalletAmount = Convert.ToDouble(objmem.GetEwalBalance("member1", regId));
+            model.DistributorDetail.TotalPayoutEarned = Convert.ToDouble(objmem.GetEwalBalance("totpayearn", regId));
+
+            var dt1 = objmem.UnilevelPrintView("MemCust", regId, DateTime.Now, DateTime.Now, 0, 0);
+            if (dt1.Rows.Count > 0)
+            {
+                model.DistributorDetail.PersonalRecruits = Convert.ToInt32(dt1.Rows[0]["RegType"]);
+            }
+            else
+            {
+                model.DistributorDetail.PersonalRecruits = 0;
+            }
+
+
             return View("dashboardView", model);
         }
 
@@ -107,16 +226,71 @@ namespace SarsoShoppingMVC.Controllers
             }
         }
 
+        private void GetUserCVDetail(DashboardViewModel model)
+        {
+            var regId = Convert.ToInt32(Session["LoginRegId"]);
+            var dt =  objmem.MemberCV("DesgStslatest", DateTime.Now, DateTime.Now, regId);
+            var MemDetail = objCommon.ConvertDataTable<MemberCV_SP_Result>(dt);            
+            model.CVDetail = MemDetail.FirstOrDefault();                 
+        }
+
+        private void GetUserOverAllCVDetail(DashboardViewModel model)
+        {
+            var regId = Convert.ToInt32(Session["LoginRegId"]);
+            var lmonth = objmem.MemberCV("lastmonth", DateTime.Now, DateTime.Now, regId);            
+            var dt = objmem.MemberCV("DesgSts", DateTime.Now, DateTime.Now, regId);
+            var MemDetail = objCommon.ConvertDataTable<MemberCV_SP_Result>(dt);
+            model.OverAllCVDetail = MemDetail.FirstOrDefault();
+            model.OverAllCVDetail.Year = lmonth.Rows[0]["YEAR"].ToString();
+        }
+
+        private void GetUserRankImage(DashboardViewModel model)
+        {
+            string IBPhoto = "https://sarsobiz.net/MemPhotos/NoImage.png";
+            var regId = Convert.ToInt32(Session["LoginRegId"]);
+            DataTable dtphoto = objmem.CheckUserName(regId.ToString(), "MemPic");
+            if (dtphoto.Rows.Count > 0)
+            {
+                IBPhoto  = "https://sarsobiz.net/MemPhotos/" + dtphoto.Rows[0]["MPhoto"];               
+            }
+            model.DistributorDetail.RankImage = IBPhoto;
+        }
+
+        private void GetUserRank(DashboardViewModel model)
+        {
+            var regId = Convert.ToInt32(Session["LoginRegId"]);            
+            var SICPnewdt = objmem.MemberCV("SICPRANKNEW", DateTime.Now, DateTime.Now, regId);
+            if (SICPnewdt.Rows.Count > 0)
+            {
+                model.DistributorDetail.Rank =  SICPnewdt.Rows[0]["RankName"].ToString();
+            }           
+        }
+
+        private void GetSICPDet(DashboardViewModel model)
+        {
+            var regId = Convert.ToInt32(Session["LoginRegId"]);
+            var SICPnewdt = objmem.MemberCV("SICPDet", DateTime.Now, DateTime.Now, regId);
+            var SICP = objCommon.ConvertDataTable<Sicp_detail>(SICPnewdt);
+            model.Sicp_detail = SICP;
+        }
+
+        private KYC_SP_Result GetUserKYCDetail(DashboardViewModel model)
+        {
+            var regId = Convert.ToInt32(Session["LoginRegId"]);
+            var dt = objmem.Kyc(regId, "KYCPAN");
+            var MemDetailList = objCommon.ConvertDataTable<KYC_SP_Result>(dt);            
+            return MemDetailList.FirstOrDefault();
+        }
+
         private void GetUserOrdersDetail(DashboardViewModel model)
         {
             var regId = Convert.ToString(Session["LoginRegId"]);
-            //var dt = objmem.MemeberReport(Convert.ToInt32(regId), "SICPRepurRpt", 3, Convert.ToInt32(0), Convert.ToInt32(0));
             var dt = objmem.MemeberReport(Convert.ToInt32(regId), "SICPRepurRpt", 3, 0, 10);
-
+            model.OrderList = new List<Orders>();
             var rowCount = dt.Rows.Count;
             if (rowCount > 0)
             {
-                model.OrderList = new List<Orders>();
+                
                 var order = new Orders();
                 for (var count = 0; count < rowCount; count++)
                 {

@@ -144,7 +144,7 @@ namespace SarsoBizDal
 
         DataTable UnilevelPrintView(string env, string action, Int32 regid, DateTime frmdate, DateTime todate, Int32 pageindex, Int32 pagesize);
 
-        string GetEwalBalance(string env, string action, Int32 regid);
+        string GetEwalBalance(string env, string action, int regid);
 
         DataTable EwalletSummaryRpt(string env, string action, Int32 regid, DateTime frmdate, DateTime todate, Int32 pageindex, Int32 pagesize, double Balance);
         //rk

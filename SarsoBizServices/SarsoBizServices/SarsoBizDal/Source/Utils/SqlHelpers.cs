@@ -248,9 +248,12 @@ namespace SarsoBizDal
         internal static T GetValue<T>(string environment, SqlCommand cmd)
         {
             T returnValue = default(T);
-            SsConnection ssconn = SarsoBizsDal.Instance.ConnService.GetClientConnection(environment);
+           
+            string ssconn = ConfigurationManager.ConnectionStrings["sarsobizServices"].ConnectionString;
 
-            SqlConnection connection = cmd.Connection ?? new SqlConnection(ssconn.EnterpriseConnectionString);
+            SqlConnection connection = cmd.Connection ?? new SqlConnection(ssconn);
+
+           
 
             try
             {
