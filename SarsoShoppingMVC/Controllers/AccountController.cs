@@ -8,6 +8,7 @@ using SarsoShoppingMVC.Models;
 using SarsoBizServices;
 using System.Collections.Generic;
 using System.Data;
+using SarsoShoppingMVC.App_Start;
 
 namespace SarsoShoppingMVC.Controllers
 {
@@ -30,12 +31,13 @@ namespace SarsoShoppingMVC.Controllers
             return View();
         }
 
-        public ActionResult Login()
+        public ActionResult Login(string returnUrl)
         {
             return View();
         }
 
         [Authorize]
+        [SessionCheck]
         public ActionResult MyProfile()
         {
             objSRepo = new ShopRepository();
@@ -124,6 +126,7 @@ namespace SarsoShoppingMVC.Controllers
         //    return View("myKYCView", KYCDEtails);
         //}
         [Authorize]
+        [SessionCheck]
         public ActionResult Dashboard()
 
         {
@@ -132,6 +135,8 @@ namespace SarsoShoppingMVC.Controllers
             objmem = new MemberService();
             objadmin = new AdminService();
             utility = new SiteUtility();
+
+            
             var regId = Convert.ToInt32(Session["LoginRegId"]);
 
             var sts = objadmin.GetValue("memberlogic", "mstatus", "regid", regId.ToString());
