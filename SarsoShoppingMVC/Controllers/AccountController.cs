@@ -50,81 +50,13 @@ namespace SarsoShoppingMVC.Controllers
             return View("myProfileView", model);
         }
 
-        //public ActionResult UploadKYC()
-        //{
-        //    var model = new KYC();
-        //    model.KycDetail = new KYC_SP_Result();
-        //    model.KycDetail = GetUserKYCDetail(model);
-            
-        //    if (model.KycDetail.res.ToUpper() == "FAIL")
-        //    {
-        //        DivEdit.Visible = true;
-        //        DivView.Visible = false;
+        public ActionResult UploadKYC()
+        {
+            var model = new KYC();
+            model = GetUserKYCDetail();          
+            return View("myKYCView", model);
+        }
 
-        //        model.Action = 
-        //    }
-        //    if (dt.Rows[0]["res"].ToString() == "PEND" && dt.Rows[0]["ProofType"].ToString() == "Pan Card")
-        //    {
-        //        DivView.Visible = true;
-        //        DivEdit.Visible = false;
-        //        lblProofNumber.Text = dt.Rows[0]["ProofType"].ToString();
-        //        lblpan.Text = dt.Rows[0]["panno"].ToString();
-        //        lblRemarks.Text = dt.Rows[0]["Remarks"].ToString();
-        //        imgProof.ImageUrl = "../Members_KYC/" + dt.Rows[0]["PANPhoto"];
-        //        if (dt.Rows[0]["kycsts"].ToString() == "0")
-        //        {
-        //            //lblkycsts.Text = "Your PAN details are under verification";
-        //            lblkycsts.ForeColor = System.Drawing.Color.Red;
-        //            btnChange.Visible = false;
-        //        }
-        //    }
-        //    if (dt.Rows[0]["res"].ToString() == "NoKYC")
-        //    {
-        //        DivEdit.Visible = true;
-        //        DivView.Visible = false;
-        //        divPan.Visible = true;
-        //        divaddress.Visible = false;
-        //        divbank.Visible = false;
-        //        Label3.Text = "PAN Details Not Submitted";
-        //        Label3.ForeColor = System.Drawing.Color.Red;
-        //    }
-        //    if (dt.Rows[0]["res"].ToString() == "REJ" && dt.Rows[0]["ProofType"].ToString() == "Pan Card")
-        //    {
-        //        DivEdit.Visible = true;
-        //        DivView.Visible = false;
-        //        txtpancard.Text = dt.Rows[0]["ProofType"].ToString();
-        //        //Label3.Text = "PAN Details Rejected";
-
-        //        imgProof.ImageUrl = "../Members_KYC/" + dt.Rows[0]["PANPhoto"];
-        //        Label3.ForeColor = System.Drawing.Color.Red;
-        //    }
-        //    if (dt.Rows[0]["res"].ToString() == "SUCC" && dt.Rows[0]["ProofType"].ToString() == "Pan Card")
-        //    {
-        //        DivView.Visible = true;
-        //        DivEdit.Visible = false;
-        //        lblProofNumber.Text = dt.Rows[0]["ProofType"].ToString();
-        //        lblpan.Text = dt.Rows[0]["panno"].ToString();
-        //        lblRemarks.Text = dt.Rows[0]["Remarks"].ToString();
-        //        imgProof.ImageUrl = "../Members_KYC/" + dt.Rows[0]["PANPhoto"];
-        //        btnChange.Visible = false;
-        //        if (dt.Rows[0]["kycsts"].ToString() == "0")
-        //        {
-        //            //lblkycsts.Text = "Your PAN details are under verification";
-        //            lblkycsts.ForeColor = System.Drawing.Color.Red;
-        //        }
-        //        if (dt.Rows[0]["kycsts"].ToString() == "1")
-        //        {
-        //            lblkycsts.Text = "Your PAN details are Verified";
-        //            lblkycsts.ForeColor = System.Drawing.Color.Green;
-        //        }
-        //    }
-        
-
-
-
-
-        //    return View("myKYCView", KYCDEtails);
-        //}
         [Authorize]
         [SessionCheck]
         public ActionResult Dashboard()
@@ -279,12 +211,19 @@ namespace SarsoShoppingMVC.Controllers
             model.Sicp_detail = SICP;
         }
 
-        private KYC_SP_Result GetUserKYCDetail(DashboardViewModel model)
+        private KYC GetUserKYCDetail()
         {
             var regId = Convert.ToInt32(Session["LoginRegId"]);
+            objmem = new MemberService();
+            objCommon = new Common();
+            var KycDetails = new KYC();
             var dt = objmem.Kyc(regId, "KYCPAN");
-            var MemDetailList = objCommon.ConvertDataTable<KYC_SP_Result>(dt);            
-            return MemDetailList.FirstOrDefault();
+            KycDetails.KycPAN = objCommon.ConvertDataTable<KYC_Address>(dt).FirstOrDefault();
+            dt = objmem.Kyc(regId, "KYCAddress");
+            KycDetails.KycAddress = objCommon.ConvertDataTable<KYC_Address>(dt).FirstOrDefault();
+            dt = objmem.Kyc(regId, "KYCBank");
+            KycDetails.KycBank = objCommon.ConvertDataTable<KYC_Bank>(dt).FirstOrDefault();
+            return KycDetails;
         }
 
         private void GetUserOrdersDetail(DashboardViewModel model)

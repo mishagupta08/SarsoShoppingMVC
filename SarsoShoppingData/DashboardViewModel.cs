@@ -30,7 +30,31 @@ namespace SarsoShoppingData
 
     public class KYC
     {
-        public string Action { get; set; }
-        public KYC_SP_Result KycDetail { get; set; }
+        public KYC_Address KycPAN { get; set; }
+        public KYC_Address KycAddress { get; set; }
+        public KYC_Bank KycBank { get; set; }
+    }
+
+    public class KYC_Address
+    {
+        public string res { get; set; }
+        public string ProofType { get; set; }
+        public string panno { get; set; }
+        public string Remarks { get; set; }
+        public string PANPhoto { get; set; }
+        public string kycsts { get; set; }
+    }
+
+    public class KYC_Bank
+    {
+        public string res { get; set; }
+        public string panno { get; set; }
+        public string Bank { get; set; }
+        public string Branch { get; set; }
+        public string Accno { get; set; }
+        public string ifscode { get; set; }
+        public string Remark { get; set; }
+        public string PANPhoto { get; set; }
+        public string kycst{ get; set; }
     }
 }

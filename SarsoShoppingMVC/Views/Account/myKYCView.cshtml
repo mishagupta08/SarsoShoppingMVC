@@ -1,5 +1,5 @@
 ﻿
-@model SarsoShoppingData.KYC_SP_Result
+@model SarsoShoppingData.KYC
 @{
     ViewBag.pageTitle = "MyKYC";
     Layout = "~/Views/Shared/SkoteShared/Layouts/_layout_horizontal.cshtml";
@@ -49,37 +49,38 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="basicpill-firstname-input">@Model.ProofType Number</label>
-                                            <label class="form-control" id="basicpill-firstname-input">@Model.PANNo</label>
+                                            <label for="basicpill-firstname-input">@Model.KycPAN.ProofType Number</label>
+                                            <label class="form-control" id="basicpill-firstname-input">@Model.KycPAN.panno</label>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="basicpill-lastname-input">@Model.ProofType Image</label>
-                                            @*<label type="text" class="form-control" id="basicpill-lastname-input">@Model.PANPhoto</label>*@
-                                            <img src="https://sarsobiz.net/Members_KYC/@Model.PANPhoto">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
+                                    
+                                    <div class="form-group">
 
-                                            <label for="basicpill-firstname-input">Your Pan Status</label>
-                                            @if (Model.KYCSts.ToString() == "0")
+                                        <label for="basicpill-firstname-input">Your Pan Status</label>
+                                        
+                                            @if (Model.KycPAN.kycsts.ToString() == "0")
                                             {
                                                 <label class="form-control" id="basicpill-firstname-input" style="color:red;">Your PAN details are under verification</label>
                                             }
-                                            else if (Model.KYCSts.ToString() == "1")
+                                            else if (Model.KycPAN.kycsts.ToString() == "1")
                                             {
                                                 <label class="form-control" id="basicpill-firstname-input" style="color:green;">Your PAN details are Verified</label>
                                             }
-                                            else if (Model.KYCSts.ToString() == "2")
+                                            else if (Model.KycPAN.kycsts.ToString() == "2")
                                             {
                                                 <label class="form-control" id="basicpill-firstname-input" style="color:green;">Pan Details Submitted Successfully</label>
                                             }
+                                        
+                                    </div>
+
+                                </div>
+                                
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="basicpill-lastname-input">@Model.KycPAN.ProofType Image</label> <br/>                                          
+                                            <img src="https://sarsobiz.net/Members_KYC/@Model.KycPAN.PANPhoto" style="max-height:250px;">
                                         </div>
-                                    </div>                                    
+                                    </div>
+                                                                     
                                 </div>
                             </form>
                         </div>
@@ -90,14 +91,14 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="basicpill-pancard-input">Bank Name</label>
-                                                <label type="text" class="form-control" id="basicpill-pancard-input">@Model.Bank</label>
+                                                <label type="text" class="form-control" id="basicpill-pancard-input">@Model.KycBank.bank</label>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="basicpill-vatno-input">Bank Branch</label>
-                                                <label type="text" class="form-control" id="basicpill-vatno-input">@Model.Branch</label>
+                                                <label type="text" class="form-control" id="basicpill-vatno-input">@Model.KycBank.branch</label>
                                             </div>
                                         </div>
                                     </div>
@@ -105,14 +106,14 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="basicpill-cstno-input">Account No</label>
-                                                <label type="text" class="form-control" id="basicpill-cstno-input">@Model.Accno</label>
+                                                <label type="text" class="form-control" id="basicpill-cstno-input">@Model.KycBank.accno</label>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="basicpill-servicetax-input">IFSC Code</label>
-                                                <label type="text" class="form-control" id="basicpill-servicetax-input">@Model.Ifscode</label>
+                                                <label type="text" class="form-control" id="basicpill-servicetax-input">@Model.KycBank.ifscode</label>
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +121,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="basicpill-companyuin-input">Bank Status</label>
-                                                <label class="form-control" id="basicpill-companyuin-input">@Model.KYCSts</label>
+                                                <label class="form-control" id="basicpill-companyuin-input">@Model.KycBank.kycst</label>
                                             </div>
                                         </div>                                        
                                     </div>
@@ -135,22 +136,19 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label for="basicpill-namecard-input">Select Proof Type</label>
-                                                <label class="form-control" id="basicpill-namecard-input">@Model.ProofType</label>
+                                                <label class="form-control" id="basicpill-namecard-input">@Model.KycAddress.ProofType</label>
                                             </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
+                                        
                                             <div class="form-group">
                                                 <label for="basicpill-namecard-input">Address Number</label>
-                                                <label class="form-control" id="basicpill-namecard-input">@Model.ChqLeaf</label>
+                                                <label class="form-control" id="basicpill-namecard-input">@Model.KycAddress.panno</label>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
+                                    
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="basicpill-cardno-input">Addressing Image</label>
-                                                <label class="form-control" id="basicpill-cardno-input">@Model.ChqLeaf</label>
+                                                <label for="basicpill-cardno-input">Addressing Image</label><br/>
+                                                <img src="https://sarsobiz.net/Members_KYC/@Model.KycAddress.PANPhoto" style="max-height:250px;">
                                             </div>
                                         </div>
 
